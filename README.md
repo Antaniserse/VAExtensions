@@ -1,4 +1,3 @@
-<b><i>(repository still being configured, source not working at the moment)</b></i>
 # VAExtensions
 A general purpose plugin to extend the base functionalities of VoiceAttack (www.voiceattack.com)
 
