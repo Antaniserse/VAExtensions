@@ -1,7 +1,4 @@
-﻿'<PropertyGroup>
-'  <PostBuildEvent>xcopy "$(ProjectDir)bin\$(ConfigurationName)\*.*" "C:\Program Files (x86)\VoiceAttack\Apps\VAExtensions" /C /F /Y</PostBuildEvent>
-'</PropertyGroup>
-Public Class App
+﻿Public Class App
 
    Public Const KEY_RESULT As String = "VAReaderResult"
    Public Const KEY_FILE As String = "VAReaderFile"
