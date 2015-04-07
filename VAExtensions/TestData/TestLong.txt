@@ -1,0 +1,6 @@
+﻿This is a longer text file example.
+It can be used to test the features of the Viewer interface, via the "show_file" context command.
+It's also useful for testing the Regular Expression feature, to limit the desired output to a specific part of the text
+For example (see the test profile) i want to read only this text here: "This comes from a Regular Expression match"
+
+This last paragraph is not really needed, but I need to keep the text long, that's why I'm still writing this!

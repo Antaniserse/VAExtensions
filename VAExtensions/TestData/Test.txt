@@ -1,0 +1,1 @@
+﻿Hello, this text comes from a local file.
