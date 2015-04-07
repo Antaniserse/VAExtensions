@@ -15,4 +15,4 @@ Import the sample profile included for a demo of the supported features; refer t
 
 <h4>Source Code</h4>
 Visual Basic.NET<br>
-Project compatible with both Full and the Express Edition of Visual Studio 2012
+Project compatible with both Full and Express Edition of Visual Studio 2012
