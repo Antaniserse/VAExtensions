@@ -69,7 +69,6 @@
     <Compile Include="App.vb" />
     <Compile Include="ContextHandlers\ContextFactory.vb" />
     <Compile Include="ContextHandlers\ContextHandlerBase.vb" />
-    <Compile Include="ContextHandlers\ContextHandlerStorage.vb" />
     <Compile Include="ContextHandlers\ContextHandlerReadFile.vb" />
     <Compile Include="ContextHandlers\ContextHandlerReadXML.vb" />
     <Compile Include="ContextHandlers\ContextHandlerShowFile.vb" />
@@ -77,11 +76,9 @@
     <Compile Include="ContextHandlers\ContextHandlerCompareText.vb" />
     <Compile Include="ContextHandlers\ContextHandlerReadStdOut.vb" />
     <Compile Include="ContextHandlers\ContextHandlerSpellText.vb" />
-    <Compile Include="ContextHandlers\ContextHandlerClipBoard.vb" />
     <Compile Include="ContextHandlers\ContextHandlerMath.vb" />
     <Compile Include="ContextHandlers\ContextHandlerRandom.vb" />
     <Compile Include="ContextHandlers\ContextHandlerCountdown.vb" />
-    <Compile Include="ContextHandlers\ContextHandlerConversion.vb" />
     <Compile Include="ContextHandlers\ContextHandlerInfoDialog.vb" />
     <Compile Include="Forms\DebugForm.designer.vb">
       <DependentUpon>DebugForm.vb</DependentUpon>

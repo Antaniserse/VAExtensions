@@ -5,15 +5,29 @@
 
    Protected m_Context As ContextFactory.Contexts
    Protected m_State As Dictionary(Of String, Object)
-   Protected m_Conditions As Dictionary(Of String, Nullable(Of Int16))
+   Protected m_smallIntValues As Dictionary(Of String, Nullable(Of Short))
    Protected m_TextValues As Dictionary(Of String, String)
+   Protected m_intValues As Dictionary(Of String, Nullable(Of Integer))
+   Protected m_decimalValues As Dictionary(Of String, Nullable(Of Decimal))
+   Protected m_booleanValues As Dictionary(Of String, Nullable(Of Boolean))
    Protected m_ExtendedValues As Dictionary(Of String, Object)
 
-   Public Sub New(ByVal context As ContextFactory.Contexts, ByRef state As Dictionary(Of String, Object), ByRef conditions As Dictionary(Of String, Nullable(Of Int16)), ByRef textValues As Dictionary(Of String, String), ByRef extendedValues As Dictionary(Of String, Object))
+   Public Sub New(ByVal context As ContextFactory.Contexts, ByRef state As Dictionary(Of String, Object) _
+                        , ByRef smallIntValues As Dictionary(Of String, Nullable(Of Short)) _
+                        , ByRef textValues As Dictionary(Of String, String) _
+                        , ByRef intValues As Dictionary(Of String, Nullable(Of Integer)) _
+                        , ByRef decimalValues As Dictionary(Of String, Nullable(Of Decimal)) _
+                        , ByRef booleanValues As Dictionary(Of String, Nullable(Of Boolean)) _
+                        , ByRef extendedValues As Dictionary(Of String, Object))
+
+
       m_Context = context
       m_State = state
-      m_Conditions = conditions
+      m_smallIntValues = smallIntValues
       m_TextValues = textValues
+      m_intValues = intValues
+      m_decimalValues = decimalValues
+      m_booleanValues = booleanValues
       m_ExtendedValues = extendedValues
    End Sub
 

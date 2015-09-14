@@ -2,8 +2,11 @@
 
    Dim contextName As String
    Dim state As Dictionary(Of String, Object) = New Dictionary(Of String, Object)
-   Dim conditions As Dictionary(Of String, Nullable(Of Int16)) = New Dictionary(Of String, Nullable(Of Int16))
+   Dim smallIntValues As Dictionary(Of String, Nullable(Of Int16)) = New Dictionary(Of String, Nullable(Of Int16))
    Dim textValues As Dictionary(Of String, String) = New Dictionary(Of String, String)
+   Dim intValues As Dictionary(Of String, Nullable(Of Integer)) = New Dictionary(Of String, Nullable(Of Integer))
+   Dim decimalValues As Dictionary(Of String, Nullable(Of Decimal)) = New Dictionary(Of String, Nullable(Of Decimal))
+   Dim booleanValues As Dictionary(Of String, Nullable(Of Boolean)) = New Dictionary(Of String, Nullable(Of Boolean))
    Dim extendedValues As Dictionary(Of String, Object) = New Dictionary(Of String, Object)
 
    Dim storageTextVar As New List(Of EditableKVP(Of String))
@@ -29,22 +32,14 @@
    End Sub
 
    Private Sub clearAllInput()
-      conditions.Clear()
+      smallIntValues.Clear()
       textValues.Clear()
       extendedValues.Clear()
    End Sub
 
    Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-      VAExtensions.VoiceAttack.VA_Init1(state, conditions, textValues, extendedValues)
+      VAExtensions.VoiceAttack.VA_Init1(state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
       Me.Text = String.Format("Test application: {0} ({1})", VAExtensions.VoiceAttack.VA_DisplayName, VAExtensions.VoiceAttack.VA_Id)
-
-      BindingSourceStorageTextVar.DataSource = storageTextVar
-      BindingSourceStorageCond.DataSource = storageCond
-      rebindStorageGrids()
-
-      BindingSourceConvertTextVar.DataSource = convertTextVar
-      BindingSourceConvertCond.DataSource = convertCond
-      rebindConversionGrids()
 
       BindingSourceMathCond.DataSource = mathCond
       rebindMathGrid()
@@ -62,35 +57,7 @@
       dgvMath.DataSource = BindingSourceMathCond
    End Sub
 
-   Private Sub rebindConversionGrids()
-      BindingSourceConvertTextVar.ResetBindings(False)
-      dgvConvertTextVar.AutoGenerateColumns = False
-      dgvConvertTextVar.Columns(0).DataPropertyName = "Key"
-      dgvConvertTextVar.Columns(1).DataPropertyName = "Value"
-      dgvConvertTextVar.DataSource = BindingSourceConvertTextVar
-
-      BindingSourceConvertCond.ResetBindings(False)
-      dgvConvertCond.AutoGenerateColumns = False
-      dgvConvertCond.Columns(0).DataPropertyName = "Key"
-      dgvConvertCond.Columns(1).DataPropertyName = "Value"
-      dgvConvertCond.DataSource = BindingSourceConvertCond
-   End Sub
-
-   Private Sub rebindStorageGrids()
-      BindingSourceStorageTextVar.ResetBindings(False)
-      dgvStorageTextVar.AutoGenerateColumns = False
-      dgvStorageTextVar.Columns(0).DataPropertyName = "Key"
-      dgvStorageTextVar.Columns(1).DataPropertyName = "Value"
-      dgvStorageTextVar.DataSource = BindingSourceStorageTextVar
-
-      BindingSourceStorageCond.ResetBindings(False)
-      dgvStorageCond.AutoGenerateColumns = False
-      dgvStorageCond.Columns(0).DataPropertyName = "Key"
-      dgvStorageCond.Columns(1).DataPropertyName = "Value"
-      dgvStorageCond.DataSource = BindingSourceStorageCond
-   End Sub
-
-   Private Sub dgvStorageCond_CellValidating(sender As Object, e As DataGridViewCellValidatingEventArgs) Handles dgvStorageCond.CellValidating
+   Private Sub dgvStorageCond_CellValidating(sender As Object, e As DataGridViewCellValidatingEventArgs)
       If e.ColumnIndex = 1 Then
          Dim i As Int16
          Dim v As String = Convert.ToString(e.FormattedValue)
@@ -101,7 +68,7 @@
    End Sub
 
    Private Sub NumericGrid_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) _
-         Handles dgvStorageCond.EditingControlShowing, dgvMath.EditingControlShowing
+         Handles dgvMath.EditingControlShowing
 
       RemoveHandler e.Control.KeyPress, AddressOf NumericGridColumn_KeyPress
       If DirectCast(sender, DataGridView).CurrentCell.ColumnIndex = 1 Then
@@ -124,8 +91,8 @@
       clearAllInput()
       contextName = VAExtensions.EnumInfoAttribute.GetTag(VAExtensions.ContextFactory.Contexts.Config)
 
-      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, conditions, textValues, extendedValues)
-      If conditions(VAExtensions.App.KEY_ERROR).Value <> 0 Then
+      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+      If smallIntValues(VAExtensions.App.KEY_ERROR).Value <> 0 Then
          MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
       Else
          MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -142,8 +109,8 @@
       textValues(VAExtensions.App.KEY_FILE) = cboReadFileName.Text
       If txtReadFileRegEx.TextLength > 0 Then textValues(VAExtensions.App.KEY_REGEX) = txtReadFileRegEx.Text
 
-      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, conditions, textValues, extendedValues)
-      If conditions(VAExtensions.App.KEY_ERROR).Value <> 0 Then
+      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+      If smallIntValues(VAExtensions.App.KEY_ERROR).Value <> 0 Then
          MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
       Else
          MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -157,10 +124,10 @@
       textValues(VAExtensions.App.KEY_FILE) = cboReadXMLName.Text
       If txtReadXMLRegEx.TextLength > 0 Then textValues(VAExtensions.App.KEY_REGEX) = txtReadXMLRegEx.Text
       If txtReadXMLItemPath.TextLength > 0 Then textValues(VAExtensions.App.KEY_ARGUMENTS) = txtReadXMLItemPath.Text
-      If udReadXMLIndex.Value > 0 Then conditions(VAExtensions.App.KEY_XMLCOUNT) = Convert.ToInt16(udReadXMLIndex.Value)
+      If udReadXMLIndex.Value > 0 Then smallIntValues(VAExtensions.App.KEY_XMLCOUNT) = Convert.ToInt16(udReadXMLIndex.Value)
 
-      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, conditions, textValues, extendedValues)
-      If conditions(VAExtensions.App.KEY_ERROR).Value <> 0 Then
+      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+      If smallIntValues(VAExtensions.App.KEY_ERROR).Value <> 0 Then
          MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
       Else
          MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -177,8 +144,8 @@
          textValues("CustomName1") = txtShowFileTextVar.Text
       End If
 
-      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, conditions, textValues, extendedValues)
-      If conditions(VAExtensions.App.KEY_ERROR).Value <> 0 Then
+      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+      If smallIntValues(VAExtensions.App.KEY_ERROR).Value <> 0 Then
          MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
       End If
    End Sub
@@ -190,10 +157,10 @@
       textValues(VAExtensions.App.KEY_ARGUMENTS) = cboReadRSSArgs.Text
       If txtReadXMLRegEx.TextLength > 0 Then textValues(VAExtensions.App.KEY_REGEX) = txtReadXMLRegEx.Text
       If cboReadRSSDateMask.Text.Length > 0 AndAlso cboReadRSSDateMask.Text <> "<default>" Then textValues(VAExtensions.App.KEY_RSSFORMAT) = cboReadRSSDateMask.Text
-      If udReadRSSIndex.Value > 0 Then conditions(VAExtensions.App.KEY_XMLCOUNT) = Convert.ToInt16(udReadRSSIndex.Value)
+      If udReadRSSIndex.Value > 0 Then smallIntValues(VAExtensions.App.KEY_XMLCOUNT) = Convert.ToInt16(udReadRSSIndex.Value)
 
-      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, conditions, textValues, extendedValues)
-      If conditions(VAExtensions.App.KEY_ERROR).Value <> 0 Then
+      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+      If smallIntValues(VAExtensions.App.KEY_ERROR).Value <> 0 Then
          MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
       Else
          MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -206,15 +173,15 @@
       textValues("Text1") = txtCompareText1.Text
       textValues("Text2") = txtCompareText2.Text
 
-      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, conditions, textValues, extendedValues)
-      If conditions(VAExtensions.App.KEY_ERROR).Value <> 0 Then
+      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+      If smallIntValues(VAExtensions.App.KEY_ERROR).Value <> 0 Then
          MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
       Else
-         Select Case conditions(VAExtensions.App.KEY_COMPARISON).Value
+         Select Case smallIntValues(VAExtensions.App.KEY_COMPARISON).Value
             Case 0
                MessageBox.Show("The two values match", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Case Else
-               MessageBox.Show(String.Format("The two values are different ({0})", conditions(VAExtensions.App.KEY_COMPARISON).Value), "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+               MessageBox.Show(String.Format("The two values are different ({0})", smallIntValues(VAExtensions.App.KEY_COMPARISON).Value), "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
          End Select
       End If
 
@@ -226,8 +193,8 @@
       textValues(VAExtensions.App.KEY_FILE) = txtReadStdOutName.Text
       textValues(VAExtensions.App.KEY_ARGUMENTS) = txtReadStdOutArgs.Text
 
-      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, conditions, textValues, extendedValues)
-      If conditions(VAExtensions.App.KEY_ERROR).Value <> 0 Then
+      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+      If smallIntValues(VAExtensions.App.KEY_ERROR).Value <> 0 Then
          MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
       Else
          txtReadStdOutResult.Text = String.Format("Success:{0}{0}{1}", Environment.NewLine, textValues(VAExtensions.App.KEY_RESULT))
@@ -243,111 +210,16 @@
 
       Dim result As String
       Do
-         VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, conditions, textValues, extendedValues)
-         If conditions(VAExtensions.App.KEY_ERROR).Value <> 0 Then
+         VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+         If smallIntValues(VAExtensions.App.KEY_ERROR).Value <> 0 Then
             MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Do
          Else
             result = textValues(VAExtensions.App.KEY_RESULT)
-            txtSpellTextOUT.AppendText(String.Format("{1} ({2}){0}", Environment.NewLine, result, conditions(VAExtensions.App.KEY_SPELLASCII)))
+            txtSpellTextOUT.AppendText(String.Format("{1} ({2}){0}", Environment.NewLine, result, smallIntValues(VAExtensions.App.KEY_SPELLASCII)))
          End If
 
       Loop Until String.IsNullOrEmpty(result)
-   End Sub
-
-   Private Sub btnStorageSave_Click(sender As Object, e As EventArgs) Handles btnStorageSave.Click
-      clearAllInput()
-      contextName = VAExtensions.EnumInfoAttribute.GetTag(VAExtensions.ContextFactory.Contexts.SaveStorage)
-      For Each kvp As EditableKVP(Of String) In storageTextVar
-         If Not String.IsNullOrEmpty(kvp.Key) Then textValues.Add(kvp.Key, kvp.Value)
-      Next
-      For Each kvp As EditableKVP(Of Nullable(Of Int16)) In storageCond
-         If Not String.IsNullOrEmpty(kvp.Key) Then conditions.Add(kvp.Key, kvp.Value)
-      Next
-
-      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, conditions, textValues, extendedValues)
-      If conditions(VAExtensions.App.KEY_ERROR).Value <> 0 Then
-         MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-      Else
-         MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-      End If
-   End Sub
-
-   Private Sub btnStorageLoad_Click(sender As Object, e As EventArgs) Handles btnStorageLoad.Click
-      clearAllInput()
-      contextName = VAExtensions.EnumInfoAttribute.GetTag(VAExtensions.ContextFactory.Contexts.LoadStorage)
-      For Each kvp As EditableKVP(Of String) In storageTextVar
-         If Not String.IsNullOrEmpty(kvp.Key) Then textValues.Add(kvp.Key, Nothing)
-      Next
-      For Each kvp As EditableKVP(Of Nullable(Of Int16)) In storageCond
-         If Not String.IsNullOrEmpty(kvp.Key) Then conditions.Add(kvp.Key, Nothing)
-      Next
-
-      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, conditions, textValues, extendedValues)
-      If conditions(VAExtensions.App.KEY_ERROR).Value <> 0 Then
-         MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-      Else
-         MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-         dgvStorageTextVar.DataSource = Nothing
-         storageTextVar.Clear()
-         For Each kvp As KeyValuePair(Of String, String) In textValues
-            If kvp.Key <> VAExtensions.App.KEY_RESULT Then
-               storageTextVar.Add(New EditableKVP(Of String) With {.Key = kvp.Key, .Value = kvp.Value})
-            End If
-         Next
-         dgvStorageCond.DataSource = Nothing
-         storageCond.Clear()
-         For Each kvp As KeyValuePair(Of String, Nullable(Of Int16)) In conditions
-            If kvp.Key <> VAExtensions.App.KEY_ERROR Then
-               storageCond.Add(New EditableKVP(Of Nullable(Of Int16)) With {.Key = kvp.Key, .Value = kvp.Value})
-            End If
-         Next
-         rebindStorageGrids()
-      End If
-
-   End Sub
-
-   Private Sub btnStorageClear_Click(sender As Object, e As EventArgs) Handles btnStorageClear.Click
-      clearAllInput()
-      contextName = VAExtensions.EnumInfoAttribute.GetTag(VAExtensions.ContextFactory.Contexts.ClearStorage)
-
-      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, conditions, textValues, extendedValues)
-      If conditions(VAExtensions.App.KEY_ERROR).Value <> 0 Then
-         MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-      Else
-         MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-         dgvStorageTextVar.DataSource = Nothing
-         storageTextVar.Clear()
-         dgvStorageCond.DataSource = Nothing
-         storageCond.Clear()
-         rebindStorageGrids()
-      End If
-
-   End Sub
-
-   Private Sub btnClipboard_Click(sender As Object, e As EventArgs) _
-      Handles btnClipboardCopy.Click, btnClipboardPaste.Click
-
-      clearAllInput()
-
-      If sender Is btnClipboardCopy Then
-         contextName = VAExtensions.EnumInfoAttribute.GetTag(VAExtensions.ContextFactory.Contexts.ClipboardSet)
-         textValues.Add("ClipTest1", txtClipboardCopy.Text)
-      Else
-         contextName = VAExtensions.EnumInfoAttribute.GetTag(VAExtensions.ContextFactory.Contexts.ClipboardGet)
-      End If
-
-      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, conditions, textValues, extendedValues)
-      If conditions(VAExtensions.App.KEY_ERROR).Value <> 0 Then
-         MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-      Else
-         MessageBox.Show("", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-         If sender Is btnClipboardPaste Then
-            txtClipboardPaste.Text = textValues(VAExtensions.App.KEY_RESULT)
-         End If
-      End If
-
    End Sub
 
    Private Sub btnMath_Click(sender As Object, e As EventArgs) _
@@ -381,14 +253,14 @@
 
       contextName = VAExtensions.EnumInfoAttribute.GetTag(mathContext)
       For Each kvp As EditableKVP(Of Nullable(Of Int16)) In mathCond
-         If Not String.IsNullOrEmpty(kvp.Key) AndAlso kvp.Value.HasValue Then conditions.Add(kvp.Key, kvp.Value)
+         If Not String.IsNullOrEmpty(kvp.Key) AndAlso kvp.Value.HasValue Then smallIntValues.Add(kvp.Key, kvp.Value)
       Next
 
-      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, conditions, textValues, extendedValues)
-      If conditions(VAExtensions.App.KEY_ERROR).Value <> 0 Then
+      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+      If smallIntValues(VAExtensions.App.KEY_ERROR).Value <> 0 Then
          MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
       Else
-         MessageBox.Show(conditions(VAExtensions.App.KEY_RESULT).Value.ToString, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+         MessageBox.Show(smallIntValues(VAExtensions.App.KEY_RESULT).Value.ToString, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
       End If
    End Sub
 
@@ -396,11 +268,11 @@
       clearAllInput()
       txtRandomOUT.Clear()
       contextName = VAExtensions.EnumInfoAttribute.GetTag(VAExtensions.ContextFactory.Contexts.RandomInit)
-      conditions(VAExtensions.App.KEY_RANGEMIN) = CType(udRandomMin.Value, Short?)
-      conditions(VAExtensions.App.KEY_RANGEMAX) = CType(udRandomMax.Value, Short?)
+      smallIntValues(VAExtensions.App.KEY_RANGEMIN) = CType(udRandomMin.Value, Short?)
+      smallIntValues(VAExtensions.App.KEY_RANGEMAX) = CType(udRandomMax.Value, Short?)
 
-      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, conditions, textValues, extendedValues)
-      If conditions(VAExtensions.App.KEY_ERROR).Value <> 0 Then
+      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+      If smallIntValues(VAExtensions.App.KEY_ERROR).Value <> 0 Then
          MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
       Else
          MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -412,11 +284,11 @@
       clearAllInput()
       contextName = VAExtensions.EnumInfoAttribute.GetTag(VAExtensions.ContextFactory.Contexts.RandomNext)
 
-      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, conditions, textValues, extendedValues)
-      If conditions(VAExtensions.App.KEY_ERROR).Value <> 0 Then
+      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+      If smallIntValues(VAExtensions.App.KEY_ERROR).Value <> 0 Then
          MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
       Else
-         txtRandomOUT.AppendText(String.Format("{1}{0}", Environment.NewLine, conditions(VAExtensions.App.KEY_RESULT)))
+         txtRandomOUT.AppendText(String.Format("{1}{0}", Environment.NewLine, smallIntValues(VAExtensions.App.KEY_RESULT)))
       End If
    End Sub
 
@@ -424,10 +296,10 @@
       clearAllInput()
       txtCountdownOUT.clear()
       contextName = VAExtensions.EnumInfoAttribute.GetTag(VAExtensions.ContextFactory.Contexts.Countdown)
-      conditions(txtCountdownName.Text) = CType(udCountdown.Value, Short?)
+      smallIntValues(txtCountdownName.Text) = CType(udCountdown.Value, Short?)
 
-      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, conditions, textValues, extendedValues)
-      If conditions(VAExtensions.App.KEY_ERROR).Value <> 0 Then
+      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+      If smallIntValues(VAExtensions.App.KEY_ERROR).Value <> 0 Then
          MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
       Else
          MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -439,62 +311,17 @@
 
       clearAllInput()
       contextName = VAExtensions.EnumInfoAttribute.GetTag(VAExtensions.ContextFactory.Contexts.Countdown)
-      conditions(txtCountdownName.Text) = CType(udCountdown.Value, Short?)
+      smallIntValues(txtCountdownName.Text) = CType(udCountdown.Value, Short?)
 
-      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, conditions, textValues, extendedValues)
-      If conditions(VAExtensions.App.KEY_ERROR).Value <> 0 Then
+      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+      If smallIntValues(VAExtensions.App.KEY_ERROR).Value <> 0 Then
          MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
       Else
-         If conditions(VAExtensions.App.KEY_RESULT).Value > 0 Then
-            txtCountdownOUT.AppendText(String.Format("Still running: {1} seconds{0}", Environment.NewLine, conditions(VAExtensions.App.KEY_RESULT)))
+         If smallIntValues(VAExtensions.App.KEY_RESULT).Value > 0 Then
+            txtCountdownOUT.AppendText(String.Format("Still running: {1} seconds{0}", Environment.NewLine, smallIntValues(VAExtensions.App.KEY_RESULT)))
          Else
-            txtCountdownOUT.AppendText(String.Format("Countdown complete{0}", Environment.NewLine, conditions(VAExtensions.App.KEY_RESULT)))
+            txtCountdownOUT.AppendText(String.Format("Countdown complete{0}", Environment.NewLine, smallIntValues(VAExtensions.App.KEY_RESULT)))
          End If
-      End If
-   End Sub
-
-   Private Sub btnConvertToNum_Click(sender As Object, e As EventArgs) Handles btnConvertToNum.Click
-      clearAllInput()
-      contextName = VAExtensions.EnumInfoAttribute.GetTag(VAExtensions.ContextFactory.Contexts.TextToNum)
-      For Each kvp As EditableKVP(Of String) In convertTextVar
-         If Not String.IsNullOrEmpty(kvp.Key) Then textValues.Add(kvp.Key, kvp.Value)
-      Next
-
-      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, conditions, textValues, extendedValues)
-      If conditions(VAExtensions.App.KEY_ERROR).Value <> 0 Then
-         MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-      Else
-         dgvConvertCond.DataSource = Nothing
-         convertCond.Clear()
-         For Each kvp As KeyValuePair(Of String, Nullable(Of Int16)) In conditions
-            If kvp.Key <> VAExtensions.App.KEY_ERROR Then
-               convertCond.Add(New EditableKVP(Of Nullable(Of Int16)) With {.Key = kvp.Key, .Value = kvp.Value})
-            End If
-         Next
-         rebindConversionGrids()
-      End If
-
-   End Sub
-
-   Private Sub btnConvertToText_Click(sender As Object, e As EventArgs) Handles btnConvertToText.Click
-      clearAllInput()
-      contextName = VAExtensions.EnumInfoAttribute.GetTag(VAExtensions.ContextFactory.Contexts.NumToText)
-      For Each kvp As EditableKVP(Of Nullable(Of Int16)) In convertCond
-         If Not String.IsNullOrEmpty(kvp.Key) Then conditions.Add(kvp.Key, kvp.Value)
-      Next
-
-      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, conditions, textValues, extendedValues)
-      If conditions(VAExtensions.App.KEY_ERROR).Value <> 0 Then
-         MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-      Else
-         dgvConvertTextVar.DataSource = Nothing
-         convertTextVar.Clear()
-         For Each kvp As KeyValuePair(Of String, String) In textValues
-            If kvp.Key <> VAExtensions.App.KEY_RESULT Then
-               convertTextVar.Add(New EditableKVP(Of String) With {.Key = kvp.Key, .Value = kvp.Value})
-            End If
-         Next
-         rebindConversionGrids()
       End If
    End Sub
 End Class

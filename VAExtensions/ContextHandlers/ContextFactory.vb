@@ -22,12 +22,6 @@
       <EnumInfo("Execute a console application and read the output", "read_stdout")> _
       ReadStdOut
 
-      <EnumInfo("Convert a list of text values to a list of numeric conditions", "text_to_num")> _
-      TextToNum
-      <EnumInfo("Convert a list of numeric conditions to a list of text values", "num_to_text")> _
-      NumToText
-
-
       <EnumInfo("Perform an addition of all the given values", "math_add")> _
       MathAdd
       <EnumInfo("Perform an subtraction of all the given values", "math_subtract")> _
@@ -57,18 +51,6 @@
       RandomInit
       <EnumInfo("Get the next number from a previously created random list", "rnd_next")> _
       RandomNext
-
-      <EnumInfo("Set a text variables into the clipboard", "clipboard_set")> _
-      ClipboardSet
-      <EnumInfo("Get a text variables from the clipboard", "clipboard_get")> _
-      ClipboardGet
-
-      <EnumInfo("Store text variables and conditions to file", "save_storage")> _
-      SaveStorage
-      <EnumInfo("Load text variables and conditions from storage file", "load_storage")> _
-      LoadStorage
-      <EnumInfo("Clear storage file", "clear_storage")> _
-      ClearStorage
    End Enum
 
    Shared Sub New()
@@ -76,7 +58,13 @@
       SupportedContexts.AddRange(EnumInfoAttribute.ToSimpleList(Of Contexts))
    End Sub
 
-   Public Shared Function Create(ByVal contextName As String, ByRef state As Dictionary(Of String, Object), ByRef conditions As Dictionary(Of String, Nullable(Of Int16)), ByRef textValues As Dictionary(Of String, String), ByRef extendedValues As Dictionary(Of String, Object)) As ContextHandlerBase
+   Public Shared Function Create(ByVal contextName As String, ByRef state As Dictionary(Of String, Object) _
+                              , ByRef smallIntValues As Dictionary(Of String, Nullable(Of Short)) _
+                              , ByRef textValues As Dictionary(Of String, String) _
+                              , ByRef intValues As Dictionary(Of String, Nullable(Of Integer)) _
+                              , ByRef decimalValues As Dictionary(Of String, Nullable(Of Decimal)) _
+                              , ByRef booleanValues As Dictionary(Of String, Nullable(Of Boolean)) _
+                              , ByRef extendedValues As Dictionary(Of String, Object)) As ContextHandlerBase
 
       Dim result As ContextHandlerBase = Nothing
 
@@ -84,46 +72,37 @@
          If String.Compare(EnumInfoAttribute.GetTag(c), contextName, True) = 0 Then
             Select Case c
                Case Contexts.Config
-                  result = New ContextHandlerInfoDialog(c, state, conditions, textValues, extendedValues)
+                  result = New ContextHandlerInfoDialog(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 
                Case Contexts.ReadFile
-                  result = New ContextHandlerReadFile(c, state, conditions, textValues, extendedValues)
+                  result = New ContextHandlerReadFile(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 
                Case Contexts.ReadXml
-                  result = New ContextHandlerReadXML(c, state, conditions, textValues, extendedValues)
+                  result = New ContextHandlerReadXML(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 
                Case Contexts.ReadRSS
-                  result = New ContextHandlerReadRSS(c, state, conditions, textValues, extendedValues)
+                  result = New ContextHandlerReadRSS(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 
                Case Contexts.ShowFile, Contexts.ShowText
-                  result = New ContextHandlerShowFile(c, state, conditions, textValues, extendedValues)
+                  result = New ContextHandlerShowFile(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 
                Case Contexts.CompareText
-                  result = New ContextHandlerCompareText(c, state, conditions, textValues, extendedValues)
+                  result = New ContextHandlerCompareText(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 
                Case Contexts.SpellText
-                  result = New ContextHandlerSpellText(c, state, conditions, textValues, extendedValues)
+                  result = New ContextHandlerSpellText(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 
                Case Contexts.ReadStdOut
-                  result = New ContextHandlerReadStdOut(c, state, conditions, textValues, extendedValues)
-
-               Case Contexts.TextToNum, Contexts.NumToText
-                  result = New ContextHandlerConversion(c, state, conditions, textValues, extendedValues)
+                  result = New ContextHandlerReadStdOut(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 
                Case Contexts.MathAdd, Contexts.MathSubtract, Contexts.MathMultiply, Contexts.MathDivide _
                   , Contexts.MathMod, Contexts.MathMin, Contexts.MathMax, Contexts.BitAnd, Contexts.BitOr, Contexts.BitXOr
-                  result = New ContextHandlerMath(c, state, conditions, textValues, extendedValues)
+                  result = New ContextHandlerMath(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 
                Case Contexts.RandomInit, Contexts.RandomNext
-                  result = New ContextHandlerRandom(c, state, conditions, textValues, extendedValues)
+                  result = New ContextHandlerRandom(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
                Case Contexts.Countdown
-                  result = New ContextHandlerCountdown(c, state, conditions, textValues, extendedValues)
-
-               Case Contexts.ClipboardGet, Contexts.ClipboardSet
-                  result = New ContextHandlerClipBoard(c, state, conditions, textValues, extendedValues)
-
-               Case Contexts.SaveStorage, Contexts.LoadStorage, Contexts.ClearStorage
-                  result = New ContextHandlerStorage(c, state, conditions, textValues, extendedValues)
+                  result = New ContextHandlerCountdown(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 
             End Select
             Exit For
