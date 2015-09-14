@@ -73,7 +73,6 @@
     <Compile Include="ContextHandlers\ContextHandlerReadXML.vb" />
     <Compile Include="ContextHandlers\ContextHandlerShowFile.vb" />
     <Compile Include="ContextHandlers\ContextHandlerReadRSS.vb" />
-    <Compile Include="ContextHandlers\ContextHandlerCompareText.vb" />
     <Compile Include="ContextHandlers\ContextHandlerReadStdOut.vb" />
     <Compile Include="ContextHandlers\ContextHandlerSpellText.vb" />
     <Compile Include="ContextHandlers\ContextHandlerMath.vb" />

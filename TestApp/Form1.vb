@@ -167,26 +167,6 @@
       End If
    End Sub
 
-   Private Sub btnCompareText_Click(sender As Object, e As EventArgs) Handles btnCompareText.Click
-      clearAllInput()
-      contextName = VAExtensions.EnumInfoAttribute.GetTag(VAExtensions.ContextFactory.Contexts.CompareText)
-      textValues("Text1") = txtCompareText1.Text
-      textValues("Text2") = txtCompareText2.Text
-
-      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
-      If smallIntValues(VAExtensions.App.KEY_ERROR).Value <> 0 Then
-         MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-      Else
-         Select Case smallIntValues(VAExtensions.App.KEY_COMPARISON).Value
-            Case 0
-               MessageBox.Show("The two values match", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Case Else
-               MessageBox.Show(String.Format("The two values are different ({0})", smallIntValues(VAExtensions.App.KEY_COMPARISON).Value), "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-         End Select
-      End If
-
-   End Sub
-
    Private Sub btnReadStdOutExecute_Click(sender As Object, e As EventArgs) Handles btnReadStdOutExecute.Click
       clearAllInput()
       contextName = VAExtensions.EnumInfoAttribute.GetTag(VAExtensions.ContextFactory.Contexts.ReadStdOut)

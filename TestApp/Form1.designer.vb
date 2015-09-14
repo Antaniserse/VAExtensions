@@ -27,7 +27,7 @@ Partial Class Form1
 	''' </summary>
 	Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
-      Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
       Me.btnLaunchVA = New System.Windows.Forms.Button()
       Me.btnShowInfo = New System.Windows.Forms.Button()
       Me.BindingSourceMathCond = New System.Windows.Forms.BindingSource(Me.components)
@@ -85,12 +85,6 @@ Partial Class Form1
       Me.lblShowFileTextVar = New System.Windows.Forms.Label()
       Me.cboShowFileName = New System.Windows.Forms.ComboBox()
       Me.btnShowFileName = New System.Windows.Forms.Button()
-      Me.pageCompareText = New System.Windows.Forms.TabPage()
-      Me.txtCompareText2 = New System.Windows.Forms.TextBox()
-      Me.txtCompareText1 = New System.Windows.Forms.TextBox()
-      Me.lblCompareText1 = New System.Windows.Forms.Label()
-      Me.lblCompareText2 = New System.Windows.Forms.Label()
-      Me.btnCompareText = New System.Windows.Forms.Button()
       Me.pageReadRSS = New System.Windows.Forms.TabPage()
       Me.txtReadRSSRegEx = New System.Windows.Forms.TextBox()
       Me.lblReadRSSRegEx = New System.Windows.Forms.Label()
@@ -131,7 +125,6 @@ Partial Class Form1
       Me.pageReadStdOut.SuspendLayout()
       Me.pageSpellText.SuspendLayout()
       Me.pageShowText.SuspendLayout()
-      Me.pageCompareText.SuspendLayout()
       Me.pageReadRSS.SuspendLayout()
       CType(Me.udReadRSSIndex, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.pageReadXML.SuspendLayout()
@@ -401,9 +394,9 @@ Partial Class Form1
       '
       'DataGridViewTextBoxColumn4
       '
-      DataGridViewCellStyle3.Format = "0"
-      DataGridViewCellStyle3.NullValue = Nothing
-      Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle3
+      DataGridViewCellStyle4.Format = "0"
+      DataGridViewCellStyle4.NullValue = Nothing
+      Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle4
       Me.DataGridViewTextBoxColumn4.HeaderText = "Value"
       Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
       '
@@ -712,61 +705,6 @@ Partial Class Form1
       Me.btnShowFileName.Text = "Execute"
       Me.btnShowFileName.UseVisualStyleBackColor = True
       '
-      'pageCompareText
-      '
-      Me.pageCompareText.Controls.Add(Me.txtCompareText2)
-      Me.pageCompareText.Controls.Add(Me.txtCompareText1)
-      Me.pageCompareText.Controls.Add(Me.lblCompareText1)
-      Me.pageCompareText.Controls.Add(Me.lblCompareText2)
-      Me.pageCompareText.Controls.Add(Me.btnCompareText)
-      Me.pageCompareText.Location = New System.Drawing.Point(4, 40)
-      Me.pageCompareText.Name = "pageCompareText"
-      Me.pageCompareText.Size = New System.Drawing.Size(773, 342)
-      Me.pageCompareText.TabIndex = 3
-      Me.pageCompareText.Text = "Compare Text"
-      Me.pageCompareText.UseVisualStyleBackColor = True
-      '
-      'txtCompareText2
-      '
-      Me.txtCompareText2.Location = New System.Drawing.Point(110, 38)
-      Me.txtCompareText2.Name = "txtCompareText2"
-      Me.txtCompareText2.Size = New System.Drawing.Size(177, 20)
-      Me.txtCompareText2.TabIndex = 12
-      '
-      'txtCompareText1
-      '
-      Me.txtCompareText1.Location = New System.Drawing.Point(110, 14)
-      Me.txtCompareText1.Name = "txtCompareText1"
-      Me.txtCompareText1.Size = New System.Drawing.Size(177, 20)
-      Me.txtCompareText1.TabIndex = 8
-      '
-      'lblCompareText1
-      '
-      Me.lblCompareText1.AutoSize = True
-      Me.lblCompareText1.Location = New System.Drawing.Point(13, 17)
-      Me.lblCompareText1.Name = "lblCompareText1"
-      Me.lblCompareText1.Size = New System.Drawing.Size(55, 13)
-      Me.lblCompareText1.TabIndex = 11
-      Me.lblCompareText1.Text = "First value"
-      '
-      'lblCompareText2
-      '
-      Me.lblCompareText2.AutoSize = True
-      Me.lblCompareText2.Location = New System.Drawing.Point(13, 41)
-      Me.lblCompareText2.Name = "lblCompareText2"
-      Me.lblCompareText2.Size = New System.Drawing.Size(73, 13)
-      Me.lblCompareText2.TabIndex = 9
-      Me.lblCompareText2.Text = "Second value"
-      '
-      'btnCompareText
-      '
-      Me.btnCompareText.Location = New System.Drawing.Point(316, 35)
-      Me.btnCompareText.Name = "btnCompareText"
-      Me.btnCompareText.Size = New System.Drawing.Size(125, 23)
-      Me.btnCompareText.TabIndex = 1
-      Me.btnCompareText.Text = "Execute"
-      Me.btnCompareText.UseVisualStyleBackColor = True
-      '
       'pageReadRSS
       '
       Me.pageReadRSS.Controls.Add(Me.txtReadRSSRegEx)
@@ -1044,7 +982,6 @@ Partial Class Form1
       Me.TabControl1.Controls.Add(Me.pageReadFile)
       Me.TabControl1.Controls.Add(Me.pageReadXML)
       Me.TabControl1.Controls.Add(Me.pageReadRSS)
-      Me.TabControl1.Controls.Add(Me.pageCompareText)
       Me.TabControl1.Controls.Add(Me.pageShowText)
       Me.TabControl1.Controls.Add(Me.pageSpellText)
       Me.TabControl1.Controls.Add(Me.pageReadStdOut)
@@ -1087,8 +1024,6 @@ Partial Class Form1
       Me.pageSpellText.PerformLayout()
       Me.pageShowText.ResumeLayout(False)
       Me.pageShowText.PerformLayout()
-      Me.pageCompareText.ResumeLayout(False)
-      Me.pageCompareText.PerformLayout()
       Me.pageReadRSS.ResumeLayout(False)
       Me.pageReadRSS.PerformLayout()
       CType(Me.udReadRSSIndex, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1158,12 +1093,6 @@ Partial Class Form1
    Friend WithEvents lblShowFileTextVar As System.Windows.Forms.Label
    Friend WithEvents cboShowFileName As System.Windows.Forms.ComboBox
    Friend WithEvents btnShowFileName As System.Windows.Forms.Button
-   Friend WithEvents pageCompareText As System.Windows.Forms.TabPage
-   Friend WithEvents txtCompareText2 As System.Windows.Forms.TextBox
-   Friend WithEvents txtCompareText1 As System.Windows.Forms.TextBox
-   Friend WithEvents lblCompareText1 As System.Windows.Forms.Label
-   Friend WithEvents lblCompareText2 As System.Windows.Forms.Label
-   Friend WithEvents btnCompareText As System.Windows.Forms.Button
    Friend WithEvents pageReadRSS As System.Windows.Forms.TabPage
    Friend WithEvents txtReadRSSRegEx As System.Windows.Forms.TextBox
    Friend WithEvents lblReadRSSRegEx As System.Windows.Forms.Label

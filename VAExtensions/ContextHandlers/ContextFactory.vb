@@ -15,8 +15,6 @@
       ShowFile
       <EnumInfo("Show content of a text variable", "show_text")> _
       ShowText
-      <EnumInfo("Compare two text variables", "compare_text")> _
-      CompareText
       <EnumInfo("Convert text variable into list of ASCII character codes", "spell_text")> _
       SpellText
       <EnumInfo("Execute a console application and read the output", "read_stdout")> _
@@ -85,9 +83,6 @@
 
                Case Contexts.ShowFile, Contexts.ShowText
                   result = New ContextHandlerShowFile(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
-
-               Case Contexts.CompareText
-                  result = New ContextHandlerCompareText(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 
                Case Contexts.SpellText
                   result = New ContextHandlerSpellText(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
