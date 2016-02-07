@@ -21,7 +21,7 @@
       If m_Context = ContextFactory.Contexts.ShowFile Then
          If Not m_TextValues.ContainsKey(App.KEY_FILE) Then
             m_smallIntValues(App.KEY_ERROR) = ERR_CONTEXT
-            m_TextValues(App.KEY_RESULT) = String.Format("Unknown file name. Text variable ""{0}"" not set.", App.KEY_FILE)
+            m_TextValues(App.KEY_RESULT) = String.Format("Unknown file name. Text variable '{0}' not set.", App.KEY_FILE)
             Return False
          End If
 
@@ -29,12 +29,12 @@
             newFile = App.DownloadTextFile(m_TextValues(App.KEY_FILE))
             If newFile.LocalPath.Length = 0 Then
                m_smallIntValues(App.KEY_ERROR) = ERR_IO
-               m_TextValues(App.KEY_RESULT) = String.Format("Error retrieving file ""{0}"".", m_TextValues(App.KEY_FILE))
+               m_TextValues(App.KEY_RESULT) = String.Format("Error retrieving File '{0}'.", m_TextValues(App.KEY_FILE))
                Return False
             End If
          Catch ex As Exception
             m_smallIntValues(App.KEY_ERROR) = ERR_IO
-            m_TextValues(App.KEY_RESULT) = String.Format("Error loading file content ""{0}"".", m_TextValues(App.KEY_FILE))
+            m_TextValues(App.KEY_RESULT) = String.Format("Error loading file content '{0}'.", m_TextValues(App.KEY_FILE))
             Return False
          End Try
       ElseIf m_Context = ContextFactory.Contexts.ShowText Then

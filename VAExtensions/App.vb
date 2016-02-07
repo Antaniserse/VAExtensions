@@ -1,21 +1,28 @@
 ﻿Public Class App
 
-   Public Const KEY_RESULT As String = "VAReaderResult"
-   Public Const KEY_FILE As String = "VAReaderFile"
-   Public Const KEY_REGEX As String = "VAReaderRegEx"
-   Public Const KEY_XMLCOUNT As String = "VAReaderXMLCount"
-   Public Const KEY_RSSFORMAT As String = "VAReaderRSSDateFormat"
-   Public Const KEY_COMPARISON As String = "VAReaderComparison"
-   Public Const KEY_SPELL As String = "VAReaderSpell"
-   Public Const KEY_SPELLASCII As String = "VAReaderSpellASCII"
-   Public Const KEY_ARGUMENTS As String = "VAReaderArgs"
+   Public Const KEY_RESULT As String = "VxResult" '"VAReaderResult"
+   Public Const KEY_FILE As String = "VxFile" '"VAReaderFile"
+   Public Const KEY_ARGUMENTS As String = "VxArgs" '"VAReaderArgs"
+   Public Const KEY_REGEX As String = "VxRegEx" '"VAReaderRegEx"
+   Public Const KEY_INDEX As String = "VxIndex" '"VAReaderXMLCount"
+   Public Const KEY_RSSFORMAT As String = "VxRSSDateFormat" '"VAReaderRSSDateFormat"
+   Public Const KEY_SPELL As String = "VxSpell" '"VAReaderSpell"
+   Public Const KEY_SPELLASCII As String = "VxSpellASCII" '"VAReaderSpellASCII"
 
-   Public Const KEY_RANGEMIN As String = "VAMathRangeMin"
-   Public Const KEY_RANGEMAX As String = "VAMathRangeMax"
-   Public Const KEY_RANDOMLIST As String = "VAMathCurrentRndList"
-   Public Const KEY_CURRENTIDX As String = "VAMathCurrentIndex"
+   Public Const KEY_INI_SECTION As String = "VxINISection"
+   Public Const KEY_INI_KEY As String = "VxINIKey"
 
-   Public Const KEY_ERROR As String = "VAReaderError"
+   Public Const KEY_DB_TABLE As String = "VxDBTable"
+   Public Const KEY_DB_COLUMNS As String = "VxDBColumns"
+   Public Const KEY_DB_WHERE As String = "VxDBWhere"
+
+
+   Public Const KEY_RANGEMIN As String = "VxRangeMin" '"VAMathRangeMin"
+   Public Const KEY_RANGEMAX As String = "VxRangeMax" '"VAMathRangeMax"
+   Public Const KEY_RANDOMLIST As String = "VxRandomList" '"VAMathCurrentRndList"
+   Public Const KEY_CURRENTIDX As String = "VxCurrentIndex" '"VAMathCurrentIndex"
+
+   Public Const KEY_ERROR As String = "VxError" '"VAReaderError"
 
    Private Shared m_LibraryFolder As String
    Private Shared m_HelpFile As String

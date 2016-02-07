@@ -15,7 +15,7 @@ Partial Public Class InfoForm
       If IO.File.Exists(App.HelpFile) Then
          rtfHelp.LoadFile(App.HelpFile)
       Else
-         rtfHelp.AppendText(String.Format("* Can't find file ""{0}"" *", App.HelpFile))
+         rtfHelp.AppendText(String.Format("* Can't find File '{0}' *", App.HelpFile))
       End If
       If App.Settings.CacheTimeout > 0 Then
          chkCache.Checked = True

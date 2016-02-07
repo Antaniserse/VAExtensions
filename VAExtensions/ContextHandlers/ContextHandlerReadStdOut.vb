@@ -20,7 +20,7 @@
 
       If Not m_TextValues.ContainsKey(App.KEY_FILE) Then
          m_smallIntValues(App.KEY_ERROR) = ERR_CONTEXT
-         m_TextValues(App.KEY_RESULT) = String.Format("Unknown file name. Text variable ""{0}"" not set.", App.KEY_FILE)
+         m_TextValues(App.KEY_RESULT) = String.Format("Unknown file name. Text variable '{0}' not set.", App.KEY_FILE)
          Return False
       End If
 
@@ -45,7 +45,7 @@
          m_TextValues(App.KEY_RESULT) = App.LimitResponse(pOutput)
       Catch ex As Exception
          m_smallIntValues(App.KEY_ERROR) = ERR_IO
-         m_TextValues(App.KEY_RESULT) = String.Format("Error running process ""{0}"" - {1}.", m_TextValues(App.KEY_FILE), ex.Message)
+         m_TextValues(App.KEY_RESULT) = String.Format("Error running process '{0}' - {1}.", m_TextValues(App.KEY_FILE), ex.Message)
          Return False
       End Try
 

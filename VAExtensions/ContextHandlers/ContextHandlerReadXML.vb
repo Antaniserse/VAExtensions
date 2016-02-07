@@ -22,7 +22,7 @@
 
       If Not m_TextValues.ContainsKey(App.KEY_FILE) Then
          m_smallIntValues(App.KEY_ERROR) = ERR_CONTEXT
-         m_TextValues(App.KEY_RESULT) = String.Format("Unknown file name. Text variable ""{0}"" not set.", App.KEY_FILE)
+         m_TextValues(App.KEY_RESULT) = String.Format("Unknown file name. Text variable '{0}' not set.", App.KEY_FILE)
          Return False
       End If
 
@@ -36,17 +36,17 @@
       Else
          elementPath = {}
       End If
-      If Not m_smallIntValues.ContainsKey(App.KEY_XMLCOUNT) OrElse Not m_smallIntValues(App.KEY_XMLCOUNT).HasValue OrElse m_smallIntValues(App.KEY_XMLCOUNT).Value < 1 Then
+      If Not m_smallIntValues.ContainsKey(App.KEY_INDEX) OrElse Not m_smallIntValues(App.KEY_INDEX).HasValue OrElse m_smallIntValues(App.KEY_INDEX).Value < 1 Then
          elementCount = 1
       Else
-         elementCount = m_smallIntValues(App.KEY_XMLCOUNT).Value
+         elementCount = m_smallIntValues(App.KEY_INDEX).Value
       End If
 
       Try
          newFile = App.DownloadTextFile(m_TextValues(App.KEY_FILE))
          If newFile.LocalPath.Length = 0 Then
             m_smallIntValues(App.KEY_ERROR) = ERR_IO
-            m_TextValues(App.KEY_RESULT) = String.Format("Error retrieving file ""{0}"".", m_TextValues(App.KEY_FILE))
+            m_TextValues(App.KEY_RESULT) = String.Format("Error retrieving File '{0}'.", m_TextValues(App.KEY_FILE))
             Return False
          End If
 
@@ -65,10 +65,10 @@
                If i > elementCount Then Exit For
             Next
             m_TextValues(App.KEY_RESULT) = App.LimitResponse(m_TextValues(App.KEY_RESULT), regexPattern)
-            m_smallIntValues(App.KEY_XMLCOUNT) = elementCount + 1S
+            m_smallIntValues(App.KEY_INDEX) = elementCount + 1S
          Else
             m_smallIntValues(App.KEY_ERROR) = ERR_ARGUMENTS
-            m_TextValues(App.KEY_RESULT) = String.Format("Element not found: ""{0}""", m_TextValues(App.KEY_ARGUMENTS))
+            m_TextValues(App.KEY_RESULT) = String.Format("Element not found: '{0}'", m_TextValues(App.KEY_ARGUMENTS))
          End If
       Catch ex As Exception
          m_smallIntValues(App.KEY_ERROR) = ERR_IO

@@ -20,6 +20,21 @@
       <EnumInfo("Execute a console application and read the output", "read_stdout")> _
       ReadStdOut
 
+      <EnumInfo("Read value from the specified key of an INI file", "read_ini")> _
+      ReadINI
+      <EnumInfo("Write value to the specified key of an INI file", "write_ini")> _
+      WriteINI
+
+      <EnumInfo("Read record from a SQLite database", "read_db")> _
+      ReadDB
+      <EnumInfo("Insert a new record into a SQLite database", "insert_db")> _
+      InsertDB
+      <EnumInfo("Update a record into a SQLite database", "update_db")> _
+      UpdateDB
+      <EnumInfo("Delete a record into a SQLite database", "delete_db")> _
+      DeleteDB
+
+
       <EnumInfo("Perform an addition of all the given values", "math_add")> _
       MathAdd
       <EnumInfo("Perform an subtraction of all the given values", "math_subtract")> _
@@ -89,6 +104,11 @@
 
                Case Contexts.ReadStdOut
                   result = New ContextHandlerReadStdOut(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+
+               Case Contexts.ReadINI
+                  result = New ContextHandlerReadINI(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+               Case Contexts.WriteINI
+                  result = New ContextHandlerWriteINI(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 
                Case Contexts.MathAdd, Contexts.MathSubtract, Contexts.MathMultiply, Contexts.MathDivide _
                   , Contexts.MathMod, Contexts.MathMin, Contexts.MathMax, Contexts.BitAnd, Contexts.BitOr, Contexts.BitXOr

@@ -27,6 +27,7 @@ Partial Class Form1
 	''' </summary>
 	Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
+      Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
       Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
       Me.btnLaunchVA = New System.Windows.Forms.Button()
       Me.btnShowInfo = New System.Windows.Forms.Button()
@@ -114,6 +115,17 @@ Partial Class Form1
       Me.lblReadFileRegEx = New System.Windows.Forms.Label()
       Me.btnReadFileExecute = New System.Windows.Forms.Button()
       Me.TabControl1 = New System.Windows.Forms.TabControl()
+      Me.pageINI = New System.Windows.Forms.TabPage()
+      Me.btnINIWrite = New System.Windows.Forms.Button()
+      Me.Label1 = New System.Windows.Forms.Label()
+      Me.txtINISection = New System.Windows.Forms.TextBox()
+      Me.cboINIFile = New System.Windows.Forms.ComboBox()
+      Me.Label3 = New System.Windows.Forms.Label()
+      Me.btnINIRead = New System.Windows.Forms.Button()
+      Me.dgvINI = New System.Windows.Forms.DataGridView()
+      Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+      Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+      Me.BindingSourceINI = New System.Windows.Forms.BindingSource(Me.components)
       CType(Me.BindingSourceMathCond, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.pageCountDown.SuspendLayout()
       CType(Me.udCountdown, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -131,6 +143,9 @@ Partial Class Form1
       CType(Me.udReadXMLIndex, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.pageReadFile.SuspendLayout()
       Me.TabControl1.SuspendLayout()
+      Me.pageINI.SuspendLayout()
+      CType(Me.dgvINI, System.ComponentModel.ISupportInitialize).BeginInit()
+      CType(Me.BindingSourceINI, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.SuspendLayout()
       '
       'btnLaunchVA
@@ -161,10 +176,10 @@ Partial Class Form1
       Me.pageCountDown.Controls.Add(Me.udCountdown)
       Me.pageCountDown.Controls.Add(Me.btnCountdownNext)
       Me.pageCountDown.Controls.Add(Me.btnCountdownInit)
-      Me.pageCountDown.Location = New System.Drawing.Point(4, 40)
+      Me.pageCountDown.Location = New System.Drawing.Point(4, 22)
       Me.pageCountDown.Name = "pageCountDown"
       Me.pageCountDown.Padding = New System.Windows.Forms.Padding(3)
-      Me.pageCountDown.Size = New System.Drawing.Size(773, 342)
+      Me.pageCountDown.Size = New System.Drawing.Size(773, 360)
       Me.pageCountDown.TabIndex = 11
       Me.pageCountDown.Text = "CountDown"
       Me.pageCountDown.UseVisualStyleBackColor = True
@@ -255,10 +270,10 @@ Partial Class Form1
       Me.pageRandom.Controls.Add(Me.lblRandomOUT)
       Me.pageRandom.Controls.Add(Me.txtRandomOUT)
       Me.pageRandom.Controls.Add(Me.btnRandomInit)
-      Me.pageRandom.Location = New System.Drawing.Point(4, 40)
+      Me.pageRandom.Location = New System.Drawing.Point(4, 22)
       Me.pageRandom.Name = "pageRandom"
       Me.pageRandom.Padding = New System.Windows.Forms.Padding(3)
-      Me.pageRandom.Size = New System.Drawing.Size(773, 342)
+      Me.pageRandom.Size = New System.Drawing.Size(773, 360)
       Me.pageRandom.TabIndex = 10
       Me.pageRandom.Text = "Random list"
       Me.pageRandom.UseVisualStyleBackColor = True
@@ -394,9 +409,9 @@ Partial Class Form1
       '
       'DataGridViewTextBoxColumn4
       '
-      DataGridViewCellStyle4.Format = "0"
-      DataGridViewCellStyle4.NullValue = Nothing
-      Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle4
+      DataGridViewCellStyle3.Format = "0"
+      DataGridViewCellStyle3.NullValue = Nothing
+      Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle3
       Me.DataGridViewTextBoxColumn4.HeaderText = "Value"
       Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
       '
@@ -503,9 +518,9 @@ Partial Class Form1
       Me.pageReadStdOut.Controls.Add(Me.lblReadStdOutName)
       Me.pageReadStdOut.Controls.Add(Me.btnReadStdOutExecute)
       Me.pageReadStdOut.Controls.Add(Me.lblReadStdOutArgs)
-      Me.pageReadStdOut.Location = New System.Drawing.Point(4, 40)
+      Me.pageReadStdOut.Location = New System.Drawing.Point(4, 22)
       Me.pageReadStdOut.Name = "pageReadStdOut"
-      Me.pageReadStdOut.Size = New System.Drawing.Size(773, 342)
+      Me.pageReadStdOut.Size = New System.Drawing.Size(773, 360)
       Me.pageReadStdOut.TabIndex = 6
       Me.pageReadStdOut.Text = "Read standard output"
       Me.pageReadStdOut.UseVisualStyleBackColor = True
@@ -581,9 +596,9 @@ Partial Class Form1
       Me.pageSpellText.Controls.Add(Me.txtSpellTextOUT)
       Me.pageSpellText.Controls.Add(Me.txtSpellTextIN)
       Me.pageSpellText.Controls.Add(Me.btnSpellTextExecute)
-      Me.pageSpellText.Location = New System.Drawing.Point(4, 40)
+      Me.pageSpellText.Location = New System.Drawing.Point(4, 22)
       Me.pageSpellText.Name = "pageSpellText"
-      Me.pageSpellText.Size = New System.Drawing.Size(773, 342)
+      Me.pageSpellText.Size = New System.Drawing.Size(773, 360)
       Me.pageSpellText.TabIndex = 4
       Me.pageSpellText.Text = "Spell Text"
       Me.pageSpellText.UseVisualStyleBackColor = True
@@ -644,9 +659,9 @@ Partial Class Form1
       Me.pageShowText.Controls.Add(Me.lblShowFileTextVar)
       Me.pageShowText.Controls.Add(Me.cboShowFileName)
       Me.pageShowText.Controls.Add(Me.btnShowFileName)
-      Me.pageShowText.Location = New System.Drawing.Point(4, 40)
+      Me.pageShowText.Location = New System.Drawing.Point(4, 22)
       Me.pageShowText.Name = "pageShowText"
-      Me.pageShowText.Size = New System.Drawing.Size(773, 342)
+      Me.pageShowText.Size = New System.Drawing.Size(773, 360)
       Me.pageShowText.TabIndex = 5
       Me.pageShowText.Text = "Show file/text"
       Me.pageShowText.UseVisualStyleBackColor = True
@@ -718,9 +733,9 @@ Partial Class Form1
       Me.pageReadRSS.Controls.Add(Me.lblReadRSSDateMask)
       Me.pageReadRSS.Controls.Add(Me.lblReadRSSName)
       Me.pageReadRSS.Controls.Add(Me.btnReadRSSExecute)
-      Me.pageReadRSS.Location = New System.Drawing.Point(4, 40)
+      Me.pageReadRSS.Location = New System.Drawing.Point(4, 22)
       Me.pageReadRSS.Name = "pageReadRSS"
-      Me.pageReadRSS.Size = New System.Drawing.Size(773, 342)
+      Me.pageReadRSS.Size = New System.Drawing.Size(773, 360)
       Me.pageReadRSS.TabIndex = 2
       Me.pageReadRSS.Text = "Read RSS"
       Me.pageReadRSS.UseVisualStyleBackColor = True
@@ -744,7 +759,7 @@ Partial Class Form1
       'cboReadRSSName
       '
       Me.cboReadRSSName.FormattingEnabled = True
-      Me.cboReadRSSName.Items.AddRange(New Object() {"http://feeds.bbci.co.uk/news/rss.xml", "http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml", "http://www.elitedangerous.com/news/galnet/rss"})
+      Me.cboReadRSSName.Items.AddRange(New Object() {"http://feeds.bbci.co.uk/news/rss.xml", "http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml", "https://community.elitedangerous.com/galnet-rss"})
       Me.cboReadRSSName.Location = New System.Drawing.Point(103, 13)
       Me.cboReadRSSName.Name = "cboReadRSSName"
       Me.cboReadRSSName.Size = New System.Drawing.Size(331, 21)
@@ -832,10 +847,10 @@ Partial Class Form1
       Me.pageReadXML.Controls.Add(Me.udReadXMLIndex)
       Me.pageReadXML.Controls.Add(Me.lblReadXMLRegEx)
       Me.pageReadXML.Controls.Add(Me.btnReadXMLExecute)
-      Me.pageReadXML.Location = New System.Drawing.Point(4, 40)
+      Me.pageReadXML.Location = New System.Drawing.Point(4, 22)
       Me.pageReadXML.Name = "pageReadXML"
       Me.pageReadXML.Padding = New System.Windows.Forms.Padding(3)
-      Me.pageReadXML.Size = New System.Drawing.Size(773, 342)
+      Me.pageReadXML.Size = New System.Drawing.Size(773, 360)
       Me.pageReadXML.TabIndex = 1
       Me.pageReadXML.Text = "Read XML"
       Me.pageReadXML.UseVisualStyleBackColor = True
@@ -982,6 +997,7 @@ Partial Class Form1
       Me.TabControl1.Controls.Add(Me.pageReadFile)
       Me.TabControl1.Controls.Add(Me.pageReadXML)
       Me.TabControl1.Controls.Add(Me.pageReadRSS)
+      Me.TabControl1.Controls.Add(Me.pageINI)
       Me.TabControl1.Controls.Add(Me.pageShowText)
       Me.TabControl1.Controls.Add(Me.pageSpellText)
       Me.TabControl1.Controls.Add(Me.pageReadStdOut)
@@ -994,6 +1010,102 @@ Partial Class Form1
       Me.TabControl1.SelectedIndex = 0
       Me.TabControl1.Size = New System.Drawing.Size(781, 386)
       Me.TabControl1.TabIndex = 37
+      '
+      'pageINI
+      '
+      Me.pageINI.Controls.Add(Me.btnINIWrite)
+      Me.pageINI.Controls.Add(Me.Label1)
+      Me.pageINI.Controls.Add(Me.txtINISection)
+      Me.pageINI.Controls.Add(Me.cboINIFile)
+      Me.pageINI.Controls.Add(Me.Label3)
+      Me.pageINI.Controls.Add(Me.btnINIRead)
+      Me.pageINI.Controls.Add(Me.dgvINI)
+      Me.pageINI.Location = New System.Drawing.Point(4, 22)
+      Me.pageINI.Name = "pageINI"
+      Me.pageINI.Size = New System.Drawing.Size(773, 360)
+      Me.pageINI.TabIndex = 12
+      Me.pageINI.Text = "Read/Write INI"
+      Me.pageINI.UseVisualStyleBackColor = True
+      '
+      'btnINIWrite
+      '
+      Me.btnINIWrite.Location = New System.Drawing.Point(312, 88)
+      Me.btnINIWrite.Name = "btnINIWrite"
+      Me.btnINIWrite.Size = New System.Drawing.Size(125, 23)
+      Me.btnINIWrite.TabIndex = 36
+      Me.btnINIWrite.Text = "Write"
+      Me.btnINIWrite.UseVisualStyleBackColor = True
+      '
+      'Label1
+      '
+      Me.Label1.AutoSize = True
+      Me.Label1.Location = New System.Drawing.Point(-1, 9)
+      Me.Label1.Name = "Label1"
+      Me.Label1.Size = New System.Drawing.Size(47, 13)
+      Me.Label1.TabIndex = 35
+      Me.Label1.Text = "File path"
+      '
+      'txtINISection
+      '
+      Me.txtINISection.Location = New System.Drawing.Point(96, 33)
+      Me.txtINISection.Name = "txtINISection"
+      Me.txtINISection.Size = New System.Drawing.Size(177, 20)
+      Me.txtINISection.TabIndex = 32
+      '
+      'cboINIFile
+      '
+      Me.cboINIFile.FormattingEnabled = True
+      Me.cboINIFile.Items.AddRange(New Object() {"TestData\Test.ini"})
+      Me.cboINIFile.Location = New System.Drawing.Point(96, 6)
+      Me.cboINIFile.Name = "cboINIFile"
+      Me.cboINIFile.Size = New System.Drawing.Size(331, 21)
+      Me.cboINIFile.TabIndex = 34
+      '
+      'Label3
+      '
+      Me.Label3.AutoSize = True
+      Me.Label3.Location = New System.Drawing.Point(-1, 36)
+      Me.Label3.Name = "Label3"
+      Me.Label3.Size = New System.Drawing.Size(60, 13)
+      Me.Label3.TabIndex = 33
+      Me.Label3.Text = "INI Section"
+      '
+      'btnINIRead
+      '
+      Me.btnINIRead.Location = New System.Drawing.Point(312, 59)
+      Me.btnINIRead.Name = "btnINIRead"
+      Me.btnINIRead.Size = New System.Drawing.Size(125, 23)
+      Me.btnINIRead.TabIndex = 31
+      Me.btnINIRead.Text = "Read"
+      Me.btnINIRead.UseVisualStyleBackColor = True
+      '
+      'dgvINI
+      '
+      Me.dgvINI.AllowUserToResizeRows = False
+      Me.dgvINI.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.dgvINI.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+      Me.dgvINI.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2})
+      Me.dgvINI.Location = New System.Drawing.Point(3, 59)
+      Me.dgvINI.Name = "dgvINI"
+      Me.dgvINI.RowHeadersWidth = 20
+      Me.dgvINI.Size = New System.Drawing.Size(303, 226)
+      Me.dgvINI.TabIndex = 30
+      '
+      'DataGridViewTextBoxColumn1
+      '
+      Me.DataGridViewTextBoxColumn1.HeaderText = "Key"
+      Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+      Me.DataGridViewTextBoxColumn1.Width = 80
+      '
+      'DataGridViewTextBoxColumn2
+      '
+      DataGridViewCellStyle4.Format = "0"
+      DataGridViewCellStyle4.NullValue = Nothing
+      Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle4
+      Me.DataGridViewTextBoxColumn2.HeaderText = "Value"
+      Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
       '
       'Form1
       '
@@ -1033,6 +1145,10 @@ Partial Class Form1
       Me.pageReadFile.ResumeLayout(False)
       Me.pageReadFile.PerformLayout()
       Me.TabControl1.ResumeLayout(False)
+      Me.pageINI.ResumeLayout(False)
+      Me.pageINI.PerformLayout()
+      CType(Me.dgvINI, System.ComponentModel.ISupportInitialize).EndInit()
+      CType(Me.BindingSourceINI, System.ComponentModel.ISupportInitialize).EndInit()
       Me.ResumeLayout(False)
 
    End Sub
@@ -1058,20 +1174,9 @@ Partial Class Form1
    Friend WithEvents txtRandomOUT As System.Windows.Forms.TextBox
    Friend WithEvents btnRandomInit As System.Windows.Forms.Button
    Friend WithEvents pageMath As System.Windows.Forms.TabPage
-   Friend WithEvents btnMathXor As System.Windows.Forms.Button
    Friend WithEvents dgvMath As System.Windows.Forms.DataGridView
    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
    Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
-   Friend WithEvents btnMathOr As System.Windows.Forms.Button
-   Friend WithEvents Label2 As System.Windows.Forms.Label
-   Friend WithEvents btnMathAnd As System.Windows.Forms.Button
-   Friend WithEvents btnMathAdd As System.Windows.Forms.Button
-   Friend WithEvents btnMathMax As System.Windows.Forms.Button
-   Friend WithEvents btnMathSub As System.Windows.Forms.Button
-   Friend WithEvents btnMathMin As System.Windows.Forms.Button
-   Friend WithEvents btnMathMult As System.Windows.Forms.Button
-   Friend WithEvents btnMathMod As System.Windows.Forms.Button
-   Friend WithEvents btnMathDiv As System.Windows.Forms.Button
    Friend WithEvents pageReadStdOut As System.Windows.Forms.TabPage
    Friend WithEvents lblReadStdOutResult As System.Windows.Forms.Label
    Friend WithEvents txtReadStdOutResult As System.Windows.Forms.TextBox
@@ -1122,4 +1227,26 @@ Partial Class Form1
    Friend WithEvents lblReadFileRegEx As System.Windows.Forms.Label
    Friend WithEvents btnReadFileExecute As System.Windows.Forms.Button
    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
+   Friend WithEvents Label2 As System.Windows.Forms.Label
+   Friend WithEvents btnMathXor As System.Windows.Forms.Button
+   Friend WithEvents btnMathOr As System.Windows.Forms.Button
+   Friend WithEvents btnMathAnd As System.Windows.Forms.Button
+   Friend WithEvents btnMathAdd As System.Windows.Forms.Button
+   Friend WithEvents btnMathMax As System.Windows.Forms.Button
+   Friend WithEvents btnMathSub As System.Windows.Forms.Button
+   Friend WithEvents btnMathMin As System.Windows.Forms.Button
+   Friend WithEvents btnMathMult As System.Windows.Forms.Button
+   Friend WithEvents btnMathMod As System.Windows.Forms.Button
+   Friend WithEvents btnMathDiv As System.Windows.Forms.Button
+   Friend WithEvents pageINI As System.Windows.Forms.TabPage
+   Friend WithEvents dgvINI As System.Windows.Forms.DataGridView
+   Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+   Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
+   Friend WithEvents BindingSourceINI As System.Windows.Forms.BindingSource
+   Friend WithEvents btnINIWrite As System.Windows.Forms.Button
+   Friend WithEvents Label1 As System.Windows.Forms.Label
+   Friend WithEvents txtINISection As System.Windows.Forms.TextBox
+   Friend WithEvents cboINIFile As System.Windows.Forms.ComboBox
+   Friend WithEvents Label3 As System.Windows.Forms.Label
+   Friend WithEvents btnINIRead As System.Windows.Forms.Button
 End Class

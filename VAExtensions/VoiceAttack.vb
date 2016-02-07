@@ -7,7 +7,7 @@ Public Class VoiceAttack
    End Function
 
    Public Shared Function VA_DisplayName() As String
-      Return "VA Extensions 1.1"
+      Return "VA Extensions 1.2"
    End Function
 
    Public Shared Function VA_DisplayInfo() As String
@@ -22,9 +22,10 @@ Public Class VoiceAttack
                               , ByRef booleanValues As Dictionary(Of String, Nullable(Of Boolean)) _
                               , ByRef extendedValues As Dictionary(Of String, Object))
 
-      App.InitValues()
-      App.Settings = Settings.Deserialize()
-   End Sub
+        App.InitValues()
+        App.Settings = Settings.Deserialize()
+
+    End Sub
 
    Public Shared Sub VA_Exit1(ByRef state As Dictionary(Of String, Object))
       App.ClearCachedFiles()
@@ -47,7 +48,7 @@ Public Class VoiceAttack
 
       If contextHandler Is Nothing Then
          smallIntValues(App.KEY_ERROR) = ContextHandlerBase.ERR_CONTEXT
-         textValues(App.KEY_RESULT) = String.Format("Unsupported or empty context: ""{0}"".", context)
+         textValues(App.KEY_RESULT) = String.Format("Unsupported or empty context: '{0}'.", context)
          Exit Sub
       Else
          contextHandler.Execute()

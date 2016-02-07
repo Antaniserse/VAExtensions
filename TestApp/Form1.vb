@@ -9,13 +9,8 @@
    Dim booleanValues As Dictionary(Of String, Nullable(Of Boolean)) = New Dictionary(Of String, Nullable(Of Boolean))
    Dim extendedValues As Dictionary(Of String, Object) = New Dictionary(Of String, Object)
 
-   Dim storageTextVar As New List(Of EditableKVP(Of String))
-   Dim storageCond As New List(Of EditableKVP(Of Nullable(Of Int16)))
-
-   Dim convertTextVar As New List(Of EditableKVP(Of String))
-   Dim convertCond As New List(Of EditableKVP(Of Nullable(Of Int16)))
-
    Dim mathCond As New List(Of EditableKVP(Of Nullable(Of Int16)))
+   Dim iniCond As New List(Of EditableKVP(Of String))
 
    Class EditableKVP(Of T) 'standard KeyValuePair is not editable when used in data binding
       Property Key As String
@@ -33,6 +28,9 @@
 
    Private Sub clearAllInput()
       smallIntValues.Clear()
+      intValues.Clear()
+      decimalValues.Clear()
+      booleanValues.Clear()
       textValues.Clear()
       extendedValues.Clear()
    End Sub
@@ -43,6 +41,8 @@
 
       BindingSourceMathCond.DataSource = mathCond
       rebindMathGrid()
+      BindingSourceINI.DataSource = iniCond
+      rebindINIGrid()
    End Sub
 
    Sub Form1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
@@ -57,18 +57,15 @@
       dgvMath.DataSource = BindingSourceMathCond
    End Sub
 
-   Private Sub dgvStorageCond_CellValidating(sender As Object, e As DataGridViewCellValidatingEventArgs)
-      If e.ColumnIndex = 1 Then
-         Dim i As Int16
-         Dim v As String = Convert.ToString(e.FormattedValue)
-         If v.Length > 0 AndAlso Not Int16.TryParse(v, i) Then
-            e.Cancel = True
-         End If
-      End If
+   Private Sub rebindINIGrid()
+      BindingSourceINI.ResetBindings(False)
+      dgvINI.AutoGenerateColumns = False
+      dgvINI.Columns(0).DataPropertyName = "Key"
+      dgvINI.Columns(1).DataPropertyName = "Value"
+      dgvINI.DataSource = BindingSourceINI
    End Sub
 
-   Private Sub NumericGrid_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) _
-         Handles dgvMath.EditingControlShowing
+   Private Sub NumericGrid_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles dgvMath.EditingControlShowing
 
       RemoveHandler e.Control.KeyPress, AddressOf NumericGridColumn_KeyPress
       If DirectCast(sender, DataGridView).CurrentCell.ColumnIndex = 1 Then
@@ -124,7 +121,7 @@
       textValues(VAExtensions.App.KEY_FILE) = cboReadXMLName.Text
       If txtReadXMLRegEx.TextLength > 0 Then textValues(VAExtensions.App.KEY_REGEX) = txtReadXMLRegEx.Text
       If txtReadXMLItemPath.TextLength > 0 Then textValues(VAExtensions.App.KEY_ARGUMENTS) = txtReadXMLItemPath.Text
-      If udReadXMLIndex.Value > 0 Then smallIntValues(VAExtensions.App.KEY_XMLCOUNT) = Convert.ToInt16(udReadXMLIndex.Value)
+      If udReadXMLIndex.Value > 0 Then smallIntValues(VAExtensions.App.KEY_INDEX) = Convert.ToInt16(udReadXMLIndex.Value)
 
       VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
       If smallIntValues(VAExtensions.App.KEY_ERROR).Value <> 0 Then
@@ -157,7 +154,7 @@
       textValues(VAExtensions.App.KEY_ARGUMENTS) = cboReadRSSArgs.Text
       If txtReadXMLRegEx.TextLength > 0 Then textValues(VAExtensions.App.KEY_REGEX) = txtReadXMLRegEx.Text
       If cboReadRSSDateMask.Text.Length > 0 AndAlso cboReadRSSDateMask.Text <> "<default>" Then textValues(VAExtensions.App.KEY_RSSFORMAT) = cboReadRSSDateMask.Text
-      If udReadRSSIndex.Value > 0 Then smallIntValues(VAExtensions.App.KEY_XMLCOUNT) = Convert.ToInt16(udReadRSSIndex.Value)
+      If udReadRSSIndex.Value > 0 Then smallIntValues(VAExtensions.App.KEY_INDEX) = Convert.ToInt16(udReadRSSIndex.Value)
 
       VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
       If smallIntValues(VAExtensions.App.KEY_ERROR).Value <> 0 Then
@@ -202,9 +199,8 @@
       Loop Until String.IsNullOrEmpty(result)
    End Sub
 
-   Private Sub btnMath_Click(sender As Object, e As EventArgs) _
-      Handles btnMathAdd.Click, btnMathSub.Click, btnMathMult.Click, btnMathDiv.Click _
-      , btnMathMod.Click, btnMathMin.Click, btnMathMax.Click, btnMathAnd.Click, btnMathOr.Click, btnMathXor.Click
+   Private Sub btnMath_Click(sender As Object, e As EventArgs) Handles btnMathXor.Click, btnMathSub.Click, btnMathOr.Click, btnMathMult.Click, btnMathMod.Click, btnMathMin.Click, btnMathMax.Click, btnMathDiv.Click, btnMathAnd.Click, btnMathAdd.Click
+
 
       clearAllInput()
 
@@ -274,7 +270,7 @@
 
    Private Sub btnCountdownInit_Click(sender As Object, e As EventArgs) Handles btnCountdownInit.Click
       clearAllInput()
-      txtCountdownOUT.clear()
+      txtCountdownOUT.Clear()
       contextName = VAExtensions.EnumInfoAttribute.GetTag(VAExtensions.ContextFactory.Contexts.Countdown)
       smallIntValues(txtCountdownName.Text) = CType(udCountdown.Value, Short?)
 
@@ -303,5 +299,32 @@
             txtCountdownOUT.AppendText(String.Format("Countdown complete{0}", Environment.NewLine, smallIntValues(VAExtensions.App.KEY_RESULT)))
          End If
       End If
+   End Sub
+
+   Private Sub btnINIReadWrite_Click(sender As Object, e As EventArgs) _
+      Handles btnINIRead.Click, btnINIWrite.Click
+
+      If sender Is btnINIRead Then
+         contextName = VAExtensions.EnumInfoAttribute.GetTag(VAExtensions.ContextFactory.Contexts.ReadINI)
+      Else
+         contextName = VAExtensions.EnumInfoAttribute.GetTag(VAExtensions.ContextFactory.Contexts.WriteINI)
+      End If
+      textValues(VAExtensions.App.KEY_FILE) = cboINIFile.Text
+      textValues(VAExtensions.App.KEY_INI_SECTION) = txtINISection.Text
+      For Each kvp As EditableKVP(Of String) In iniCond
+         If Not String.IsNullOrEmpty(kvp.Key) Then
+            textValues(VAExtensions.App.KEY_INI_KEY) = kvp.Key
+            If sender Is btnINIWrite Then
+               textValues(VAExtensions.App.KEY_ARGUMENTS) = kvp.Value
+            End If
+            VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+            If smallIntValues(VAExtensions.App.KEY_ERROR).Value <> 0 Then
+               MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+               kvp.Value = textValues(VAExtensions.App.KEY_RESULT)
+            End If
+         End If
+      Next
+      rebindINIGrid()
    End Sub
 End Class
