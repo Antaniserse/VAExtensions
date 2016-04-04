@@ -6,6 +6,9 @@ echo -=-=-=-=-=-=-=-=-=-=-=-
 echo Copying sample data...
 xcopy "VAExtensions\bin\Release\TestData\*.*" "%PROGRAMFILES(x86)%\VoiceAttack\Apps\VAExtensions\TestData" /C /F /Y
 echo -=-=-=-=-=-=-=-=-=-=-=-
+echo Copying sample profiles...
+xcopy "VAExtensions\Profiles\*.*" "%PROGRAMFILES(x86)%\VoiceAttack\Apps\VAExtensions\Profiles" /C /F /Y
+echo -=-=-=-=-=-=-=-=-=-=-=-
 echo Launching VoiceAttack...
 pause
 start "" "%PROGRAMFILES(x86)%\VoiceAttack\VoiceAttack.exe" -listeningoff -joysticksoff

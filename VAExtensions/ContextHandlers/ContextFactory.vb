@@ -2,71 +2,73 @@
    Public Shared SupportedContexts As List(Of ContextFactory.Contexts)
 
    Public Enum Contexts
-      <EnumInfo("Show configuration dialog", "config")> _
-      Config
+        <EnumInfo("Show configuration dialog", "config")>
+        Config
 
-      <EnumInfo("Read a text file", "read_file")> _
-      ReadFile
-      <EnumInfo("Read an XML File", "read_xml")> _
-      ReadXml
-      <EnumInfo("Read a RSS feed", "read_rss")> _
-      ReadRSS
-      <EnumInfo("Show content of a text file", "show_file")> _
-      ShowFile
-      <EnumInfo("Show content of a text variable", "show_text")> _
-      ShowText
-      <EnumInfo("Convert text variable into list of ASCII character codes", "spell_text")> _
-      SpellText
-      <EnumInfo("Execute a console application and read the output", "read_stdout")> _
-      ReadStdOut
+        <EnumInfo("Read a text file", "read_file")>
+        ReadFile
+        <EnumInfo("Read an XML File", "read_xml")>
+        ReadXml
+        <EnumInfo("Read a RSS feed", "read_rss")>
+        ReadRSS
+        <EnumInfo("Show content of a text file", "show_file")>
+        ShowFile
+        <EnumInfo("Show content of a text variable", "show_text")>
+        ShowText
+        <EnumInfo("Convert text variable into list of ASCII character codes", "spell_text")>
+        SpellText
+        <EnumInfo("Execute a console application and read the output", "read_stdout")>
+        ReadStdOut
 
-      <EnumInfo("Read value from the specified key of an INI file", "read_ini")> _
-      ReadINI
-      <EnumInfo("Write value to the specified key of an INI file", "write_ini")> _
-      WriteINI
+        <EnumInfo("Read value from the specified key of an INI file", "read_ini")>
+        ReadINI
+        <EnumInfo("Write value to the specified key of an INI file", "write_ini")>
+        WriteINI
 
-      <EnumInfo("Read record from a SQLite database", "read_db")> _
-      ReadDB
-      <EnumInfo("Insert a new record into a SQLite database", "insert_db")> _
-      InsertDB
-      <EnumInfo("Update a record into a SQLite database", "update_db")> _
-      UpdateDB
-      <EnumInfo("Delete a record into a SQLite database", "delete_db")> _
-      DeleteDB
+        <EnumInfo("Read record from a SQLite database", "read_db")>
+        ReadDB
+        <EnumInfo("Insert a new record into a SQLite database", "insert_db")>
+        InsertDB
+        <EnumInfo("Update a record into a SQLite database", "update_db")>
+        UpdateDB
+        <EnumInfo("Delete a record into a SQLite database", "delete_db")>
+        DeleteDB
 
 
-      <EnumInfo("Perform an addition of all the given values", "math_add")> _
-      MathAdd
-      <EnumInfo("Perform an subtraction of all the given values", "math_subtract")> _
-      MathSubtract
-      <EnumInfo("Perform a multiplication of all the given values", "math_multiply")> _
-      MathMultiply
-      <EnumInfo("Perform a division of all the given values", "math_divide")> _
-      MathDivide
-      <EnumInfo("Perform a modulo operation (remainder of division) all the given values", "math_mod")> _
-      MathMod
-      <EnumInfo("Return the higher in a list of values", "math_max")> _
-      MathMax
-      <EnumInfo("Return the lower in a list of values", "math_min")> _
-      MathMin
+        <EnumInfo("Perform an addition of all the given values", "math_add")>
+        MathAdd
+        <EnumInfo("Perform an subtraction of all the given values", "math_subtract")>
+        MathSubtract
+        <EnumInfo("Perform a multiplication of all the given values", "math_multiply")>
+        MathMultiply
+        <EnumInfo("Perform a division of all the given values", "math_divide")>
+        MathDivide
+        <EnumInfo("Perform a modulo operation (remainder of division) all the given values", "math_mod")>
+        MathMod
+        <EnumInfo("Return the higher in a list of values", "math_max")>
+        MathMax
+        <EnumInfo("Return the lower in a list of values", "math_min")>
+        MathMin
 
-      <EnumInfo("Perform a bitwise AND operation between two supplied values", "bit_and")> _
-      BitAnd
-      <EnumInfo("Perform a bitwise OR operation between two supplied values", "bit_or")> _
-      BitOr
-      <EnumInfo("Perform a bitwise XOR operation between two supplied values", "bit_xor")> _
-      BitXOr
+        <EnumInfo("Perform a bitwise AND operation between two supplied values", "bit_and")>
+        BitAnd
+        <EnumInfo("Perform a bitwise OR operation between two supplied values", "bit_or")>
+        BitOr
+        <EnumInfo("Perform a bitwise XOR operation between two supplied values", "bit_xor")>
+        BitXOr
 
-      <EnumInfo("Start a timer of X seconds and manage the countdown to zero", "countdown")> _
-      Countdown
+        <EnumInfo("Start a timer of X seconds and manage the countdown to zero", "countdown")>
+        Countdown
 
-      <EnumInfo("Create a random list of non-repeating numbers", "rnd_init")> _
-      RandomInit
-      <EnumInfo("Get the next number from a previously created random list", "rnd_next")> _
-      RandomNext
-   End Enum
+        <EnumInfo("Create a random list of non-repeating numbers", "rnd_init")>
+        RandomInit
+        <EnumInfo("Get the next number from a previously created random list", "rnd_next")>
+        RandomNext
+        <EnumInfo("Re-shuffle the values in a previously created random list", "rnd_shuffle")>
+        RandomShuffle
+    End Enum
 
-   Shared Sub New()
+    Shared Sub New()
       SupportedContexts = New List(Of ContextFactory.Contexts)
       SupportedContexts.AddRange(EnumInfoAttribute.ToSimpleList(Of Contexts))
    End Sub
