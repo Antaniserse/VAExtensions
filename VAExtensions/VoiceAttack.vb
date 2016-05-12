@@ -41,10 +41,10 @@ Public Class VoiceAttack
                                 , ByRef extendedValues As Dictionary(Of String, Object))
 
 #If SHOW_DEBUG_UI Then
-      DebugForm.ShowDebugInfo(context, state, conditions, textValues, extendedValues)
+        DebugForm.ShowDebugInfo(context, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 #End If
 
-      Dim contextHandler As ContextHandlerBase = ContextFactory.Create(context, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+        Dim contextHandler As ContextHandlerBase = ContextFactory.Create(context, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 
       If contextHandler Is Nothing Then
          smallIntValues(App.KEY_ERROR) = ContextHandlerBase.ERR_CONTEXT
