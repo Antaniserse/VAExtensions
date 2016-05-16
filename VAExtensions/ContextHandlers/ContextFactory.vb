@@ -1,7 +1,7 @@
 ﻿Public Class ContextFactory
-   Public Shared SupportedContexts As List(Of ContextFactory.Contexts)
+    Public Shared SupportedContexts As List(Of ContextFactory.Contexts)
 
-   Public Enum Contexts
+    Public Enum Contexts
         <EnumInfo("Show configuration dialog", "config")>
         Config
 
@@ -11,6 +11,10 @@
         ReadXml
         <EnumInfo("Read a RSS feed", "read_rss")>
         ReadRSS
+        <EnumInfo("Loads a CSV file in memory", "load_csv")>
+        LoadCSV
+        <EnumInfo("Read a CSV value from a previously loaded file", "read_csv")>
+        ReadCSV
         <EnumInfo("Show content of a text file", "show_file")>
         ShowFile
         <EnumInfo("Show content of a text variable", "show_text")>
@@ -69,63 +73,66 @@
     End Enum
 
     Shared Sub New()
-      SupportedContexts = New List(Of ContextFactory.Contexts)
-      SupportedContexts.AddRange(EnumInfoAttribute.ToSimpleList(Of Contexts))
-   End Sub
+        SupportedContexts = New List(Of ContextFactory.Contexts)
+        SupportedContexts.AddRange(EnumInfoAttribute.ToSimpleList(Of Contexts))
+    End Sub
 
-   Public Shared Function Create(ByVal contextName As String, ByRef state As Dictionary(Of String, Object) _
-                              , ByRef smallIntValues As Dictionary(Of String, Nullable(Of Short)) _
-                              , ByRef textValues As Dictionary(Of String, String) _
-                              , ByRef intValues As Dictionary(Of String, Nullable(Of Integer)) _
-                              , ByRef decimalValues As Dictionary(Of String, Nullable(Of Decimal)) _
-                              , ByRef booleanValues As Dictionary(Of String, Nullable(Of Boolean)) _
-                              , ByRef extendedValues As Dictionary(Of String, Object)) As ContextHandlerBase
+    Public Shared Function Create(ByVal contextName As String, ByRef state As Dictionary(Of String, Object) _
+                               , ByRef smallIntValues As Dictionary(Of String, Nullable(Of Short)) _
+                               , ByRef textValues As Dictionary(Of String, String) _
+                               , ByRef intValues As Dictionary(Of String, Nullable(Of Integer)) _
+                               , ByRef decimalValues As Dictionary(Of String, Nullable(Of Decimal)) _
+                               , ByRef booleanValues As Dictionary(Of String, Nullable(Of Boolean)) _
+                               , ByRef extendedValues As Dictionary(Of String, Object)) As ContextHandlerBase
 
-      Dim result As ContextHandlerBase = Nothing
+        Dim result As ContextHandlerBase = Nothing
 
-      For Each c As Contexts In SupportedContexts
-         If String.Compare(EnumInfoAttribute.GetTag(c), contextName, True) = 0 Then
-            Select Case c
-               Case Contexts.Config
-                  result = New ContextHandlerInfoDialog(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+        For Each c As Contexts In SupportedContexts
+            If String.Compare(EnumInfoAttribute.GetTag(c), contextName, True) = 0 Then
+                Select Case c
+                    Case Contexts.Config
+                        result = New ContextHandlerInfoDialog(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 
-               Case Contexts.ReadFile
-                  result = New ContextHandlerReadFile(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+                    Case Contexts.ReadFile
+                        result = New ContextHandlerReadFile(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 
-               Case Contexts.ReadXml
-                  result = New ContextHandlerReadXML(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+                    Case Contexts.ReadXml
+                        result = New ContextHandlerReadXML(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 
-               Case Contexts.ReadRSS
-                  result = New ContextHandlerReadRSS(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+                    Case Contexts.ReadRSS
+                        result = New ContextHandlerReadRSS(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 
-               Case Contexts.ShowFile, Contexts.ShowText
-                  result = New ContextHandlerShowFile(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+                    Case Contexts.LoadCSV, Contexts.ReadCSV
+                        result = New ContextHandlerReadCSV(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 
-               Case Contexts.SpellText
-                  result = New ContextHandlerSpellText(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+                    Case Contexts.ShowFile, Contexts.ShowText
+                        result = New ContextHandlerShowFile(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 
-               Case Contexts.ReadStdOut
-                  result = New ContextHandlerReadStdOut(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+                    Case Contexts.SpellText
+                        result = New ContextHandlerSpellText(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 
-               Case Contexts.ReadINI
-                  result = New ContextHandlerReadINI(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
-               Case Contexts.WriteINI
-                  result = New ContextHandlerWriteINI(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+                    Case Contexts.ReadStdOut
+                        result = New ContextHandlerReadStdOut(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 
-               Case Contexts.MathAdd, Contexts.MathSubtract, Contexts.MathMultiply, Contexts.MathDivide _
-                  , Contexts.MathMod, Contexts.MathMin, Contexts.MathMax, Contexts.BitAnd, Contexts.BitOr, Contexts.BitXOr
-                  result = New ContextHandlerMath(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+                    Case Contexts.ReadINI
+                        result = New ContextHandlerReadINI(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+                    Case Contexts.WriteINI
+                        result = New ContextHandlerWriteINI(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 
-               Case Contexts.RandomInit, Contexts.RandomNext
-                  result = New ContextHandlerRandom(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
-               Case Contexts.Countdown
-                  result = New ContextHandlerCountdown(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+                    Case Contexts.MathAdd, Contexts.MathSubtract, Contexts.MathMultiply, Contexts.MathDivide _
+                       , Contexts.MathMod, Contexts.MathMin, Contexts.MathMax, Contexts.BitAnd, Contexts.BitOr, Contexts.BitXOr
+                        result = New ContextHandlerMath(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 
-            End Select
-            Exit For
-         End If
-      Next
+                    Case Contexts.RandomInit, Contexts.RandomNext
+                        result = New ContextHandlerRandom(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+                    Case Contexts.Countdown
+                        result = New ContextHandlerCountdown(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 
-      Return result
-   End Function
+                End Select
+                Exit For
+            End If
+        Next
+
+        Return result
+    End Function
 End Class

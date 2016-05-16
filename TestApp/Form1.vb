@@ -327,4 +327,40 @@
       Next
       rebindINIGrid()
    End Sub
+
+    Private Sub btnLoadCSVExecute_Click(sender As Object, e As EventArgs) Handles btnLoadCSVExecute.Click
+        clearAllInput()
+        contextName = VAExtensions.EnumInfoAttribute.GetTag(VAExtensions.ContextFactory.Contexts.LoadCSV)
+        textValues(VAExtensions.App.KEY_FILE) = cboReadCSVName.Text
+
+        VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+        If smallIntValues(VAExtensions.App.KEY_ERROR).Value <> 0 Then
+            MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+
+    End Sub
+
+    Private Sub btnReadCSVExecute_Click(sender As Object, e As EventArgs) Handles btnReadCSVExecute.Click
+        clearAllInput()
+        contextName = VAExtensions.EnumInfoAttribute.GetTag(VAExtensions.ContextFactory.Contexts.ReadCSV)
+
+        textValues(VAExtensions.App.KEY_FILE) = cboReadCSVName.Text
+        Dim colIndex As Integer
+        If Int32.TryParse(txtReadCSVCol.Text, colIndex) Then
+            intValues(VAExtensions.App.KEY_COL) = colIndex
+        Else
+            textValues(VAExtensions.App.KEY_COL) = txtReadCSVCol.Text
+        End If
+        If udReadCSVRow.Value >= 0 Then intValues(VAExtensions.App.KEY_ROW) = Convert.ToInt32(udReadCSVRow.Value)
+
+        VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+        If smallIntValues(VAExtensions.App.KEY_ERROR).Value <> 0 Then
+            MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+
+    End Sub
 End Class

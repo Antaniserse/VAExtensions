@@ -7,8 +7,8 @@ Public Class VoiceAttack
    End Function
 
    Public Shared Function VA_DisplayName() As String
-      Return "VA Extensions 1.2"
-   End Function
+        Return "VA Extensions 1.3"
+    End Function
 
    Public Shared Function VA_DisplayInfo() As String
       Return String.Empty

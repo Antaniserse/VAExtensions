@@ -76,6 +76,7 @@
     <Compile Include="App.vb" />
     <Compile Include="ContextHandlers\ContextFactory.vb" />
     <Compile Include="ContextHandlers\ContextHandlerBase.vb" />
+    <Compile Include="ContextHandlers\ContextHandlerReadCSV.vb" />
     <Compile Include="ContextHandlers\ContextHandlerReadFile.vb" />
     <Compile Include="ContextHandlers\ContextHandlerReadXML.vb" />
     <Compile Include="ContextHandlers\ContextHandlerShowFile.vb" />
