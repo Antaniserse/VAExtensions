@@ -2,7 +2,7 @@
 A general purpose plugin to extend the base functionalities of VoiceAttack (www.voiceattack.com)
 
 VAExtensions adds extra commands for 
-- Extracting content from plain text, XML files or RSS feeds, either stored locally on your hard drive or shared the Internet
+- Extracting content from plain text, XML files, CSV files or RSS feeds, either stored locally on your hard drive or shared the Internet
 - Read and write INI files
 - Read and write values in SQLite databases (experimental)
 - and some more...
