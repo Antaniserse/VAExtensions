@@ -13,8 +13,10 @@
         ReadRSS
         <EnumInfo("Loads a CSV file in memory", "load_csv")>
         LoadCSV
-        <EnumInfo("Read a CSV value from a previously loaded file", "read_csv")>
+        <EnumInfo("Read a value from a previously loaded CSV file", "read_csv")>
         ReadCSV
+        <EnumInfo("Search a specific text in a specific column of a previously loaded CSV file", "search_csv")>
+        SearchCSV
         <EnumInfo("Show content of a text file", "show_file")>
         ShowFile
         <EnumInfo("Show content of a text variable", "show_text")>
@@ -102,7 +104,7 @@
                     Case Contexts.ReadRSS
                         result = New ContextHandlerReadRSS(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 
-                    Case Contexts.LoadCSV, Contexts.ReadCSV
+                    Case Contexts.LoadCSV, Contexts.ReadCSV, Contexts.SearchCSV
                         result = New ContextHandlerReadCSV(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 
                     Case Contexts.ShowFile, Contexts.ShowText

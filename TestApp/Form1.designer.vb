@@ -27,8 +27,8 @@ Partial Class Form1
 	''' </summary>
 	Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnLaunchVA = New System.Windows.Forms.Button()
         Me.btnShowInfo = New System.Windows.Forms.Button()
         Me.BindingSourceMathCond = New System.Windows.Forms.BindingSource(Me.components)
@@ -115,6 +115,17 @@ Partial Class Form1
         Me.lblReadFileRegEx = New System.Windows.Forms.Label()
         Me.btnReadFileExecute = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.pageReadCSV = New System.Windows.Forms.TabPage()
+        Me.optReadCSVByValue = New System.Windows.Forms.RadioButton()
+        Me.txtReadCSVSearch = New System.Windows.Forms.TextBox()
+        Me.optReadCSVByIndex = New System.Windows.Forms.RadioButton()
+        Me.btnLoadCSVExecute = New System.Windows.Forms.Button()
+        Me.txtReadCSVCol = New System.Windows.Forms.TextBox()
+        Me.cboReadCSVName = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.udReadCSVRow = New System.Windows.Forms.NumericUpDown()
+        Me.btnReadCSVExecute = New System.Windows.Forms.Button()
         Me.pageINI = New System.Windows.Forms.TabPage()
         Me.btnINIWrite = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -126,15 +137,6 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BindingSourceINI = New System.Windows.Forms.BindingSource(Me.components)
-        Me.pageReadCSV = New System.Windows.Forms.TabPage()
-        Me.txtReadCSVCol = New System.Windows.Forms.TextBox()
-        Me.cboReadCSVName = New System.Windows.Forms.ComboBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.udReadCSVRow = New System.Windows.Forms.NumericUpDown()
-        Me.btnReadCSVExecute = New System.Windows.Forms.Button()
-        Me.btnLoadCSVExecute = New System.Windows.Forms.Button()
         CType(Me.BindingSourceMathCond, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pageCountDown.SuspendLayout()
         CType(Me.udCountdown, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -152,11 +154,11 @@ Partial Class Form1
         CType(Me.udReadXMLIndex, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pageReadFile.SuspendLayout()
         Me.TabControl1.SuspendLayout()
+        Me.pageReadCSV.SuspendLayout()
+        CType(Me.udReadCSVRow, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pageINI.SuspendLayout()
         CType(Me.dgvINI, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingSourceINI, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pageReadCSV.SuspendLayout()
-        CType(Me.udReadCSVRow, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnLaunchVA
@@ -420,9 +422,9 @@ Partial Class Form1
         '
         'DataGridViewTextBoxColumn4
         '
-        DataGridViewCellStyle5.Format = "0"
-        DataGridViewCellStyle5.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Format = "0"
+        DataGridViewCellStyle1.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridViewTextBoxColumn4.HeaderText = "Value"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         '
@@ -1023,6 +1025,117 @@ Partial Class Form1
         Me.TabControl1.Size = New System.Drawing.Size(836, 386)
         Me.TabControl1.TabIndex = 37
         '
+        'pageReadCSV
+        '
+        Me.pageReadCSV.Controls.Add(Me.optReadCSVByValue)
+        Me.pageReadCSV.Controls.Add(Me.txtReadCSVSearch)
+        Me.pageReadCSV.Controls.Add(Me.optReadCSVByIndex)
+        Me.pageReadCSV.Controls.Add(Me.btnLoadCSVExecute)
+        Me.pageReadCSV.Controls.Add(Me.txtReadCSVCol)
+        Me.pageReadCSV.Controls.Add(Me.cboReadCSVName)
+        Me.pageReadCSV.Controls.Add(Me.Label4)
+        Me.pageReadCSV.Controls.Add(Me.Label6)
+        Me.pageReadCSV.Controls.Add(Me.udReadCSVRow)
+        Me.pageReadCSV.Controls.Add(Me.btnReadCSVExecute)
+        Me.pageReadCSV.Location = New System.Drawing.Point(4, 22)
+        Me.pageReadCSV.Name = "pageReadCSV"
+        Me.pageReadCSV.Padding = New System.Windows.Forms.Padding(3)
+        Me.pageReadCSV.Size = New System.Drawing.Size(828, 360)
+        Me.pageReadCSV.TabIndex = 13
+        Me.pageReadCSV.Text = "Read CSV"
+        Me.pageReadCSV.UseVisualStyleBackColor = True
+        '
+        'optReadCSVByValue
+        '
+        Me.optReadCSVByValue.AutoSize = True
+        Me.optReadCSVByValue.Location = New System.Drawing.Point(6, 143)
+        Me.optReadCSVByValue.Name = "optReadCSVByValue"
+        Me.optReadCSVByValue.Size = New System.Drawing.Size(79, 17)
+        Me.optReadCSVByValue.TabIndex = 17
+        Me.optReadCSVByValue.Text = "Search text"
+        Me.optReadCSVByValue.UseVisualStyleBackColor = True
+        '
+        'txtReadCSVSearch
+        '
+        Me.txtReadCSVSearch.Enabled = False
+        Me.txtReadCSVSearch.Location = New System.Drawing.Point(102, 143)
+        Me.txtReadCSVSearch.Name = "txtReadCSVSearch"
+        Me.txtReadCSVSearch.Size = New System.Drawing.Size(171, 20)
+        Me.txtReadCSVSearch.TabIndex = 16
+        '
+        'optReadCSVByIndex
+        '
+        Me.optReadCSVByIndex.AutoSize = True
+        Me.optReadCSVByIndex.Checked = True
+        Me.optReadCSVByIndex.Location = New System.Drawing.Point(6, 111)
+        Me.optReadCSVByIndex.Name = "optReadCSVByIndex"
+        Me.optReadCSVByIndex.Size = New System.Drawing.Size(76, 17)
+        Me.optReadCSVByIndex.TabIndex = 15
+        Me.optReadCSVByIndex.TabStop = True
+        Me.optReadCSVByIndex.Text = "Row Index"
+        Me.optReadCSVByIndex.UseVisualStyleBackColor = True
+        '
+        'btnLoadCSVExecute
+        '
+        Me.btnLoadCSVExecute.Location = New System.Drawing.Point(302, 33)
+        Me.btnLoadCSVExecute.Name = "btnLoadCSVExecute"
+        Me.btnLoadCSVExecute.Size = New System.Drawing.Size(125, 23)
+        Me.btnLoadCSVExecute.TabIndex = 14
+        Me.btnLoadCSVExecute.Text = "Execute"
+        Me.btnLoadCSVExecute.UseVisualStyleBackColor = True
+        '
+        'txtReadCSVCol
+        '
+        Me.txtReadCSVCol.Location = New System.Drawing.Point(102, 75)
+        Me.txtReadCSVCol.Name = "txtReadCSVCol"
+        Me.txtReadCSVCol.Size = New System.Drawing.Size(171, 20)
+        Me.txtReadCSVCol.TabIndex = 12
+        '
+        'cboReadCSVName
+        '
+        Me.cboReadCSVName.FormattingEnabled = True
+        Me.cboReadCSVName.Items.AddRange(New Object() {"TestData\TestCSV.csv"})
+        Me.cboReadCSVName.Location = New System.Drawing.Point(102, 6)
+        Me.cboReadCSVName.Name = "cboReadCSVName"
+        Me.cboReadCSVName.Size = New System.Drawing.Size(325, 21)
+        Me.cboReadCSVName.TabIndex = 10
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(0, 75)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(101, 13)
+        Me.Label4.TabIndex = 13
+        Me.Label4.Text = "Column name/index"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(0, 9)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(74, 13)
+        Me.Label6.TabIndex = 11
+        Me.Label6.Text = "File path/URL"
+        '
+        'udReadCSVRow
+        '
+        Me.udReadCSVRow.Location = New System.Drawing.Point(102, 111)
+        Me.udReadCSVRow.Maximum = New Decimal(New Integer() {99999, 0, 0, 0})
+        Me.udReadCSVRow.Name = "udReadCSVRow"
+        Me.udReadCSVRow.Size = New System.Drawing.Size(66, 20)
+        Me.udReadCSVRow.TabIndex = 7
+        Me.udReadCSVRow.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'btnReadCSVExecute
+        '
+        Me.btnReadCSVExecute.Location = New System.Drawing.Point(302, 96)
+        Me.btnReadCSVExecute.Name = "btnReadCSVExecute"
+        Me.btnReadCSVExecute.Size = New System.Drawing.Size(125, 23)
+        Me.btnReadCSVExecute.TabIndex = 1
+        Me.btnReadCSVExecute.Text = "Execute"
+        Me.btnReadCSVExecute.UseVisualStyleBackColor = True
+        '
         'pageINI
         '
         Me.pageINI.Controls.Add(Me.btnINIWrite)
@@ -1113,98 +1226,11 @@ Partial Class Form1
         '
         'DataGridViewTextBoxColumn2
         '
-        DataGridViewCellStyle6.Format = "0"
-        DataGridViewCellStyle6.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Format = "0"
+        DataGridViewCellStyle2.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridViewTextBoxColumn2.HeaderText = "Value"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'pageReadCSV
-        '
-        Me.pageReadCSV.Controls.Add(Me.btnLoadCSVExecute)
-        Me.pageReadCSV.Controls.Add(Me.txtReadCSVCol)
-        Me.pageReadCSV.Controls.Add(Me.cboReadCSVName)
-        Me.pageReadCSV.Controls.Add(Me.Label4)
-        Me.pageReadCSV.Controls.Add(Me.Label5)
-        Me.pageReadCSV.Controls.Add(Me.Label6)
-        Me.pageReadCSV.Controls.Add(Me.udReadCSVRow)
-        Me.pageReadCSV.Controls.Add(Me.btnReadCSVExecute)
-        Me.pageReadCSV.Location = New System.Drawing.Point(4, 22)
-        Me.pageReadCSV.Name = "pageReadCSV"
-        Me.pageReadCSV.Padding = New System.Windows.Forms.Padding(3)
-        Me.pageReadCSV.Size = New System.Drawing.Size(828, 360)
-        Me.pageReadCSV.TabIndex = 13
-        Me.pageReadCSV.Text = "Read CSV"
-        Me.pageReadCSV.UseVisualStyleBackColor = True
-        '
-        'txtReadCSVCol
-        '
-        Me.txtReadCSVCol.Location = New System.Drawing.Point(96, 75)
-        Me.txtReadCSVCol.Name = "txtReadCSVCol"
-        Me.txtReadCSVCol.Size = New System.Drawing.Size(177, 20)
-        Me.txtReadCSVCol.TabIndex = 12
-        '
-        'cboReadCSVName
-        '
-        Me.cboReadCSVName.FormattingEnabled = True
-        Me.cboReadCSVName.Items.AddRange(New Object() {"TestData\TestCSV.csv"})
-        Me.cboReadCSVName.Location = New System.Drawing.Point(96, 6)
-        Me.cboReadCSVName.Name = "cboReadCSVName"
-        Me.cboReadCSVName.Size = New System.Drawing.Size(331, 21)
-        Me.cboReadCSVName.TabIndex = 10
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(0, 75)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(101, 13)
-        Me.Label4.TabIndex = 13
-        Me.Label4.Text = "Column name/index"
-        '
-        'Label5
-        '
-        Me.Label5.Location = New System.Drawing.Point(0, 101)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(74, 18)
-        Me.Label5.TabIndex = 6
-        Me.Label5.Text = "Row index"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(0, 9)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(74, 13)
-        Me.Label6.TabIndex = 11
-        Me.Label6.Text = "File path/URL"
-        '
-        'udReadCSVRow
-        '
-        Me.udReadCSVRow.Location = New System.Drawing.Point(96, 101)
-        Me.udReadCSVRow.Maximum = New Decimal(New Integer() {99999, 0, 0, 0})
-        Me.udReadCSVRow.Name = "udReadCSVRow"
-        Me.udReadCSVRow.Size = New System.Drawing.Size(66, 20)
-        Me.udReadCSVRow.TabIndex = 7
-        Me.udReadCSVRow.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'btnReadCSVExecute
-        '
-        Me.btnReadCSVExecute.Location = New System.Drawing.Point(302, 121)
-        Me.btnReadCSVExecute.Name = "btnReadCSVExecute"
-        Me.btnReadCSVExecute.Size = New System.Drawing.Size(125, 23)
-        Me.btnReadCSVExecute.TabIndex = 1
-        Me.btnReadCSVExecute.Text = "Execute"
-        Me.btnReadCSVExecute.UseVisualStyleBackColor = True
-        '
-        'btnLoadCSVExecute
-        '
-        Me.btnLoadCSVExecute.Location = New System.Drawing.Point(302, 33)
-        Me.btnLoadCSVExecute.Name = "btnLoadCSVExecute"
-        Me.btnLoadCSVExecute.Size = New System.Drawing.Size(125, 23)
-        Me.btnLoadCSVExecute.TabIndex = 14
-        Me.btnLoadCSVExecute.Text = "Execute"
-        Me.btnLoadCSVExecute.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -1244,13 +1270,13 @@ Partial Class Form1
         Me.pageReadFile.ResumeLayout(False)
         Me.pageReadFile.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
+        Me.pageReadCSV.ResumeLayout(False)
+        Me.pageReadCSV.PerformLayout()
+        CType(Me.udReadCSVRow, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pageINI.ResumeLayout(False)
         Me.pageINI.PerformLayout()
         CType(Me.dgvINI, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingSourceINI, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pageReadCSV.ResumeLayout(False)
-        Me.pageReadCSV.PerformLayout()
-        CType(Me.udReadCSVRow, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1356,8 +1382,10 @@ Partial Class Form1
     Friend WithEvents txtReadCSVCol As TextBox
     Friend WithEvents cboReadCSVName As ComboBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents udReadCSVRow As NumericUpDown
     Friend WithEvents btnReadCSVExecute As Button
+    Friend WithEvents optReadCSVByValue As RadioButton
+    Friend WithEvents txtReadCSVSearch As TextBox
+    Friend WithEvents optReadCSVByIndex As RadioButton
 End Class

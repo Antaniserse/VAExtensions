@@ -13,7 +13,9 @@
     Public Const KEY_INI_KEY As String = "VxINIKey"
 
     Public Const KEY_ROW As String = "VxRow"
+    Public Const KEY_ROWSCOUNT As String = "VxRowsCount"
     Public Const KEY_COL As String = "VxColumn"
+    Public Const KEY_COLSCOUNT As String = "VxColumnsCount"
     Public Const KEY_DELIMITER As String = "VxDelimiter"
 
     Public Const KEY_DB_TABLE As String = "VxDBTable"

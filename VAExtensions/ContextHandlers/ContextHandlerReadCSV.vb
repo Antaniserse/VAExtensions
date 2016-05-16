@@ -45,8 +45,12 @@ Public Class ContextHandlerReadCSV
                     If CSVStorage.ContainsKey(m_TextValues(App.KEY_FILE)) Then CSVStorage.Remove(m_TextValues(App.KEY_FILE))
 
                     Dim newTable As DataTable = getDataTableFromCSVFile(newFile.LocalPath, delimiter)
-                    If newTable IsNot Nothing Then CSVStorage.Add(m_TextValues(App.KEY_FILE), newTable)
+                    If newTable IsNot Nothing Then
+                        CSVStorage.Add(m_TextValues(App.KEY_FILE), newTable)
 
+                        m_intValues(App.KEY_ROWSCOUNT) = newTable.Rows.Count
+                        m_intValues(App.KEY_COLSCOUNT) = newTable.Columns.Count
+                    End If
                 Catch ex As Exception
                     m_smallIntValues(App.KEY_ERROR) = ERR_IO
                     m_TextValues(App.KEY_RESULT) = String.Format("Error loading file content '{0}' ({1}).", m_TextValues(App.KEY_FILE), ex.Message)
@@ -54,10 +58,11 @@ Public Class ContextHandlerReadCSV
                 End Try
                 If newFile.IsTemporary Then App.Settings.AddDownloadedFile(newFile)
 
-            Case ContextFactory.Contexts.ReadCSV
+            Case ContextFactory.Contexts.ReadCSV, ContextFactory.Contexts.SearchCSV
                 Dim table As DataTable
-                Dim row, col As Integer
+                Dim row As Integer
                 Dim dataRow As DataRow
+                Dim dataCol As DataColumn
 
                 If Not CSVStorage.ContainsKey(m_TextValues(App.KEY_FILE)) Then
                     m_smallIntValues(App.KEY_ERROR) = ERR_ARGUMENTS
@@ -67,45 +72,74 @@ Public Class ContextHandlerReadCSV
                     table = CSVStorage.Item(m_TextValues(App.KEY_FILE))
                 End If
 
-                If Not m_intValues.ContainsKey(App.KEY_ROW) Then
-                    m_smallIntValues(App.KEY_ERROR) = ERR_ARGUMENTS
-                    m_TextValues(App.KEY_RESULT) = String.Format("No row specified. variable '{0}' not set.", App.KEY_ROW)
-                    Return False
-                Else
-                    row = m_intValues.Item(App.KEY_ROW).Value
-                    If table.Rows.Count < row + 1 Then
-                        m_smallIntValues(App.KEY_ERROR) = ERR_ARGUMENTS
-                        m_TextValues(App.KEY_RESULT) = String.Format("Invalid row. The loaded CSV contains '{0}' elements.", table.Rows.Count)
-                        Return False
-                    Else
-                        dataRow = table.Rows.Item(row)
-                    End If
-                End If
-
-                col = -1
+                dataCol = Nothing
                 If Not m_intValues.ContainsKey(App.KEY_COL) Then
                     If Not m_TextValues.ContainsKey(App.KEY_COL) Then
                         m_smallIntValues(App.KEY_ERROR) = ERR_ARGUMENTS
                         m_TextValues(App.KEY_RESULT) = String.Format("No column specified. variable '{0}' not set.", App.KEY_COL)
                         Return False
-                    Else
-                        For i As Integer = 0 To table.Columns.Count - 1
-                            If String.Compare(table.Columns(i).ColumnName, m_TextValues(App.KEY_COL), True) = 0 Then
-                                col = i
-                                Exit For
-                            End If
-                        Next
                     End If
+
+                    For i As Integer = 0 To table.Columns.Count - 1
+                        If String.Compare(table.Columns(i).ColumnName, m_TextValues(App.KEY_COL), True) = 0 Then
+                            dataCol = table.Columns(i)
+                            Exit For
+                        End If
+                    Next
                 Else
-                    col = m_intValues(App.KEY_COL).Value
+                    If m_intValues(App.KEY_COL).Value < 0 OrElse m_intValues(App.KEY_COL).Value >= table.Columns.Count Then
+                        m_smallIntValues(App.KEY_ERROR) = ERR_ARGUMENTS
+                        m_TextValues(App.KEY_RESULT) = String.Format("Invalid column name/index. The loaded CSV contains '{0}' columns.", table.Columns.Count)
+                        Return False
+                    End If
+                    dataCol = table.Columns(m_intValues(App.KEY_COL).Value)
                 End If
 
-                If col < 0 OrElse col >= table.Columns.Count Then
+                If dataCol Is Nothing Then
                     m_smallIntValues(App.KEY_ERROR) = ERR_ARGUMENTS
                     m_TextValues(App.KEY_RESULT) = String.Format("Invalid column name/index. The loaded CSV contains '{0}' columns.", table.Columns.Count)
                     Return False
+                End If
+
+                If m_Context = ContextFactory.Contexts.ReadCSV Then
+                    If Not m_intValues.ContainsKey(App.KEY_ROW) Then
+                        m_smallIntValues(App.KEY_ERROR) = ERR_ARGUMENTS
+                        m_TextValues(App.KEY_RESULT) = String.Format("No row specified. variable '{0}' not set.", App.KEY_ROW)
+                        Return False
+                    End If
+                    row = m_intValues(App.KEY_ROW).Value
+
+                    If table.Rows.Count < row + 1 Then
+                        m_smallIntValues(App.KEY_ERROR) = ERR_ARGUMENTS
+                        m_TextValues(App.KEY_RESULT) = String.Format("Invalid row. The loaded CSV contains '{0}' elements.", table.Rows.Count)
+                        Return False
+                    End If
+                    dataRow = table.Rows.Item(row)
+                    m_TextValues(App.KEY_RESULT) = App.LimitResponse(Convert.ToString(dataRow.Item(dataCol.Ordinal)))
+
                 Else
-                    m_TextValues(App.KEY_RESULT) = App.LimitResponse(Convert.ToString(dataRow.Item(col)))
+                    If Not m_TextValues.ContainsKey(App.KEY_ARGUMENTS) Then
+                        m_smallIntValues(App.KEY_ERROR) = ERR_ARGUMENTS
+                        m_TextValues(App.KEY_RESULT) = String.Format("No search value specified. variable '{0}' not set.", App.KEY_ARGUMENTS)
+                        Return False
+                    End If
+
+                    'We need the index here, so we can't use .Select() but we iterate instead
+                    Dim foundIndex As Integer = -1
+                    For i As Integer = 0 To table.Rows.Count - 1
+                        If String.Compare(Convert.ToString(table.Rows(i).Item(dataCol.Ordinal)), m_TextValues(App.KEY_ARGUMENTS), True) = 0 Then
+                            foundIndex = i
+                            Exit For
+                        End If
+                    Next
+
+                    If foundIndex >= 0 Then
+                        m_intValues(App.KEY_ROW) = foundIndex
+                        m_TextValues(App.KEY_RESULT) = foundIndex.ToString
+                    Else
+                        m_intValues(App.KEY_ROW) = -1
+                        m_TextValues(App.KEY_RESULT) = "Value not found at specified column"
+                    End If
                 End If
         End Select
 

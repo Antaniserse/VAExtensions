@@ -337,15 +337,13 @@
         If smallIntValues(VAExtensions.App.KEY_ERROR).Value <> 0 Then
             MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
-            MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show(String.Format("{0} rows and {1} columns", intValues(VAExtensions.App.KEY_ROWSCOUNT), intValues(VAExtensions.App.KEY_COLSCOUNT)), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
 
     End Sub
 
     Private Sub btnReadCSVExecute_Click(sender As Object, e As EventArgs) Handles btnReadCSVExecute.Click
         clearAllInput()
-        contextName = VAExtensions.EnumInfoAttribute.GetTag(VAExtensions.ContextFactory.Contexts.ReadCSV)
-
         textValues(VAExtensions.App.KEY_FILE) = cboReadCSVName.Text
         Dim colIndex As Integer
         If Int32.TryParse(txtReadCSVCol.Text, colIndex) Then
@@ -353,7 +351,14 @@
         Else
             textValues(VAExtensions.App.KEY_COL) = txtReadCSVCol.Text
         End If
-        If udReadCSVRow.Value >= 0 Then intValues(VAExtensions.App.KEY_ROW) = Convert.ToInt32(udReadCSVRow.Value)
+
+        If optReadCSVByIndex.Checked Then
+            contextName = VAExtensions.EnumInfoAttribute.GetTag(VAExtensions.ContextFactory.Contexts.ReadCSV)
+            If udReadCSVRow.Value >= 0 Then intValues(VAExtensions.App.KEY_ROW) = Convert.ToInt32(udReadCSVRow.Value)
+        Else
+            contextName = VAExtensions.EnumInfoAttribute.GetTag(VAExtensions.ContextFactory.Contexts.SearchCSV)
+            textValues(VAExtensions.App.KEY_ARGUMENTS) = txtReadCSVSearch.Text
+        End If
 
         VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
         If smallIntValues(VAExtensions.App.KEY_ERROR).Value <> 0 Then
@@ -362,5 +367,12 @@
             MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
 
+    End Sub
+
+    Private Sub optReadCSV_CheckedChanged(sender As Object, e As EventArgs) _
+        Handles optReadCSVByIndex.CheckedChanged, optReadCSVByValue.CheckedChanged
+
+        udReadCSVRow.Enabled = optReadCSVByIndex.Checked
+        txtReadCSVSearch.Enabled = optReadCSVByValue.Checked
     End Sub
 End Class
