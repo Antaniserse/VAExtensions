@@ -1122,10 +1122,12 @@ Partial Class Form1
         '
         Me.udReadCSVRow.Location = New System.Drawing.Point(102, 111)
         Me.udReadCSVRow.Maximum = New Decimal(New Integer() {99999, 0, 0, 0})
+        Me.udReadCSVRow.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.udReadCSVRow.Name = "udReadCSVRow"
         Me.udReadCSVRow.Size = New System.Drawing.Size(66, 20)
         Me.udReadCSVRow.TabIndex = 7
         Me.udReadCSVRow.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.udReadCSVRow.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'btnReadCSVExecute
         '

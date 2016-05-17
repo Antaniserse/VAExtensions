@@ -87,12 +87,12 @@ Public Class ContextHandlerReadCSV
                         End If
                     Next
                 Else
-                    If m_intValues(App.KEY_COL).Value < 0 OrElse m_intValues(App.KEY_COL).Value >= table.Columns.Count Then
+                    If m_intValues(App.KEY_COL).Value <= 0 OrElse m_intValues(App.KEY_COL).Value > table.Columns.Count Then
                         m_smallIntValues(App.KEY_ERROR) = ERR_ARGUMENTS
                         m_TextValues(App.KEY_RESULT) = String.Format("Invalid column name/index. The loaded CSV contains '{0}' columns.", table.Columns.Count)
                         Return False
                     End If
-                    dataCol = table.Columns(m_intValues(App.KEY_COL).Value)
+                    dataCol = table.Columns(m_intValues(App.KEY_COL).Value - 1)
                 End If
 
                 If dataCol Is Nothing Then
@@ -107,9 +107,9 @@ Public Class ContextHandlerReadCSV
                         m_TextValues(App.KEY_RESULT) = String.Format("No row specified. variable '{0}' not set.", App.KEY_ROW)
                         Return False
                     End If
-                    row = m_intValues(App.KEY_ROW).Value
+                    row = m_intValues(App.KEY_ROW).Value - 1
 
-                    If table.Rows.Count < row + 1 Then
+                    If table.Rows.Count <= row Then
                         m_smallIntValues(App.KEY_ERROR) = ERR_ARGUMENTS
                         m_TextValues(App.KEY_RESULT) = String.Format("Invalid row. The loaded CSV contains '{0}' elements.", table.Rows.Count)
                         Return False
@@ -134,10 +134,10 @@ Public Class ContextHandlerReadCSV
                     Next
 
                     If foundIndex >= 0 Then
-                        m_intValues(App.KEY_ROW) = foundIndex
-                        m_TextValues(App.KEY_RESULT) = foundIndex.ToString
+                        m_intValues(App.KEY_ROW) = foundIndex + 1
+                        m_TextValues(App.KEY_RESULT) = m_intValues(App.KEY_ROW).ToString
                     Else
-                        m_intValues(App.KEY_ROW) = -1
+                        m_intValues(App.KEY_ROW) = 0
                         m_TextValues(App.KEY_RESULT) = "Value not found at specified column"
                     End If
                 End If
