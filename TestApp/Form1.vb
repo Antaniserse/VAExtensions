@@ -115,23 +115,38 @@
 
    End Sub
 
-   Private Sub btnReadXMLExecute_Click(sender As Object, e As EventArgs) Handles btnReadXMLExecute.Click
-      clearAllInput()
-      contextName = VAExtensions.EnumInfoAttribute.GetTag(VAExtensions.ContextFactory.Contexts.ReadXml)
-      textValues(VAExtensions.App.KEY_FILE) = cboReadXMLName.Text
-      If txtReadXMLRegEx.TextLength > 0 Then textValues(VAExtensions.App.KEY_REGEX) = txtReadXMLRegEx.Text
-      If txtReadXMLItemPath.TextLength > 0 Then textValues(VAExtensions.App.KEY_ARGUMENTS) = txtReadXMLItemPath.Text
-      If udReadXMLIndex.Value > 0 Then smallIntValues(VAExtensions.App.KEY_INDEX) = Convert.ToInt16(udReadXMLIndex.Value)
+    Private Sub btnReadXMLExecute_Click(sender As Object, e As EventArgs) Handles btnReadXMLExecute.Click
+        clearAllInput()
+        contextName = VAExtensions.EnumInfoAttribute.GetTag(VAExtensions.ContextFactory.Contexts.ReadXml)
+        textValues(VAExtensions.App.KEY_FILE) = cboReadXMLName.Text
+        If txtReadXMLRegEx.TextLength > 0 Then textValues(VAExtensions.App.KEY_REGEX) = txtReadXMLRegEx.Text
+        If txtReadXMLItemPath.TextLength > 0 Then textValues(VAExtensions.App.KEY_ARGUMENTS) = txtReadXMLItemPath.Text
+        If udReadXMLIndex.Value > 0 Then smallIntValues(VAExtensions.App.KEY_INDEX) = Convert.ToInt16(udReadXMLIndex.Value)
 
-      VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
-      If smallIntValues(VAExtensions.App.KEY_ERROR).Value <> 0 Then
-         MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-      Else
-         MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-      End If
-   End Sub
+        VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+        If smallIntValues(VAExtensions.App.KEY_ERROR).Value <> 0 Then
+            MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
 
-   Private Sub btnShowFileName_Click(sender As Object, e As EventArgs) Handles btnShowFileName.Click
+    Private Sub btnReadJSONExecute_Click(sender As Object, e As EventArgs) Handles btnReadJSONExecute.Click
+        clearAllInput()
+        contextName = VAExtensions.EnumInfoAttribute.GetTag(VAExtensions.ContextFactory.Contexts.ReadJSON)
+        textValues(VAExtensions.App.KEY_FILE) = cboReadJSONName.Text
+        If txtReadJSONRegEx.TextLength > 0 Then textValues(VAExtensions.App.KEY_REGEX) = txtReadJSONRegEx.Text
+        If txtReadJSONItemPath.TextLength > 0 Then textValues(VAExtensions.App.KEY_ARGUMENTS) = txtReadJSONItemPath.Text
+
+        VAExtensions.VoiceAttack.VA_Invoke1(contextName, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+        If smallIntValues(VAExtensions.App.KEY_ERROR).Value <> 0 Then
+            MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            MessageBox.Show(textValues(VAExtensions.App.KEY_RESULT), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Sub btnShowFileName_Click(sender As Object, e As EventArgs) Handles btnShowFileName.Click
       clearAllInput()
       If cboShowFileName.Text.Length > 0 Then
          contextName = VAExtensions.EnumInfoAttribute.GetTag(VAExtensions.ContextFactory.Contexts.ShowFile)
@@ -375,4 +390,5 @@
         udReadCSVRow.Enabled = optReadCSVByIndex.Checked
         txtReadCSVSearch.Enabled = optReadCSVByValue.Checked
     End Sub
+
 End Class

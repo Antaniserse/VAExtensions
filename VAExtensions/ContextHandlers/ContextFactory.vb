@@ -10,6 +10,8 @@
         <EnumInfo("Read an XML File", "read_xml")>
         ReadXml
         <EnumInfo("Read a RSS feed", "read_rss")>
+        ReadJSON
+        <EnumInfo("Read a JSON feed", "read_json")>
         ReadRSS
         <EnumInfo("Loads a CSV file in memory", "load_csv")>
         LoadCSV
@@ -100,6 +102,9 @@
 
                     Case Contexts.ReadXml
                         result = New ContextHandlerReadXML(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+
+                    Case Contexts.ReadJSON
+                        result = New ContextHandlerReadJSON(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 
                     Case Contexts.ReadRSS
                         result = New ContextHandlerReadRSS(c, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)

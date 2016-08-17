@@ -27,8 +27,8 @@ Partial Class Form1
 	''' </summary>
 	Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnLaunchVA = New System.Windows.Forms.Button()
         Me.btnShowInfo = New System.Windows.Forms.Button()
         Me.BindingSourceMathCond = New System.Windows.Forms.BindingSource(Me.components)
@@ -115,6 +115,14 @@ Partial Class Form1
         Me.lblReadFileRegEx = New System.Windows.Forms.Label()
         Me.btnReadFileExecute = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.pageReadJSON = New System.Windows.Forms.TabPage()
+        Me.txtReadJSONItemPath = New System.Windows.Forms.TextBox()
+        Me.txtReadJSONRegEx = New System.Windows.Forms.TextBox()
+        Me.cboReadJSONName = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.btnReadJSONExecute = New System.Windows.Forms.Button()
         Me.pageReadCSV = New System.Windows.Forms.TabPage()
         Me.optReadCSVByValue = New System.Windows.Forms.RadioButton()
         Me.txtReadCSVSearch = New System.Windows.Forms.TextBox()
@@ -154,6 +162,7 @@ Partial Class Form1
         CType(Me.udReadXMLIndex, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pageReadFile.SuspendLayout()
         Me.TabControl1.SuspendLayout()
+        Me.pageReadJSON.SuspendLayout()
         Me.pageReadCSV.SuspendLayout()
         CType(Me.udReadCSVRow, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pageINI.SuspendLayout()
@@ -189,10 +198,10 @@ Partial Class Form1
         Me.pageCountDown.Controls.Add(Me.udCountdown)
         Me.pageCountDown.Controls.Add(Me.btnCountdownNext)
         Me.pageCountDown.Controls.Add(Me.btnCountdownInit)
-        Me.pageCountDown.Location = New System.Drawing.Point(4, 22)
+        Me.pageCountDown.Location = New System.Drawing.Point(4, 40)
         Me.pageCountDown.Name = "pageCountDown"
         Me.pageCountDown.Padding = New System.Windows.Forms.Padding(3)
-        Me.pageCountDown.Size = New System.Drawing.Size(828, 360)
+        Me.pageCountDown.Size = New System.Drawing.Size(828, 342)
         Me.pageCountDown.TabIndex = 11
         Me.pageCountDown.Text = "CountDown"
         Me.pageCountDown.UseVisualStyleBackColor = True
@@ -217,7 +226,7 @@ Partial Class Form1
         Me.txtCountdownOUT.Name = "txtCountdownOUT"
         Me.txtCountdownOUT.ReadOnly = True
         Me.txtCountdownOUT.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtCountdownOUT.Size = New System.Drawing.Size(261, 296)
+        Me.txtCountdownOUT.Size = New System.Drawing.Size(261, 278)
         Me.txtCountdownOUT.TabIndex = 36
         '
         'txtCountdownName
@@ -283,10 +292,10 @@ Partial Class Form1
         Me.pageRandom.Controls.Add(Me.lblRandomOUT)
         Me.pageRandom.Controls.Add(Me.txtRandomOUT)
         Me.pageRandom.Controls.Add(Me.btnRandomInit)
-        Me.pageRandom.Location = New System.Drawing.Point(4, 22)
+        Me.pageRandom.Location = New System.Drawing.Point(4, 40)
         Me.pageRandom.Name = "pageRandom"
         Me.pageRandom.Padding = New System.Windows.Forms.Padding(3)
-        Me.pageRandom.Size = New System.Drawing.Size(828, 360)
+        Me.pageRandom.Size = New System.Drawing.Size(828, 342)
         Me.pageRandom.TabIndex = 10
         Me.pageRandom.Text = "Random list"
         Me.pageRandom.UseVisualStyleBackColor = True
@@ -384,9 +393,9 @@ Partial Class Form1
         Me.pageMath.Controls.Add(Me.btnMathMult)
         Me.pageMath.Controls.Add(Me.btnMathMod)
         Me.pageMath.Controls.Add(Me.btnMathDiv)
-        Me.pageMath.Location = New System.Drawing.Point(4, 22)
+        Me.pageMath.Location = New System.Drawing.Point(4, 40)
         Me.pageMath.Name = "pageMath"
-        Me.pageMath.Size = New System.Drawing.Size(828, 360)
+        Me.pageMath.Size = New System.Drawing.Size(828, 342)
         Me.pageMath.TabIndex = 7
         Me.pageMath.Text = "Math functions"
         Me.pageMath.UseVisualStyleBackColor = True
@@ -422,9 +431,9 @@ Partial Class Form1
         '
         'DataGridViewTextBoxColumn4
         '
-        DataGridViewCellStyle1.Format = "0"
-        DataGridViewCellStyle1.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Format = "0"
+        DataGridViewCellStyle3.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridViewTextBoxColumn4.HeaderText = "Value"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         '
@@ -531,9 +540,9 @@ Partial Class Form1
         Me.pageReadStdOut.Controls.Add(Me.lblReadStdOutName)
         Me.pageReadStdOut.Controls.Add(Me.btnReadStdOutExecute)
         Me.pageReadStdOut.Controls.Add(Me.lblReadStdOutArgs)
-        Me.pageReadStdOut.Location = New System.Drawing.Point(4, 22)
+        Me.pageReadStdOut.Location = New System.Drawing.Point(4, 40)
         Me.pageReadStdOut.Name = "pageReadStdOut"
-        Me.pageReadStdOut.Size = New System.Drawing.Size(828, 360)
+        Me.pageReadStdOut.Size = New System.Drawing.Size(828, 342)
         Me.pageReadStdOut.TabIndex = 6
         Me.pageReadStdOut.Text = "Read standard output"
         Me.pageReadStdOut.UseVisualStyleBackColor = True
@@ -609,9 +618,9 @@ Partial Class Form1
         Me.pageSpellText.Controls.Add(Me.txtSpellTextOUT)
         Me.pageSpellText.Controls.Add(Me.txtSpellTextIN)
         Me.pageSpellText.Controls.Add(Me.btnSpellTextExecute)
-        Me.pageSpellText.Location = New System.Drawing.Point(4, 22)
+        Me.pageSpellText.Location = New System.Drawing.Point(4, 40)
         Me.pageSpellText.Name = "pageSpellText"
-        Me.pageSpellText.Size = New System.Drawing.Size(828, 360)
+        Me.pageSpellText.Size = New System.Drawing.Size(828, 342)
         Me.pageSpellText.TabIndex = 4
         Me.pageSpellText.Text = "Spell Text"
         Me.pageSpellText.UseVisualStyleBackColor = True
@@ -672,9 +681,9 @@ Partial Class Form1
         Me.pageShowText.Controls.Add(Me.lblShowFileTextVar)
         Me.pageShowText.Controls.Add(Me.cboShowFileName)
         Me.pageShowText.Controls.Add(Me.btnShowFileName)
-        Me.pageShowText.Location = New System.Drawing.Point(4, 22)
+        Me.pageShowText.Location = New System.Drawing.Point(4, 40)
         Me.pageShowText.Name = "pageShowText"
-        Me.pageShowText.Size = New System.Drawing.Size(828, 360)
+        Me.pageShowText.Size = New System.Drawing.Size(828, 342)
         Me.pageShowText.TabIndex = 5
         Me.pageShowText.Text = "Show file/text"
         Me.pageShowText.UseVisualStyleBackColor = True
@@ -746,9 +755,9 @@ Partial Class Form1
         Me.pageReadRSS.Controls.Add(Me.lblReadRSSDateMask)
         Me.pageReadRSS.Controls.Add(Me.lblReadRSSName)
         Me.pageReadRSS.Controls.Add(Me.btnReadRSSExecute)
-        Me.pageReadRSS.Location = New System.Drawing.Point(4, 22)
+        Me.pageReadRSS.Location = New System.Drawing.Point(4, 40)
         Me.pageReadRSS.Name = "pageReadRSS"
-        Me.pageReadRSS.Size = New System.Drawing.Size(828, 360)
+        Me.pageReadRSS.Size = New System.Drawing.Size(828, 342)
         Me.pageReadRSS.TabIndex = 2
         Me.pageReadRSS.Text = "Read RSS"
         Me.pageReadRSS.UseVisualStyleBackColor = True
@@ -860,10 +869,10 @@ Partial Class Form1
         Me.pageReadXML.Controls.Add(Me.udReadXMLIndex)
         Me.pageReadXML.Controls.Add(Me.lblReadXMLRegEx)
         Me.pageReadXML.Controls.Add(Me.btnReadXMLExecute)
-        Me.pageReadXML.Location = New System.Drawing.Point(4, 22)
+        Me.pageReadXML.Location = New System.Drawing.Point(4, 40)
         Me.pageReadXML.Name = "pageReadXML"
         Me.pageReadXML.Padding = New System.Windows.Forms.Padding(3)
-        Me.pageReadXML.Size = New System.Drawing.Size(828, 360)
+        Me.pageReadXML.Size = New System.Drawing.Size(828, 342)
         Me.pageReadXML.TabIndex = 1
         Me.pageReadXML.Text = "Read XML"
         Me.pageReadXML.UseVisualStyleBackColor = True
@@ -951,10 +960,10 @@ Partial Class Form1
         Me.pageReadFile.Controls.Add(Me.cboReadFileName)
         Me.pageReadFile.Controls.Add(Me.lblReadFileRegEx)
         Me.pageReadFile.Controls.Add(Me.btnReadFileExecute)
-        Me.pageReadFile.Location = New System.Drawing.Point(4, 22)
+        Me.pageReadFile.Location = New System.Drawing.Point(4, 40)
         Me.pageReadFile.Name = "pageReadFile"
         Me.pageReadFile.Padding = New System.Windows.Forms.Padding(3)
-        Me.pageReadFile.Size = New System.Drawing.Size(828, 360)
+        Me.pageReadFile.Size = New System.Drawing.Size(828, 342)
         Me.pageReadFile.TabIndex = 0
         Me.pageReadFile.Text = "Read file"
         Me.pageReadFile.UseVisualStyleBackColor = True
@@ -1009,6 +1018,7 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TabControl1.Controls.Add(Me.pageReadFile)
         Me.TabControl1.Controls.Add(Me.pageReadXML)
+        Me.TabControl1.Controls.Add(Me.pageReadJSON)
         Me.TabControl1.Controls.Add(Me.pageReadRSS)
         Me.TabControl1.Controls.Add(Me.pageReadCSV)
         Me.TabControl1.Controls.Add(Me.pageINI)
@@ -1025,6 +1035,83 @@ Partial Class Form1
         Me.TabControl1.Size = New System.Drawing.Size(836, 386)
         Me.TabControl1.TabIndex = 37
         '
+        'pageReadJSON
+        '
+        Me.pageReadJSON.Controls.Add(Me.txtReadJSONItemPath)
+        Me.pageReadJSON.Controls.Add(Me.txtReadJSONRegEx)
+        Me.pageReadJSON.Controls.Add(Me.cboReadJSONName)
+        Me.pageReadJSON.Controls.Add(Me.Label5)
+        Me.pageReadJSON.Controls.Add(Me.Label8)
+        Me.pageReadJSON.Controls.Add(Me.Label9)
+        Me.pageReadJSON.Controls.Add(Me.btnReadJSONExecute)
+        Me.pageReadJSON.Location = New System.Drawing.Point(4, 40)
+        Me.pageReadJSON.Name = "pageReadJSON"
+        Me.pageReadJSON.Padding = New System.Windows.Forms.Padding(3)
+        Me.pageReadJSON.Size = New System.Drawing.Size(828, 342)
+        Me.pageReadJSON.TabIndex = 14
+        Me.pageReadJSON.Text = "Read JSON"
+        Me.pageReadJSON.UseVisualStyleBackColor = True
+        '
+        'txtReadJSONItemPath
+        '
+        Me.txtReadJSONItemPath.Location = New System.Drawing.Point(96, 33)
+        Me.txtReadJSONItemPath.Name = "txtReadJSONItemPath"
+        Me.txtReadJSONItemPath.Size = New System.Drawing.Size(177, 20)
+        Me.txtReadJSONItemPath.TabIndex = 12
+        Me.txtReadJSONItemPath.Text = "breakfast_menu.food[0].description"
+        '
+        'txtReadJSONRegEx
+        '
+        Me.txtReadJSONRegEx.Location = New System.Drawing.Point(96, 59)
+        Me.txtReadJSONRegEx.Name = "txtReadJSONRegEx"
+        Me.txtReadJSONRegEx.Size = New System.Drawing.Size(177, 20)
+        Me.txtReadJSONRegEx.TabIndex = 8
+        '
+        'cboReadJSONName
+        '
+        Me.cboReadJSONName.FormattingEnabled = True
+        Me.cboReadJSONName.Items.AddRange(New Object() {"TestData\TestJSON.json"})
+        Me.cboReadJSONName.Location = New System.Drawing.Point(96, 6)
+        Me.cboReadJSONName.Name = "cboReadJSONName"
+        Me.cboReadJSONName.Size = New System.Drawing.Size(331, 21)
+        Me.cboReadJSONName.TabIndex = 10
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(0, 33)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(57, 13)
+        Me.Label5.TabIndex = 13
+        Me.Label5.Text = "Node path"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(0, 9)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(74, 13)
+        Me.Label8.TabIndex = 11
+        Me.Label8.Text = "File path/URL"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(0, 62)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(61, 13)
+        Me.Label9.TabIndex = 9
+        Me.Label9.Text = "Use RegEx"
+        '
+        'btnReadJSONExecute
+        '
+        Me.btnReadJSONExecute.Location = New System.Drawing.Point(302, 56)
+        Me.btnReadJSONExecute.Name = "btnReadJSONExecute"
+        Me.btnReadJSONExecute.Size = New System.Drawing.Size(125, 23)
+        Me.btnReadJSONExecute.TabIndex = 1
+        Me.btnReadJSONExecute.Text = "Execute"
+        Me.btnReadJSONExecute.UseVisualStyleBackColor = True
+        '
         'pageReadCSV
         '
         Me.pageReadCSV.Controls.Add(Me.optReadCSVByValue)
@@ -1037,10 +1124,10 @@ Partial Class Form1
         Me.pageReadCSV.Controls.Add(Me.Label6)
         Me.pageReadCSV.Controls.Add(Me.udReadCSVRow)
         Me.pageReadCSV.Controls.Add(Me.btnReadCSVExecute)
-        Me.pageReadCSV.Location = New System.Drawing.Point(4, 22)
+        Me.pageReadCSV.Location = New System.Drawing.Point(4, 40)
         Me.pageReadCSV.Name = "pageReadCSV"
         Me.pageReadCSV.Padding = New System.Windows.Forms.Padding(3)
-        Me.pageReadCSV.Size = New System.Drawing.Size(828, 360)
+        Me.pageReadCSV.Size = New System.Drawing.Size(828, 342)
         Me.pageReadCSV.TabIndex = 13
         Me.pageReadCSV.Text = "Read CSV"
         Me.pageReadCSV.UseVisualStyleBackColor = True
@@ -1147,9 +1234,9 @@ Partial Class Form1
         Me.pageINI.Controls.Add(Me.Label3)
         Me.pageINI.Controls.Add(Me.btnINIRead)
         Me.pageINI.Controls.Add(Me.dgvINI)
-        Me.pageINI.Location = New System.Drawing.Point(4, 22)
+        Me.pageINI.Location = New System.Drawing.Point(4, 40)
         Me.pageINI.Name = "pageINI"
-        Me.pageINI.Size = New System.Drawing.Size(828, 360)
+        Me.pageINI.Size = New System.Drawing.Size(828, 342)
         Me.pageINI.TabIndex = 12
         Me.pageINI.Text = "Read/Write INI"
         Me.pageINI.UseVisualStyleBackColor = True
@@ -1228,9 +1315,9 @@ Partial Class Form1
         '
         'DataGridViewTextBoxColumn2
         '
-        DataGridViewCellStyle2.Format = "0"
-        DataGridViewCellStyle2.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Format = "0"
+        DataGridViewCellStyle4.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridViewTextBoxColumn2.HeaderText = "Value"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         '
@@ -1272,6 +1359,8 @@ Partial Class Form1
         Me.pageReadFile.ResumeLayout(False)
         Me.pageReadFile.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
+        Me.pageReadJSON.ResumeLayout(False)
+        Me.pageReadJSON.PerformLayout()
         Me.pageReadCSV.ResumeLayout(False)
         Me.pageReadCSV.PerformLayout()
         CType(Me.udReadCSVRow, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1390,4 +1479,12 @@ Partial Class Form1
     Friend WithEvents optReadCSVByValue As RadioButton
     Friend WithEvents txtReadCSVSearch As TextBox
     Friend WithEvents optReadCSVByIndex As RadioButton
+    Friend WithEvents pageReadJSON As TabPage
+    Friend WithEvents txtReadJSONItemPath As TextBox
+    Friend WithEvents txtReadJSONRegEx As TextBox
+    Friend WithEvents cboReadJSONName As ComboBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents btnReadJSONExecute As Button
 End Class

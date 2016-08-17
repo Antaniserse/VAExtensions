@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-16"?>
 <Profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Id>7a81a43d-5e83-4dea-8d36-011cd346d68e</Id>
+  <Id>08bc0b41-9c1e-482b-964e-a191eb1cc4d9</Id>
   <Name>VAExtensions Text &amp; Misc Samples</Name>
   <Commands>
     <Command>
-      <Id>41ab035f-5862-4153-b2bc-5b1e1a649630</Id>
+      <Id>4e729fd5-b735-4a00-8918-9beb49ef82d4</Id>
       <CommandString>read console</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -14,13 +14,13 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>9c8fccfa-af5d-4715-bc83-0f79eb6376d0</Id>
+          <Id>2ea98e88-20c5-4e45-8df5-e37abe84e19f</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
           <Context>VxFile</Context>
-          <Context2>TestData\TestConsole.exe</Context2>
+          <Context2 xml:space="preserve">TestData\TestConsole.exe</Context2>
           <Context3 />
           <Context4 />
           <X>0</X>
@@ -51,13 +51,13 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>f1d789d4-9617-4a7d-a4e9-d6b48c8e4db2</Id>
+          <Id>a68fd6f8-dcc8-41f1-997b-c63f157ab32e</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
           <Context>VxArgs</Context>
-          <Context2>hello</Context2>
+          <Context2 xml:space="preserve">hello</Context2>
           <Context3 />
           <X>0</X>
           <Y>0</Y>
@@ -85,7 +85,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>0637475d-f724-427c-ab86-0ff80c8bca5b</Id>
+          <Id>5f159758-3cf7-42f7-a6fb-d35c173ea64e</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -123,7 +123,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>0c95780b-0d9c-446b-a998-829be9cd9540</Id>
+          <Id>10781d10-76b8-4114-a91d-8502bf169520</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -156,7 +156,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>75fe35fc-a5de-4fbe-9bf5-d08011445f99</Id>
+          <Id>ed8a9077-e2c4-4377-9ed1-25aa7b715040</Id>
           <ActionType>Say</ActionType>
           <Duration>1</Duration>
           <Delay>0</Delay>
@@ -188,7 +188,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>2ddeae3b-03d0-4fe6-9529-604a3d570b14</Id>
+          <Id>db28e87e-9791-466e-9981-09ec310ee85f</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -219,7 +219,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>033521d0-b1b4-4a09-9b3c-d32dd991929f</Id>
+          <Id>2c44a816-d805-468d-907f-627f8dd9ff1b</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -252,7 +252,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>e2b38cf1-0f86-4d1d-9a5e-95ea5379def3</Id>
+          <Id>9ef23103-be51-4580-b147-0e637d4d2f76</Id>
           <ActionType>WriteToLog</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -284,7 +284,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>60d8c7c1-f197-4256-bfdc-69edbc757daf</Id>
+          <Id>2f74cd1a-8289-4059-9ec5-7c2e9d3c5d46</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -312,7 +312,6 @@
       <Async>true</Async>
       <Enabled>true</Enabled>
       <Description>Execute a console application and capture it's output</Description>
-      <Category>Misc</Category>
       <UseShortcut>true</UseShortcut>
       <keyValue>54</keyValue>
       <keyShift>160</keyShift>
@@ -363,9 +362,374 @@
       <ExecFromWildcard>false</ExecFromWildcard>
       <IsSubCommand>false</IsSubCommand>
       <IsOverride>false</IsOverride>
+      <BaseId>00000000-0000-0000-0000-000000000000</BaseId>
     </Command>
     <Command>
-      <Id>7cc5addb-50f9-4a22-9a71-141be0483acc</Id>
+      <Id>fd75ec7f-1928-4bf7-85e8-04b347985c74</Id>
+      <CommandString>read json</CommandString>
+      <ActionSequence>
+        <CommandAction>
+          <PairingSet>false</PairingSet>
+          <PairingSetElse>false</PairingSetElse>
+          <Ordinal>0</Ordinal>
+          <ConditionMet xsi:nil="true" />
+          <IndentLevel>0</IndentLevel>
+          <ConditionSkip>false</ConditionSkip>
+          <Id>b3efadf3-8fc7-4b3f-8819-f557899e8292</Id>
+          <ActionType>TextSet</ActionType>
+          <Duration>0</Duration>
+          <Delay>0</Delay>
+          <KeyCodes />
+          <Context>VxFile</Context>
+          <Context2 xml:space="preserve">TestData\testJSON.json</Context2>
+          <Context3 />
+          <Context4 />
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+          <InputMode>0</InputMode>
+          <ConditionSetName />
+          <ConditionSetCondition />
+          <ConditionPairing>0</ConditionPairing>
+          <ConditionGroup>0</ConditionGroup>
+          <ConditionStartOperator>0</ConditionStartOperator>
+          <ConditionStartValue>0</ConditionStartValue>
+          <ConditionStartValueType>0</ConditionStartValueType>
+          <ConditionStartType>0</ConditionStartType>
+          <DecimalContext1>0</DecimalContext1>
+          <DecimalContext2>0</DecimalContext2>
+          <DateContext1>0001-01-01T00:00:00</DateContext1>
+          <DateContext2>0001-01-01T00:00:00</DateContext2>
+          <Disabled>false</Disabled>
+          <RandomSounds />
+          <IsSuffixAction>false</IsSuffixAction>
+          <DecimalTransient1>0</DecimalTransient1>
+        </CommandAction>
+        <CommandAction>
+          <PairingSet>false</PairingSet>
+          <PairingSetElse>false</PairingSetElse>
+          <Ordinal>0</Ordinal>
+          <ConditionMet xsi:nil="true" />
+          <IndentLevel>0</IndentLevel>
+          <ConditionSkip>false</ConditionSkip>
+          <Id>5a8c9099-5815-43b2-8b4a-33287ede23d1</Id>
+          <ActionType>TextSet</ActionType>
+          <Duration>0</Duration>
+          <Delay>0</Delay>
+          <KeyCodes />
+          <Context>VxArgs</Context>
+          <Context2 xml:space="preserve">breakfast_menu.food[0].description</Context2>
+          <Context3 />
+          <Context4 />
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+          <InputMode>0</InputMode>
+          <ConditionSetName />
+          <ConditionSetCondition />
+          <ConditionPairing>0</ConditionPairing>
+          <ConditionGroup>0</ConditionGroup>
+          <ConditionStartOperator>0</ConditionStartOperator>
+          <ConditionStartValue>0</ConditionStartValue>
+          <ConditionStartValueType>0</ConditionStartValueType>
+          <ConditionStartType>0</ConditionStartType>
+          <DecimalContext1>0</DecimalContext1>
+          <DecimalContext2>0</DecimalContext2>
+          <DateContext1>0001-01-01T00:00:00</DateContext1>
+          <DateContext2>0001-01-01T00:00:00</DateContext2>
+          <Disabled>false</Disabled>
+          <RandomSounds />
+          <IsSuffixAction>false</IsSuffixAction>
+          <DecimalTransient1>0</DecimalTransient1>
+        </CommandAction>
+        <CommandAction>
+          <PairingSet>false</PairingSet>
+          <PairingSetElse>false</PairingSetElse>
+          <Ordinal>0</Ordinal>
+          <ConditionMet xsi:nil="true" />
+          <IndentLevel>0</IndentLevel>
+          <ConditionSkip>false</ConditionSkip>
+          <Id>016a56f7-cb28-4ac0-8528-9afd5e687ca5</Id>
+          <ActionType>ExternalInvoke</ActionType>
+          <Duration>0</Duration>
+          <Delay>0</Delay>
+          <KeyCodes />
+          <Context>9571b674-0ce8-4a04-90d3-83519cb66968</Context>
+          <Context2 xml:space="preserve">VxIndex</Context2>
+          <Context3>VxFile;VxArgs</Context3>
+          <Context4>read_xml</Context4>
+          <X>1</X>
+          <Y>0</Y>
+          <Z>0</Z>
+          <InputMode>0</InputMode>
+          <ConditionSetName />
+          <ConditionSetCondition />
+          <ConditionPairing>0</ConditionPairing>
+          <ConditionGroup>0</ConditionGroup>
+          <ConditionStartNameFrom />
+          <ConditionStartOperator>0</ConditionStartOperator>
+          <ConditionStartValue>0</ConditionStartValue>
+          <ConditionStartValueType>0</ConditionStartValueType>
+          <ConditionStartType>0</ConditionStartType>
+          <DecimalContext1>0</DecimalContext1>
+          <DecimalContext2>0</DecimalContext2>
+          <DateContext1>0001-01-01T00:00:00</DateContext1>
+          <DateContext2>0001-01-01T00:00:00</DateContext2>
+          <Disabled>false</Disabled>
+          <RandomSounds />
+          <IsSuffixAction>false</IsSuffixAction>
+          <DecimalTransient1>0</DecimalTransient1>
+        </CommandAction>
+        <CommandAction>
+          <PairingSet>false</PairingSet>
+          <PairingSetElse>false</PairingSetElse>
+          <Ordinal>0</Ordinal>
+          <ConditionMet xsi:nil="true" />
+          <IndentLevel>0</IndentLevel>
+          <ConditionSkip>false</ConditionSkip>
+          <Id>dba2e69e-757c-43cf-89d2-c277ba61f495</Id>
+          <ActionType>ConditionStart</ActionType>
+          <Duration>0</Duration>
+          <Delay>0</Delay>
+          <KeyCodes />
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+          <InputMode>0</InputMode>
+          <ConditionPairing>5</ConditionPairing>
+          <ConditionGroup>1</ConditionGroup>
+          <ConditionStartNameFrom>VxError</ConditionStartNameFrom>
+          <ConditionStartOperator>0</ConditionStartOperator>
+          <ConditionStartValue>0</ConditionStartValue>
+          <ConditionStartValueType>0</ConditionStartValueType>
+          <ConditionStartCompareToCondtion />
+          <ConditionStartType>0</ConditionStartType>
+          <DecimalContext1>0</DecimalContext1>
+          <DecimalContext2>0</DecimalContext2>
+          <DateContext1>0001-01-01T00:00:00</DateContext1>
+          <DateContext2>0001-01-01T00:00:00</DateContext2>
+          <Disabled>false</Disabled>
+          <RandomSounds />
+          <IsSuffixAction>false</IsSuffixAction>
+          <DecimalTransient1>0</DecimalTransient1>
+        </CommandAction>
+        <CommandAction>
+          <PairingSet>false</PairingSet>
+          <PairingSetElse>false</PairingSetElse>
+          <Ordinal>0</Ordinal>
+          <ConditionMet xsi:nil="true" />
+          <IndentLevel>0</IndentLevel>
+          <ConditionSkip>false</ConditionSkip>
+          <Id>93e85fc6-8d4d-4387-9b44-9615904913cb</Id>
+          <ActionType>Say</ActionType>
+          <Duration>1</Duration>
+          <Delay>0</Delay>
+          <KeyCodes />
+          <Context>{TXT:VxResult}</Context>
+          <X>100</X>
+          <Y>0</Y>
+          <Z>0</Z>
+          <InputMode>0</InputMode>
+          <ConditionPairing>0</ConditionPairing>
+          <ConditionGroup>0</ConditionGroup>
+          <ConditionStartOperator>0</ConditionStartOperator>
+          <ConditionStartValue>0</ConditionStartValue>
+          <ConditionStartValueType>0</ConditionStartValueType>
+          <ConditionStartType>0</ConditionStartType>
+          <DecimalContext1>0</DecimalContext1>
+          <DecimalContext2>0</DecimalContext2>
+          <DateContext1>0001-01-01T00:00:00</DateContext1>
+          <DateContext2>0001-01-01T00:00:00</DateContext2>
+          <Disabled>false</Disabled>
+          <RandomSounds />
+          <IsSuffixAction>false</IsSuffixAction>
+          <DecimalTransient1>0</DecimalTransient1>
+        </CommandAction>
+        <CommandAction>
+          <PairingSet>false</PairingSet>
+          <PairingSetElse>false</PairingSetElse>
+          <Ordinal>0</Ordinal>
+          <ConditionMet xsi:nil="true" />
+          <IndentLevel>0</IndentLevel>
+          <ConditionSkip>false</ConditionSkip>
+          <Id>20dcc467-cf98-47ec-9aa1-bb5af7ef8ddb</Id>
+          <ActionType>ConditionEnd</ActionType>
+          <Duration>0</Duration>
+          <Delay>0</Delay>
+          <KeyCodes />
+          <X>1</X>
+          <Y>0</Y>
+          <Z>0</Z>
+          <InputMode>0</InputMode>
+          <ConditionPairing>3</ConditionPairing>
+          <ConditionGroup>1</ConditionGroup>
+          <ConditionStartOperator>0</ConditionStartOperator>
+          <ConditionStartValue>0</ConditionStartValue>
+          <ConditionStartValueType>0</ConditionStartValueType>
+          <ConditionStartType>0</ConditionStartType>
+          <DecimalContext1>0</DecimalContext1>
+          <DecimalContext2>0</DecimalContext2>
+          <DateContext1>0001-01-01T00:00:00</DateContext1>
+          <DateContext2>0001-01-01T00:00:00</DateContext2>
+          <Disabled>false</Disabled>
+          <RandomSounds />
+          <IsSuffixAction>false</IsSuffixAction>
+          <DecimalTransient1>0</DecimalTransient1>
+        </CommandAction>
+        <CommandAction>
+          <PairingSet>false</PairingSet>
+          <PairingSetElse>false</PairingSetElse>
+          <Ordinal>0</Ordinal>
+          <ConditionMet xsi:nil="true" />
+          <IndentLevel>0</IndentLevel>
+          <ConditionSkip>false</ConditionSkip>
+          <Id>97a382c0-9616-4607-9bbe-a482344795f9</Id>
+          <ActionType>ConditionStart</ActionType>
+          <Duration>0</Duration>
+          <Delay>0</Delay>
+          <KeyCodes />
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+          <InputMode>0</InputMode>
+          <ConditionPairing>8</ConditionPairing>
+          <ConditionGroup>2</ConditionGroup>
+          <ConditionStartNameFrom>VxError</ConditionStartNameFrom>
+          <ConditionStartOperator>1</ConditionStartOperator>
+          <ConditionStartValue>0</ConditionStartValue>
+          <ConditionStartValueType>0</ConditionStartValueType>
+          <ConditionStartCompareToCondtion />
+          <ConditionStartType>0</ConditionStartType>
+          <DecimalContext1>0</DecimalContext1>
+          <DecimalContext2>0</DecimalContext2>
+          <DateContext1>0001-01-01T00:00:00</DateContext1>
+          <DateContext2>0001-01-01T00:00:00</DateContext2>
+          <Disabled>false</Disabled>
+          <RandomSounds />
+          <IsSuffixAction>false</IsSuffixAction>
+          <DecimalTransient1>0</DecimalTransient1>
+        </CommandAction>
+        <CommandAction>
+          <PairingSet>false</PairingSet>
+          <PairingSetElse>false</PairingSetElse>
+          <Ordinal>0</Ordinal>
+          <ConditionMet xsi:nil="true" />
+          <IndentLevel>0</IndentLevel>
+          <ConditionSkip>false</ConditionSkip>
+          <Id>913599f7-4bd2-4ece-a325-1b3bf2bc736d</Id>
+          <ActionType>WriteToLog</ActionType>
+          <Duration>0</Duration>
+          <Delay>0</Delay>
+          <KeyCodes />
+          <Context>{TXT:VxResult}</Context>
+          <X>3</X>
+          <Y>0</Y>
+          <Z>0</Z>
+          <InputMode>0</InputMode>
+          <ConditionPairing>0</ConditionPairing>
+          <ConditionGroup>0</ConditionGroup>
+          <ConditionStartOperator>0</ConditionStartOperator>
+          <ConditionStartValue>0</ConditionStartValue>
+          <ConditionStartValueType>0</ConditionStartValueType>
+          <ConditionStartType>0</ConditionStartType>
+          <DecimalContext1>0</DecimalContext1>
+          <DecimalContext2>0</DecimalContext2>
+          <DateContext1>0001-01-01T00:00:00</DateContext1>
+          <DateContext2>0001-01-01T00:00:00</DateContext2>
+          <Disabled>false</Disabled>
+          <RandomSounds />
+          <IsSuffixAction>false</IsSuffixAction>
+          <DecimalTransient1>0</DecimalTransient1>
+        </CommandAction>
+        <CommandAction>
+          <PairingSet>false</PairingSet>
+          <PairingSetElse>false</PairingSetElse>
+          <Ordinal>0</Ordinal>
+          <ConditionMet xsi:nil="true" />
+          <IndentLevel>0</IndentLevel>
+          <ConditionSkip>false</ConditionSkip>
+          <Id>1f89ea68-6b66-4a5c-b421-bc697731ea7d</Id>
+          <ActionType>ConditionEnd</ActionType>
+          <Duration>0</Duration>
+          <Delay>0</Delay>
+          <KeyCodes />
+          <X>1</X>
+          <Y>0</Y>
+          <Z>0</Z>
+          <InputMode>0</InputMode>
+          <ConditionPairing>6</ConditionPairing>
+          <ConditionGroup>2</ConditionGroup>
+          <ConditionStartOperator>0</ConditionStartOperator>
+          <ConditionStartValue>0</ConditionStartValue>
+          <ConditionStartValueType>0</ConditionStartValueType>
+          <ConditionStartType>0</ConditionStartType>
+          <DecimalContext1>0</DecimalContext1>
+          <DecimalContext2>0</DecimalContext2>
+          <DateContext1>0001-01-01T00:00:00</DateContext1>
+          <DateContext2>0001-01-01T00:00:00</DateContext2>
+          <Disabled>false</Disabled>
+          <RandomSounds />
+          <IsSuffixAction>false</IsSuffixAction>
+          <DecimalTransient1>0</DecimalTransient1>
+        </CommandAction>
+      </ActionSequence>
+      <Async>true</Async>
+      <Enabled>true</Enabled>
+      <Description>Read a generic JSON file</Description>
+      <UseShortcut>true</UseShortcut>
+      <keyValue>55</keyValue>
+      <keyShift>160</keyShift>
+      <keyAlt>0</keyAlt>
+      <keyCtrl>0</keyCtrl>
+      <keyWin>0</keyWin>
+      <keyPassthru>true</keyPassthru>
+      <UseSpokenPhrase>true</UseSpokenPhrase>
+      <onlyKeyUp>false</onlyKeyUp>
+      <RepeatNumber>2</RepeatNumber>
+      <RepeatType>0</RepeatType>
+      <CommandType>0</CommandType>
+      <SourceProfile>00000000-0000-0000-0000-000000000000</SourceProfile>
+      <UseConfidence>false</UseConfidence>
+      <minimumConfidenceLevel>0</minimumConfidenceLevel>
+      <UseJoystick>false</UseJoystick>
+      <joystickNumber>0</joystickNumber>
+      <joystickButton>0</joystickButton>
+      <joystickNumber2>0</joystickNumber2>
+      <joystickButton2>0</joystickButton2>
+      <joystickUp>false</joystickUp>
+      <KeepRepeating>false</KeepRepeating>
+      <UseProcessOverride>false</UseProcessOverride>
+      <ProcessOverrideActiveWindow>false</ProcessOverrideActiveWindow>
+      <LostFocusStop>false</LostFocusStop>
+      <PauseLostFocus>false</PauseLostFocus>
+      <LostFocusBackCompat>true</LostFocusBackCompat>
+      <UseMouse>false</UseMouse>
+      <Mouse1>false</Mouse1>
+      <Mouse2>false</Mouse2>
+      <Mouse3>false</Mouse3>
+      <Mouse4>false</Mouse4>
+      <Mouse5>false</Mouse5>
+      <MouseUpOnly>false</MouseUpOnly>
+      <MousePassThru>false</MousePassThru>
+      <joystickExclusive>false</joystickExclusive>
+      <lastEditedAction>5ac55e17-ee4e-444f-9842-988f3a0f9d2c</lastEditedAction>
+      <Referrer xsi:nil="true" />
+      <ExecType>0</ExecType>
+      <Confidence>0</Confidence>
+      <PrefixActionCount>0</PrefixActionCount>
+      <UseProfileProcessOverride>false</UseProfileProcessOverride>
+      <ProfileProcessOverrideActiveWindow>false</ProfileProcessOverrideActiveWindow>
+      <TargetProcessSet>false</TargetProcessSet>
+      <TargetProcessType>0</TargetProcessType>
+      <TargetProcessLevel>0</TargetProcessLevel>
+      <CompareType>0</CompareType>
+      <ExecFromWildcard>false</ExecFromWildcard>
+      <IsSubCommand>false</IsSubCommand>
+      <IsOverride>false</IsOverride>
+      <BaseId>00000000-0000-0000-0000-000000000000</BaseId>
+    </Command>
+    <Command>
+      <Id>6f3c8fbf-2e56-4104-b96a-8b4949845410</Id>
       <CommandString>read text</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -375,13 +739,13 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>b7cee88a-90ee-49ee-9e8e-bc2bf24af464</Id>
+          <Id>356f4638-abc1-4d70-a7da-f1b6ec9b8a9a</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
           <Context>VxFile</Context>
-          <Context2>TestData\test.txt</Context2>
+          <Context2 xml:space="preserve">TestData\test.txt</Context2>
           <Context3 />
           <X>0</X>
           <Y>0</Y>
@@ -409,7 +773,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>859b4f5e-e1e5-4523-ae88-23a6c229e7be</Id>
+          <Id>c8341e57-02b1-4462-81fa-96b5f97286d7</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -447,7 +811,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>045fdd31-7dcd-4fef-9339-c412c6d89eae</Id>
+          <Id>16769c0e-0059-4f07-bc03-d0832d35532d</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -480,7 +844,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>0b38d221-a083-4615-92fb-9537a6d04157</Id>
+          <Id>3e877305-6a6b-442d-b279-b245dc8f185d</Id>
           <ActionType>Say</ActionType>
           <Duration>1</Duration>
           <Delay>0</Delay>
@@ -512,7 +876,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>ad631899-e1dc-4476-8a66-03a5f2aeff2f</Id>
+          <Id>4c5fdfeb-b865-4796-a217-6297df135fdd</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -543,7 +907,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>86878228-3a5b-4c2c-8d35-b222ceab4c0f</Id>
+          <Id>a423ee7a-dda9-476c-9234-b40892099298</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -576,7 +940,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>4ff9a8f5-ce36-49c8-a7e1-5b2f697fcce3</Id>
+          <Id>b2ff8288-1ef4-4934-ba7a-54eac6fc0b49</Id>
           <ActionType>WriteToLog</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -608,7 +972,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>7ea6da96-bc5e-406e-b6ab-17328e577b50</Id>
+          <Id>fb49b243-800e-41fa-8c49-00013d9d5151</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -636,7 +1000,6 @@
       <Async>true</Async>
       <Enabled>true</Enabled>
       <Description>Read a text file from the local drive</Description>
-      <Category>Text files</Category>
       <UseShortcut>true</UseShortcut>
       <keyValue>49</keyValue>
       <keyShift>160</keyShift>
@@ -687,9 +1050,10 @@
       <ExecFromWildcard>false</ExecFromWildcard>
       <IsSubCommand>false</IsSubCommand>
       <IsOverride>false</IsOverride>
+      <BaseId>00000000-0000-0000-0000-000000000000</BaseId>
     </Command>
     <Command>
-      <Id>c4f0dec5-3ed5-4df6-9b29-d1fe41765ce1</Id>
+      <Id>678f957d-b694-473d-ab4d-2aa8ce8e43e4</Id>
       <CommandString>read text regular expression</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -699,13 +1063,13 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>3e910c3d-ffd9-471b-a195-bf3a95c3f16c</Id>
+          <Id>922c0428-da44-4228-a201-8775c8292f30</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
           <Context>VxFile</Context>
-          <Context2>TestData\testLong.txt</Context2>
+          <Context2 xml:space="preserve">TestData\testLong.txt</Context2>
           <Context3 />
           <Context4 />
           <X>0</X>
@@ -736,13 +1100,13 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>c4008f03-8e7e-4f92-be81-422b80a466db</Id>
+          <Id>dfc65d14-aadf-4988-be1a-03a96f194ef8</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
           <Context>VxRegEx</Context>
-          <Context2>this text here: "(.*)"</Context2>
+          <Context2 xml:space="preserve">this text here: "(.*)"</Context2>
           <Context3 />
           <X>0</X>
           <Y>0</Y>
@@ -770,7 +1134,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>f05364f8-1660-4d6b-8ed9-c23f45a49678</Id>
+          <Id>44511cc6-5c61-48bb-a703-84f9b875714f</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -808,7 +1172,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>dbd5f0b3-bf15-4383-9d88-c19dcafe4396</Id>
+          <Id>e18c74f1-73bd-457f-827f-f4b09c715121</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -842,7 +1206,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>6db756df-c852-44af-971e-9792df3d9924</Id>
+          <Id>606ce11d-d86e-416d-98f5-68f30414a449</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -875,7 +1239,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>6c6125bc-c536-420b-9a45-d25611f795ab</Id>
+          <Id>e198cbc2-8d12-460c-870a-82d96f6b9113</Id>
           <ActionType>Say</ActionType>
           <Duration>1</Duration>
           <Delay>0</Delay>
@@ -907,7 +1271,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>35b4d950-96f8-4422-a75a-bc4a48106649</Id>
+          <Id>513ca9b8-70b9-4b6b-bd9d-2889f024ebd9</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -938,7 +1302,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>bbcbacfd-8333-42f2-a552-f5696847d5a5</Id>
+          <Id>5764d999-ce22-494a-a53a-b85ca89c7d04</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -971,7 +1335,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>fa8e48f0-d228-470d-8e16-3d704b4006c2</Id>
+          <Id>27b196f9-bc01-4fab-b004-6596c55d8eef</Id>
           <ActionType>WriteToLog</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1003,7 +1367,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>2759ab31-d523-40a8-be71-3ecdb0cac4ed</Id>
+          <Id>52be9323-0ecd-4433-bace-6224874db52e</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1031,7 +1395,6 @@
       <Async>true</Async>
       <Enabled>true</Enabled>
       <Description>Read a portion of text file using a Regular Expression to find a specific part</Description>
-      <Category>Text files</Category>
       <UseShortcut>true</UseShortcut>
       <keyValue>51</keyValue>
       <keyShift>160</keyShift>
@@ -1082,9 +1445,10 @@
       <ExecFromWildcard>false</ExecFromWildcard>
       <IsSubCommand>false</IsSubCommand>
       <IsOverride>false</IsOverride>
+      <BaseId>00000000-0000-0000-0000-000000000000</BaseId>
     </Command>
     <Command>
-      <Id>9170f3d3-204f-4194-bc36-e2da34f57e30</Id>
+      <Id>4e0cfce1-1c03-4be7-9b0a-a6fd5d736408</Id>
       <CommandString>read text web</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -1094,13 +1458,13 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>7dce9fb5-1be1-4862-9700-8994d8687bc4</Id>
+          <Id>3e181543-4e84-4578-9342-0c2a05058954</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
           <Context>VxFile</Context>
-          <Context2>https://drive.google.com/uc?export=download&amp;id=0B1i7jJTId0GVVzRyZ0N5OEQ5eGM</Context2>
+          <Context2 xml:space="preserve">https://drive.google.com/uc?export=download&amp;id=0B1i7jJTId0GVVzRyZ0N5OEQ5eGM</Context2>
           <Context3 />
           <Context4 />
           <X>0</X>
@@ -1131,7 +1495,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>70443bba-9911-494b-bf7e-552fa6993043</Id>
+          <Id>47948f1f-84fe-4dda-b864-8c0beb32f318</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1169,7 +1533,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>52ff4921-ee1a-4088-b434-fb9603dfc607</Id>
+          <Id>c6a1dde0-d431-4692-b67c-4aced052f01d</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1202,7 +1566,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>3218d620-fac4-41aa-aec6-41a6401606f0</Id>
+          <Id>e0c96d89-0cf8-4e31-88b5-746babc25e03</Id>
           <ActionType>Say</ActionType>
           <Duration>1</Duration>
           <Delay>0</Delay>
@@ -1234,7 +1598,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>746890ef-5a33-4cb1-96c6-56fdf4d33037</Id>
+          <Id>4c61b764-8422-4108-902f-101f3783ca46</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1265,7 +1629,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>51c81c7c-0e7d-4083-aa4b-7f6ab4664acd</Id>
+          <Id>ef745713-ab1a-4edc-a85a-b32efcb01c04</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1298,7 +1662,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>134821b1-eb7c-4f4a-9576-ab66dfda8ed6</Id>
+          <Id>b8562f61-32d8-4456-bfed-3d5564dd1031</Id>
           <ActionType>WriteToLog</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1330,7 +1694,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>04edfa98-cebf-4f86-be82-b9375072665a</Id>
+          <Id>18dbf8c4-57c2-44d3-8d94-4d1cc38838d0</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1358,7 +1722,6 @@
       <Async>true</Async>
       <Enabled>true</Enabled>
       <Description>Read a text file from an URL</Description>
-      <Category>Text files</Category>
       <UseShortcut>true</UseShortcut>
       <keyValue>50</keyValue>
       <keyShift>160</keyShift>
@@ -1409,9 +1772,10 @@
       <ExecFromWildcard>false</ExecFromWildcard>
       <IsSubCommand>false</IsSubCommand>
       <IsOverride>false</IsOverride>
+      <BaseId>00000000-0000-0000-0000-000000000000</BaseId>
     </Command>
     <Command>
-      <Id>30f7e432-3611-4df0-81ef-cf409e6e8460</Id>
+      <Id>0a1342c7-a052-40ea-836c-e85dfe022781</Id>
       <CommandString>read xml</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -1421,13 +1785,13 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>aa814ad3-f214-4a2c-9e0d-59c9ec1f86a4</Id>
+          <Id>e4eb4236-2b46-49da-b9dc-435df600e385</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
           <Context>VxFile</Context>
-          <Context2>TestData\testXML.xml</Context2>
+          <Context2 xml:space="preserve">TestData\testXML.xml</Context2>
           <Context3 />
           <Context4 />
           <X>0</X>
@@ -1458,13 +1822,13 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>9087dc84-5ddf-49f9-934f-85fe99200f93</Id>
+          <Id>091418cb-d690-4a65-959d-df63c6de347a</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
           <Context>VxArgs</Context>
-          <Context2>breakfast_menu\food\description</Context2>
+          <Context2 xml:space="preserve">breakfast_menu\food\description</Context2>
           <Context3 />
           <X>0</X>
           <Y>0</Y>
@@ -1492,7 +1856,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>429b0020-e780-4499-9c7f-184901383686</Id>
+          <Id>b076270c-85fb-4449-9011-3f9b51eeea79</Id>
           <ActionType>ConditionSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1501,7 +1865,7 @@
           <Y>0</Y>
           <Z>0</Z>
           <InputMode>0</InputMode>
-          <ConditionSetName>VxIndex</ConditionSetName>
+          <ConditionSetName xml:space="preserve">VxIndex</ConditionSetName>
           <ConditionPairing>0</ConditionPairing>
           <ConditionGroup>0</ConditionGroup>
           <ConditionStartOperator>0</ConditionStartOperator>
@@ -1524,13 +1888,13 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>79c5780b-a507-4f71-ae0a-15faa8bfa74b</Id>
+          <Id>4369811f-0ab0-4b74-8059-f273469875b8</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
           <Context>9571b674-0ce8-4a04-90d3-83519cb66968</Context>
-          <Context2>VxIndex</Context2>
+          <Context2 xml:space="preserve">VxIndex</Context2>
           <Context3>VxFile;VxArgs</Context3>
           <Context4>read_xml</Context4>
           <X>1</X>
@@ -1562,7 +1926,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>fbf0a6bd-ea79-4a60-bdbc-abb85e0c37b3</Id>
+          <Id>b8b18a77-8d83-4eda-8f18-f50652a5b4a1</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1595,7 +1959,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>52c78781-9c2a-4937-b2d2-6b092b17c9ee</Id>
+          <Id>02c90d06-4293-48ab-a540-c538be39de89</Id>
           <ActionType>Say</ActionType>
           <Duration>1</Duration>
           <Delay>0</Delay>
@@ -1627,7 +1991,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>f7d6dc29-9bdf-41dc-86ae-22a4a2a738f2</Id>
+          <Id>23da2fcd-900b-4bdc-bf7a-2d49c581b099</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1658,7 +2022,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>3b9022c1-be99-4903-84aa-cadcbe82cf96</Id>
+          <Id>1e1301e3-29b7-4d95-bdf5-697e12c615cd</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1691,7 +2055,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>989c60be-96be-46d0-8919-d46d16b3110a</Id>
+          <Id>7bfd6399-08ca-4a7a-9b67-521fe18a944c</Id>
           <ActionType>WriteToLog</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1723,7 +2087,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>5e6873fc-4a68-42bf-9e38-451eefd9c0e2</Id>
+          <Id>368da1e6-842e-4dc9-86f0-cbf54fb2852c</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1751,7 +2115,6 @@
       <Async>true</Async>
       <Enabled>true</Enabled>
       <Description>Read a generic XML file, first item</Description>
-      <Category>XML Files</Category>
       <UseShortcut>true</UseShortcut>
       <keyValue>53</keyValue>
       <keyShift>160</keyShift>
@@ -1802,9 +2165,10 @@
       <ExecFromWildcard>false</ExecFromWildcard>
       <IsSubCommand>false</IsSubCommand>
       <IsOverride>false</IsOverride>
+      <BaseId>00000000-0000-0000-0000-000000000000</BaseId>
     </Command>
     <Command>
-      <Id>dbd75f12-115f-4145-936f-c9eb3ac34806</Id>
+      <Id>a1e911e4-a9f7-4e98-9990-e482b3ac4c08</Id>
       <CommandString>show text</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -1814,13 +2178,13 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>dd5aeb44-fcca-405c-8080-689a645cec5f</Id>
+          <Id>7538cd44-71fa-4309-8396-b911412e2ac5</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
           <Context>VxFile</Context>
-          <Context2>TestData\testlong.txt</Context2>
+          <Context2 xml:space="preserve">TestData\testlong.txt</Context2>
           <Context3 />
           <Context4 />
           <X>0</X>
@@ -1851,7 +2215,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>c128aba1-625e-443b-9c23-1af580d7ab73</Id>
+          <Id>c732692e-130b-4b5a-b221-e99b06e99412</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1889,7 +2253,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>94b6777e-d51e-49d2-b598-b9373cc80b42</Id>
+          <Id>4306aa5d-16b8-4d06-8d9d-779413b7743a</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1922,7 +2286,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>125245f4-0703-4b71-85a4-abed9b6f1c6b</Id>
+          <Id>470b8a6e-7e27-4acd-b9cc-f7e39d84404c</Id>
           <ActionType>WriteToLog</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1954,7 +2318,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>cad0aa23-9e0b-472f-854c-885552bf14ad</Id>
+          <Id>ce863381-5773-46d7-8ee5-fcdc5d9fc958</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1982,7 +2346,6 @@
       <Async>true</Async>
       <Enabled>true</Enabled>
       <Description>Shows a text file in a dialog</Description>
-      <Category>Text files</Category>
       <UseShortcut>true</UseShortcut>
       <keyValue>52</keyValue>
       <keyShift>160</keyShift>
@@ -2033,6 +2396,7 @@
       <ExecFromWildcard>false</ExecFromWildcard>
       <IsSubCommand>false</IsSubCommand>
       <IsOverride>false</IsOverride>
+      <BaseId>00000000-0000-0000-0000-000000000000</BaseId>
     </Command>
   </Commands>
   <OverrideGlobal>false</OverrideGlobal>
@@ -2063,7 +2427,7 @@
   <GlobalJoystickButton2>0</GlobalJoystickButton2>
   <GlobalJoystickNumber2>0</GlobalJoystickNumber2>
   <ReferencedProfile xsi:nil="true" />
-  <ExportVAVersion>1.5.8.18</ExportVAVersion>
+  <ExportVAVersion>1.5.12</ExportVAVersion>
   <ExportOSVersionMajor>6</ExportOSVersionMajor>
   <ExportOSVersionMinor>2</ExportOSVersionMinor>
   <OverrideConfidence>false</OverrideConfidence>
@@ -2079,5 +2443,5 @@
   <EnableProfileSwitch>false</EnableProfileSwitch>
   <CategoryGroups />
   <GroupCategory>false</GroupCategory>
-  <LastEditedCommand xsi:nil="true" />
+  <LastEditedCommand>a4f74485-4da8-40ce-82b3-7654b5871337</LastEditedCommand>
 </Profile>
