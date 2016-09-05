@@ -20,7 +20,7 @@ Public Class ContextHandlerReadJSON
         Dim newFile As DownloadedFile = Nothing
         Dim regexPattern As String
         Dim elementPath As String
-        Dim i As Integer, elementCount As Short
+        Dim elementCount As Short
 
         If Not m_TextValues.ContainsKey(App.KEY_FILE) Then
             m_smallIntValues(App.KEY_ERROR) = ERR_CONTEXT
@@ -40,14 +40,14 @@ Public Class ContextHandlerReadJSON
         End If
 
         Try
-            newFile = App.DownloadTextFile(m_TextValues(App.KEY_FILE))
+            newFile = App.DownloadFile(m_TextValues(App.KEY_FILE))
             If newFile.LocalPath.Length = 0 Then
                 m_smallIntValues(App.KEY_ERROR) = ERR_IO
                 m_TextValues(App.KEY_RESULT) = String.Format("Error retrieving File '{0}'.", m_TextValues(App.KEY_FILE))
                 Return False
             End If
 
-            Dim jobj As Json.Linq.JObject = Json.Linq.JObject.Parse(IO.File.ReadAllText(newFile.LocalPath))
+            Dim jobj As Json.Linq.JObject = Json.Linq.JObject.Parse(App.ReadTextFile(newFile.LocalPath))
 
             Dim token As Json.Linq.JToken = jobj.SelectToken(elementPath)
             If token IsNot Nothing Then

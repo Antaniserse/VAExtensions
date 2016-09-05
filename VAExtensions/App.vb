@@ -95,7 +95,7 @@
         End If
     End Function
 
-    Public Shared Function DownloadTextFile(ByVal url As String) As DownloadedFile
+    Public Shared Function DownloadFile(ByVal url As String) As DownloadedFile
         Dim result As New DownloadedFile
 
         If Not url.ToLower.StartsWith("http") Then
@@ -131,6 +131,18 @@
             End If
         End If
         Return result
+    End Function
+
+    Public Shared Function ReadTextFile(ByVal filename As String) As String
+        Dim content As String = Nothing
+
+        Using fileStream = New IO.FileStream(filename, IO.FileMode.Open, IO.FileAccess.Read, IO.FileShare.ReadWrite)
+            Using textReader = New IO.StreamReader(fileStream)
+                content = textReader.ReadToEnd()
+            End Using
+        End Using
+
+        Return content
     End Function
 
     Public Shared Sub ClearCachedFiles()

@@ -29,7 +29,7 @@ Public Class ContextHandlerReadCSV
         Select Case m_Context
             Case ContextFactory.Contexts.LoadCSV
                 Try
-                    newFile = App.DownloadTextFile(m_TextValues(App.KEY_FILE))
+                    newFile = App.DownloadFile(m_TextValues(App.KEY_FILE))
                     If newFile.LocalPath.Length = 0 Then
                         m_smallIntValues(App.KEY_ERROR) = ERR_IO
                         m_TextValues(App.KEY_RESULT) = String.Format("Error retrieving File '{0}'.", m_TextValues(App.KEY_FILE))
