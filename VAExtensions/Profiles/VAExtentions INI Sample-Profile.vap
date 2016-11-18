@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-16"?>
 <Profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Id>13295ad2-edd3-4d7b-bfac-3ba04a01d47f</Id>
+  <Id>b10789f9-9cb9-47cf-aedb-c73ec3b7cd2a</Id>
   <Name>VAExtentions INI Sample</Name>
   <Commands>
     <Command>
-      <Id>d92754f3-17f8-4864-986a-1c78a7906541</Id>
+      <Id>4fe491c5-b399-4c6d-a7ad-71326472406f</Id>
       <CommandString>read ini</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -14,7 +14,81 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>56ba692d-f3f0-42c0-b159-ab92ae305373</Id>
+          <Id>db9c6d61-9c43-4f64-8545-69f733df9937</Id>
+          <ActionType>ConditionSet</ActionType>
+          <Duration>0</Duration>
+          <Delay>0</Delay>
+          <KeyCodes />
+          <Context>VxError</Context>
+          <Context2 />
+          <Context3 />
+          <Context4 />
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+          <InputMode>0</InputMode>
+          <ConditionSetName xml:space="preserve">VxError</ConditionSetName>
+          <ConditionSetCondition />
+          <ConditionPairing>0</ConditionPairing>
+          <ConditionGroup>0</ConditionGroup>
+          <ConditionStartOperator>0</ConditionStartOperator>
+          <ConditionStartValue>0</ConditionStartValue>
+          <ConditionStartValueType>0</ConditionStartValueType>
+          <ConditionStartType>0</ConditionStartType>
+          <DecimalContext1>0</DecimalContext1>
+          <DecimalContext2>0</DecimalContext2>
+          <DateContext1>0001-01-01T00:00:00</DateContext1>
+          <DateContext2>0001-01-01T00:00:00</DateContext2>
+          <Disabled>false</Disabled>
+          <RandomSounds />
+          <IsSuffixAction>false</IsSuffixAction>
+          <DecimalTransient1>0</DecimalTransient1>
+        </CommandAction>
+        <CommandAction>
+          <PairingSet>false</PairingSet>
+          <PairingSetElse>false</PairingSetElse>
+          <Ordinal>0</Ordinal>
+          <ConditionMet xsi:nil="true" />
+          <IndentLevel>0</IndentLevel>
+          <ConditionSkip>false</ConditionSkip>
+          <Id>385df4c7-317a-499f-90b5-248f7dd8e974</Id>
+          <ActionType>TextSet</ActionType>
+          <Duration>0</Duration>
+          <Delay>0</Delay>
+          <KeyCodes />
+          <Context>VxResult</Context>
+          <Context2 />
+          <Context3 />
+          <Context4 />
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+          <InputMode>0</InputMode>
+          <ConditionSetName />
+          <ConditionSetCondition />
+          <ConditionPairing>0</ConditionPairing>
+          <ConditionGroup>0</ConditionGroup>
+          <ConditionStartOperator>0</ConditionStartOperator>
+          <ConditionStartValue>0</ConditionStartValue>
+          <ConditionStartValueType>0</ConditionStartValueType>
+          <ConditionStartType>0</ConditionStartType>
+          <DecimalContext1>0</DecimalContext1>
+          <DecimalContext2>0</DecimalContext2>
+          <DateContext1>0001-01-01T00:00:00</DateContext1>
+          <DateContext2>0001-01-01T00:00:00</DateContext2>
+          <Disabled>false</Disabled>
+          <RandomSounds />
+          <IsSuffixAction>false</IsSuffixAction>
+          <DecimalTransient1>0</DecimalTransient1>
+        </CommandAction>
+        <CommandAction>
+          <PairingSet>false</PairingSet>
+          <PairingSetElse>false</PairingSetElse>
+          <Ordinal>0</Ordinal>
+          <ConditionMet xsi:nil="true" />
+          <IndentLevel>0</IndentLevel>
+          <ConditionSkip>false</ConditionSkip>
+          <Id>02e2f879-a376-4aec-9f33-28df09ebbb4d</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -51,7 +125,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>ca81cc23-624c-48e3-956a-274aa344d00b</Id>
+          <Id>a4001e5c-df9a-4ec5-9858-53f91f3b978c</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -83,7 +157,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>cac2dbe8-f36c-49e3-a219-042dde70bf49</Id>
+          <Id>4870f823-8cee-44cf-bf24-81cdd2647490</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -115,7 +189,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>febe2153-1d90-4a79-bf04-5bdbb25bdab6</Id>
+          <Id>886933f7-8853-4c11-910d-9fd1368fb0b9</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -147,7 +221,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>c7de969b-8bff-4446-a071-67a0845bd7a4</Id>
+          <Id>97726d3c-576d-4bf2-90ca-b399340893df</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -179,7 +253,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>bb627f81-b9fd-479f-8023-a6d3ae4e62e8</Id>
+          <Id>7f4b3b73-f249-4698-baa0-71e6b433d40c</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -216,7 +290,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>11053849-6528-4071-b0b6-de05340e2e97</Id>
+          <Id>97829bed-25f6-4631-a988-31e4c4cdb38f</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -253,7 +327,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>0a891210-40f0-4d9c-a9d2-d6552d355a87</Id>
+          <Id>62968d92-59d8-4c7b-9ece-41ba5fb768cc</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -291,7 +365,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>dbab3862-ab48-4654-8a63-b3197a880ffd</Id>
+          <Id>82ffd615-6c20-4a45-bd7b-c684e2049109</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -300,7 +374,7 @@
           <Y>0</Y>
           <Z>0</Z>
           <InputMode>0</InputMode>
-          <ConditionPairing>10</ConditionPairing>
+          <ConditionPairing>12</ConditionPairing>
           <ConditionGroup>1</ConditionGroup>
           <ConditionStartNameFrom>VxError</ConditionStartNameFrom>
           <ConditionStartOperator>0</ConditionStartOperator>
@@ -324,7 +398,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>c40802cc-79b2-4167-8018-400f653d2da0</Id>
+          <Id>89b946d8-cc1c-4c39-9a3e-19910a4de84e</Id>
           <ActionType>Say</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -356,7 +430,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>62a92f51-c998-4995-bf18-7e3a80888edf</Id>
+          <Id>10924446-48d0-47d6-ba3f-c64311142399</Id>
           <ActionType>ConditionElse</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -365,7 +439,7 @@
           <Y>0</Y>
           <Z>0</Z>
           <InputMode>0</InputMode>
-          <ConditionPairing>12</ConditionPairing>
+          <ConditionPairing>14</ConditionPairing>
           <ConditionGroup>1</ConditionGroup>
           <ConditionStartOperator>0</ConditionStartOperator>
           <ConditionStartValue>0</ConditionStartValue>
@@ -387,7 +461,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>f9cc1818-44dd-4048-9eaf-6199f572a543</Id>
+          <Id>45afd263-5395-4662-aef1-4d25a7f16973</Id>
           <ActionType>WriteToLog</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -419,16 +493,16 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>2ea030e8-960a-4825-a1ac-611e26f4a496</Id>
+          <Id>8e1ccc6b-b307-441e-a3de-78cd72886c3d</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <X>1</X>
+          <X>0</X>
           <Y>0</Y>
           <Z>0</Z>
           <InputMode>0</InputMode>
-          <ConditionPairing>8</ConditionPairing>
+          <ConditionPairing>10</ConditionPairing>
           <ConditionGroup>1</ConditionGroup>
           <ConditionStartOperator>0</ConditionStartOperator>
           <ConditionStartValue>0</ConditionStartValue>
@@ -488,7 +562,7 @@
       <MouseUpOnly>false</MouseUpOnly>
       <MousePassThru>false</MousePassThru>
       <joystickExclusive>false</joystickExclusive>
-      <lastEditedAction>4f049177-1fbd-4007-b784-c15862074739</lastEditedAction>
+      <lastEditedAction>e6153655-e312-4a4a-bbae-ab5446893a0d</lastEditedAction>
       <Referrer xsi:nil="true" />
       <ExecType>0</ExecType>
       <Confidence>0</Confidence>
@@ -505,7 +579,7 @@
       <BaseId>00000000-0000-0000-0000-000000000000</BaseId>
     </Command>
     <Command>
-      <Id>9b5f8eaf-5a8b-4cd8-982b-3ddf214763a7</Id>
+      <Id>8761ff76-881d-4c96-b8ff-8fd6354e1403</Id>
       <CommandString>write ini</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -515,7 +589,81 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>764e04e8-6246-4dad-8fd9-297394e1b3c9</Id>
+          <Id>9f9ec2b8-f41e-4ddc-93e4-08d8af24f1da</Id>
+          <ActionType>ConditionSet</ActionType>
+          <Duration>0</Duration>
+          <Delay>0</Delay>
+          <KeyCodes />
+          <Context>VxError</Context>
+          <Context2 />
+          <Context3 />
+          <Context4 />
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+          <InputMode>0</InputMode>
+          <ConditionSetName xml:space="preserve">VxError</ConditionSetName>
+          <ConditionSetCondition />
+          <ConditionPairing>0</ConditionPairing>
+          <ConditionGroup>0</ConditionGroup>
+          <ConditionStartOperator>0</ConditionStartOperator>
+          <ConditionStartValue>0</ConditionStartValue>
+          <ConditionStartValueType>0</ConditionStartValueType>
+          <ConditionStartType>0</ConditionStartType>
+          <DecimalContext1>0</DecimalContext1>
+          <DecimalContext2>0</DecimalContext2>
+          <DateContext1>0001-01-01T00:00:00</DateContext1>
+          <DateContext2>0001-01-01T00:00:00</DateContext2>
+          <Disabled>false</Disabled>
+          <RandomSounds />
+          <IsSuffixAction>false</IsSuffixAction>
+          <DecimalTransient1>0</DecimalTransient1>
+        </CommandAction>
+        <CommandAction>
+          <PairingSet>false</PairingSet>
+          <PairingSetElse>false</PairingSetElse>
+          <Ordinal>0</Ordinal>
+          <ConditionMet xsi:nil="true" />
+          <IndentLevel>0</IndentLevel>
+          <ConditionSkip>false</ConditionSkip>
+          <Id>73226cd5-58c7-4a20-b412-50489790b51c</Id>
+          <ActionType>TextSet</ActionType>
+          <Duration>0</Duration>
+          <Delay>0</Delay>
+          <KeyCodes />
+          <Context>VxResult</Context>
+          <Context2 />
+          <Context3 />
+          <Context4 />
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+          <InputMode>0</InputMode>
+          <ConditionSetName />
+          <ConditionSetCondition />
+          <ConditionPairing>0</ConditionPairing>
+          <ConditionGroup>0</ConditionGroup>
+          <ConditionStartOperator>0</ConditionStartOperator>
+          <ConditionStartValue>0</ConditionStartValue>
+          <ConditionStartValueType>0</ConditionStartValueType>
+          <ConditionStartType>0</ConditionStartType>
+          <DecimalContext1>0</DecimalContext1>
+          <DecimalContext2>0</DecimalContext2>
+          <DateContext1>0001-01-01T00:00:00</DateContext1>
+          <DateContext2>0001-01-01T00:00:00</DateContext2>
+          <Disabled>false</Disabled>
+          <RandomSounds />
+          <IsSuffixAction>false</IsSuffixAction>
+          <DecimalTransient1>0</DecimalTransient1>
+        </CommandAction>
+        <CommandAction>
+          <PairingSet>false</PairingSet>
+          <PairingSetElse>false</PairingSetElse>
+          <Ordinal>0</Ordinal>
+          <ConditionMet xsi:nil="true" />
+          <IndentLevel>0</IndentLevel>
+          <ConditionSkip>false</ConditionSkip>
+          <Id>17be77eb-475d-4bb7-baeb-98f09e35e40b</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -552,7 +700,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>182faf92-be01-49ea-a3b5-16dd0b2ed4fa</Id>
+          <Id>9df0915b-0a8f-4d61-ace3-12d63b963fd7</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -584,7 +732,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>0aa8b399-e0d5-4db8-90a3-3278a152f48c</Id>
+          <Id>1f79037d-913d-483f-83a2-3b36e0ec97f8</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -616,7 +764,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>1eb86819-63c2-4a5b-a919-98201e71b348</Id>
+          <Id>c9601d3d-61a6-45b2-bb58-73d89f5fec3e</Id>
           <ActionType>Comment</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -648,7 +796,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>e69bc38d-d70e-4b0d-808d-69dd70b35382</Id>
+          <Id>48f2c443-0000-460c-8efd-6a01b1efdd57</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -685,7 +833,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>6ce30552-50bc-4cc2-9e65-8a7e9aacbe85</Id>
+          <Id>9f394634-211a-43cf-be69-226fb06a6f42</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -722,7 +870,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>8dba340c-f464-43e4-b1c4-c230bab1f9bb</Id>
+          <Id>9c3f48c6-dfab-405e-a0b2-0cb7b19a258c</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -759,7 +907,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>97bdce28-1d95-4c22-ad7d-4a65d757ae7a</Id>
+          <Id>72889d4f-ba2b-4a9f-9295-0808f7f59fac</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -797,7 +945,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>644f27f2-4fba-4c01-b464-3644fc283945</Id>
+          <Id>b82395fb-d964-4036-8ae2-15e8052067f2</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -806,7 +954,7 @@
           <Y>0</Y>
           <Z>0</Z>
           <InputMode>0</InputMode>
-          <ConditionPairing>10</ConditionPairing>
+          <ConditionPairing>12</ConditionPairing>
           <ConditionGroup>1</ConditionGroup>
           <ConditionStartNameFrom>VxError</ConditionStartNameFrom>
           <ConditionStartOperator>0</ConditionStartOperator>
@@ -830,7 +978,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>07c959cd-9b7a-4591-83d4-94d4f8eb4ab2</Id>
+          <Id>7093f753-8dfa-4a74-a783-db4d1f0e4362</Id>
           <ActionType>Say</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -862,7 +1010,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>7a7c9f40-31c4-42ba-a861-c2e0c06d1618</Id>
+          <Id>d4704f62-1456-4f44-99f5-d1ea29c69342</Id>
           <ActionType>ConditionElse</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -871,7 +1019,7 @@
           <Y>0</Y>
           <Z>0</Z>
           <InputMode>0</InputMode>
-          <ConditionPairing>12</ConditionPairing>
+          <ConditionPairing>14</ConditionPairing>
           <ConditionGroup>1</ConditionGroup>
           <ConditionStartOperator>0</ConditionStartOperator>
           <ConditionStartValue>0</ConditionStartValue>
@@ -893,7 +1041,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>40d20ca2-7381-4430-ade6-e51efe5b590c</Id>
+          <Id>30e9e89b-2bd5-4a1e-82c9-3bf28d89c705</Id>
           <ActionType>WriteToLog</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -925,16 +1073,16 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>d691c4e8-bee8-4eb3-a553-14e992ab9e98</Id>
+          <Id>19922649-aab2-4783-9588-ad3ed198a193</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
-          <X>1</X>
+          <X>0</X>
           <Y>0</Y>
           <Z>0</Z>
           <InputMode>0</InputMode>
-          <ConditionPairing>8</ConditionPairing>
+          <ConditionPairing>10</ConditionPairing>
           <ConditionGroup>1</ConditionGroup>
           <ConditionStartOperator>0</ConditionStartOperator>
           <ConditionStartValue>0</ConditionStartValue>
@@ -994,7 +1142,7 @@
       <MouseUpOnly>false</MouseUpOnly>
       <MousePassThru>false</MousePassThru>
       <joystickExclusive>false</joystickExclusive>
-      <lastEditedAction>414854d5-0782-4b26-8cee-ac3e3b9c75dc</lastEditedAction>
+      <lastEditedAction>ea829d34-c05a-4c06-886d-7efef52a4af7</lastEditedAction>
       <Referrer xsi:nil="true" />
       <ExecType>0</ExecType>
       <Confidence>0</Confidence>
@@ -1039,7 +1187,7 @@
   <GlobalJoystickButton2>0</GlobalJoystickButton2>
   <GlobalJoystickNumber2>0</GlobalJoystickNumber2>
   <ReferencedProfile xsi:nil="true" />
-  <ExportVAVersion>1.5.12.21</ExportVAVersion>
+  <ExportVAVersion>1.6</ExportVAVersion>
   <ExportOSVersionMajor>6</ExportOSVersionMajor>
   <ExportOSVersionMinor>2</ExportOSVersionMinor>
   <OverrideConfidence>false</OverrideConfidence>

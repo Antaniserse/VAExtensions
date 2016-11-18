@@ -38,7 +38,8 @@ Public Class VoiceAttack
     Public Shared Sub VA_Invoke1(vaProxy As Object)
 
 #If SHOW_DEBUG_UI Then
-        DebugForm.ShowDebugInfo(context, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+        'Not working with interface 4
+        'DebugForm.ShowDebugInfo(context, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 #End If
 
         Dim contextHandler As ContextHandlerBase = ContextFactory.Create(vaProxy)

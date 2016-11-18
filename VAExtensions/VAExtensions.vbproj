@@ -24,8 +24,7 @@
     <DocumentationFile>VAExtensions.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DefineConstants>
-    </DefineConstants>
+    <DefineConstants>SHOW_DEBUG_UI=true</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>

@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-16"?>
 <Profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Id>f9b08d10-39d8-4b1d-b917-dbe060c2eee4</Id>
+  <Id>99490b25-a65e-43bf-9b03-0045f3ac9a66</Id>
   <Name>VAExtensions CSV Samples</Name>
   <Commands>
     <Command>
-      <Id>7d50f344-463a-4a25-a8e5-1bd21f038e30</Id>
+      <Id>4e5af113-3b7e-47e2-8925-4fcf9b5b8c8a</Id>
       <CommandString>load file</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -14,13 +14,13 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>40afb9ce-d2fc-4bc8-9f4c-398c8e5d1f00</Id>
+          <Id>1f9c43f9-bb2c-4b6e-b184-4ea811750c0d</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
           <Context>VxFile</Context>
-          <Context2>TestData\testcsv.csv</Context2>
+          <Context2 xml:space="preserve">TestData\testcsv.csv</Context2>
           <Context3 />
           <Context4 />
           <X>0</X>
@@ -51,13 +51,13 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>da1cbf98-dc1e-4feb-8cb1-639ab6b115f3</Id>
+          <Id>485abfee-1554-410a-8e49-6a3c8a8b2b87</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
           <Context>VxDelimiter</Context>
-          <Context2>,</Context2>
+          <Context2 xml:space="preserve">,</Context2>
           <Context3 />
           <Context4 />
           <X>0</X>
@@ -88,7 +88,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>2edda7eb-e040-4d74-b534-68bfdaeaa1ad</Id>
+          <Id>5bc52c92-545f-4977-b956-9a3a3c0968ae</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -127,7 +127,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>6972e3b8-22e0-4148-bc15-599d456b29b7</Id>
+          <Id>c8be6f3c-5ec4-43ae-87e1-86a822fc6760</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -160,7 +160,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>b6f54812-3fbf-49c3-8c9b-0c498aaed487</Id>
+          <Id>9c6fda1c-b6fa-4ef4-aa67-a32fe0835aa9</Id>
           <ActionType>Say</ActionType>
           <Duration>1</Duration>
           <Delay>1</Delay>
@@ -192,7 +192,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>4adc16cb-2066-4b06-8f09-3e88ad55a7bf</Id>
+          <Id>4f3f845a-8891-4e80-901e-eafdffce9576</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -223,7 +223,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>b29f6117-8c6a-471b-8aab-edbc87ffbb85</Id>
+          <Id>e1620211-4edd-4eaa-9d6c-85b129c75527</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -256,7 +256,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>125831c1-9b33-4904-85bb-dc62c964b7dd</Id>
+          <Id>e23fe88d-1e47-494a-a1b8-c49b4cd57aed</Id>
           <ActionType>WriteToLog</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -288,7 +288,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>006a6041-5918-4724-adc7-35ed760e2793</Id>
+          <Id>40d06a21-68b0-4f65-b77f-33c5ec0f0393</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -350,6 +350,10 @@
       <Mouse3>false</Mouse3>
       <Mouse4>false</Mouse4>
       <Mouse5>false</Mouse5>
+      <Mouse6>false</Mouse6>
+      <Mouse7>false</Mouse7>
+      <Mouse8>false</Mouse8>
+      <Mouse9>false</Mouse9>
       <MouseUpOnly>false</MouseUpOnly>
       <MousePassThru>false</MousePassThru>
       <joystickExclusive>false</joystickExclusive>
@@ -367,9 +371,10 @@
       <ExecFromWildcard>false</ExecFromWildcard>
       <IsSubCommand>false</IsSubCommand>
       <IsOverride>false</IsOverride>
+      <BaseId>00000000-0000-0000-0000-000000000000</BaseId>
     </Command>
     <Command>
-      <Id>7ff562e8-0174-485e-be0e-9879228e781d</Id>
+      <Id>73d8e44d-cebd-4c23-a1b9-13752e088ddf</Id>
       <CommandString>read value</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -379,13 +384,13 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>ce843f49-cb2b-48c8-8809-f8f96316b2d4</Id>
+          <Id>a67107ba-3196-43d2-9329-7da07c4a3659</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
           <Context>VxFile</Context>
-          <Context2>TestData\testcsv.csv</Context2>
+          <Context2 xml:space="preserve">TestData\testcsv.csv</Context2>
           <Context3 />
           <Context4 />
           <X>0</X>
@@ -416,20 +421,20 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>eefc7756-d9f1-4020-8bf7-e77bc82476ff</Id>
+          <Id>c889bb2e-0335-4944-9251-25e5e9f1388e</Id>
           <ActionType>IntSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
           <Context>VxArgs</Context>
-          <Context2>title</Context2>
+          <Context2 xml:space="preserve">title</Context2>
           <Context3 />
           <Context4 />
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
           <InputMode>0</InputMode>
-          <ConditionSetName>VxRow</ConditionSetName>
+          <ConditionSetName xml:space="preserve">VxRow</ConditionSetName>
           <ConditionSetCondition />
           <ConditionPairing>0</ConditionPairing>
           <ConditionGroup>0</ConditionGroup>
@@ -453,20 +458,20 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>324ec213-6b01-4eea-a177-24a7555655f0</Id>
+          <Id>5ed038e5-7cee-48cb-9e2d-b123f9baafb9</Id>
           <ActionType>IntSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
           <Context>VxArgs</Context>
-          <Context2>title</Context2>
+          <Context2 xml:space="preserve">title</Context2>
           <Context3 />
           <Context4 />
           <X>2</X>
           <Y>0</Y>
           <Z>0</Z>
           <InputMode>0</InputMode>
-          <ConditionSetName>VxColumn</ConditionSetName>
+          <ConditionSetName xml:space="preserve">VxColumn</ConditionSetName>
           <ConditionSetCondition />
           <ConditionPairing>0</ConditionPairing>
           <ConditionGroup>0</ConditionGroup>
@@ -490,7 +495,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>4c2456d2-7154-4627-8701-6d2e22d46b88</Id>
+          <Id>d8567614-b03c-40c7-98f2-1998ac4d30ca</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -503,7 +508,7 @@
           <Y>0</Y>
           <Z>0</Z>
           <InputMode>0</InputMode>
-          <ConditionSetName>VxRow;VxColumn</ConditionSetName>
+          <ConditionSetName xml:space="preserve">VxRow;VxColumn</ConditionSetName>
           <ConditionSetCondition />
           <ConditionPairing>0</ConditionPairing>
           <ConditionGroup>0</ConditionGroup>
@@ -529,7 +534,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>de6aecc9-a858-4c98-943e-3f8af548dde5</Id>
+          <Id>3c44c493-6da7-4360-9b28-87e4621fc8f5</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -562,7 +567,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>1d93c8c5-0f60-4f57-b3c5-dbe63a1c8128</Id>
+          <Id>c99cc33a-3a95-4f61-8443-749073eba427</Id>
           <ActionType>Say</ActionType>
           <Duration>1</Duration>
           <Delay>1</Delay>
@@ -594,7 +599,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>d0d06644-9b02-4437-b470-205541887fd1</Id>
+          <Id>daf39a04-01ed-4a03-855d-7a700eb73bb2</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -625,7 +630,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>415f18ea-baa4-486b-be62-c856cc1cb82b</Id>
+          <Id>2f8479cf-1e94-45f9-b5d0-c87ac4f48d38</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -658,7 +663,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>ae793feb-a55b-4648-a6e4-44cb25c513a0</Id>
+          <Id>2d2b0731-c477-43be-98ec-0594d2f50ea2</Id>
           <ActionType>WriteToLog</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -690,7 +695,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>f3ad864e-8b06-42a4-82ad-0676237a7b5c</Id>
+          <Id>3c877cdf-81bc-44da-b09c-3592cccfe872</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -721,7 +726,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>f5284720-5bba-4f1c-acbd-e1c16e10fb8a</Id>
+          <Id>60783407-93f7-4aec-be06-65ab234e491d</Id>
           <ActionType>Pause</ActionType>
           <Duration>1</Duration>
           <Delay>0</Delay>
@@ -752,20 +757,20 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>73c3351c-4d92-4770-a6f5-ef1edf574662</Id>
+          <Id>508f3251-8aae-40af-9562-cebb05a396fa</Id>
           <ActionType>IntSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
           <Context>VxArgs</Context>
-          <Context2>title</Context2>
+          <Context2 xml:space="preserve">title</Context2>
           <Context3 />
           <Context4 />
           <X>2</X>
           <Y>0</Y>
           <Z>0</Z>
           <InputMode>0</InputMode>
-          <ConditionSetName>VxRow</ConditionSetName>
+          <ConditionSetName xml:space="preserve">VxRow</ConditionSetName>
           <ConditionSetCondition />
           <ConditionPairing>0</ConditionPairing>
           <ConditionGroup>0</ConditionGroup>
@@ -789,13 +794,13 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>a0b46fcc-8117-4827-8b4c-2afacee1e9ee</Id>
+          <Id>14f9e725-2554-4b81-a1bb-5f911e969c0a</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
           <Context>VxColumn</Context>
-          <Context2>Ship</Context2>
+          <Context2 xml:space="preserve">Ship</Context2>
           <Context3 />
           <Context4 />
           <X>0</X>
@@ -826,7 +831,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>1b6aedfa-fff1-476e-8132-42526aa3ec19</Id>
+          <Id>eb847f9e-1522-4fad-8f21-d1f6e1b32fed</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -839,7 +844,7 @@
           <Y>0</Y>
           <Z>0</Z>
           <InputMode>0</InputMode>
-          <ConditionSetName>VxRow</ConditionSetName>
+          <ConditionSetName xml:space="preserve">VxRow</ConditionSetName>
           <ConditionSetCondition />
           <ConditionPairing>0</ConditionPairing>
           <ConditionGroup>0</ConditionGroup>
@@ -865,7 +870,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>699f2faf-737b-4452-8217-087b01b3e9c8</Id>
+          <Id>72b403c0-c9b6-4388-8429-82dfb36ce4a0</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -898,7 +903,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>07c5152f-2fe5-4115-944d-e88089219251</Id>
+          <Id>80080497-eee4-4160-834f-3ed614a1c884</Id>
           <ActionType>Say</ActionType>
           <Duration>1</Duration>
           <Delay>1</Delay>
@@ -930,7 +935,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>472d027f-49ca-46c2-9d51-c283a0feafee</Id>
+          <Id>ad4a5c02-cfb6-443c-8f81-b3db99d6b481</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -961,7 +966,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>f89b7832-065c-46c6-a9c3-b8d4bdfeb4f0</Id>
+          <Id>45b68d9b-ca9c-43a1-b192-4a1ac2d7768d</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -994,7 +999,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>52f6a50e-d4ac-4fdf-8e34-39027e52f0ec</Id>
+          <Id>790a99e4-6a3c-4ff8-baa3-60f9b956e7d4</Id>
           <ActionType>WriteToLog</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1026,7 +1031,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>acf94579-3ead-4d10-b13d-65c1e09e2c98</Id>
+          <Id>621e1d1b-3800-4f5d-b86f-a30a6f788e16</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1088,6 +1093,10 @@
       <Mouse3>false</Mouse3>
       <Mouse4>false</Mouse4>
       <Mouse5>false</Mouse5>
+      <Mouse6>false</Mouse6>
+      <Mouse7>false</Mouse7>
+      <Mouse8>false</Mouse8>
+      <Mouse9>false</Mouse9>
       <MouseUpOnly>false</MouseUpOnly>
       <MousePassThru>false</MousePassThru>
       <joystickExclusive>false</joystickExclusive>
@@ -1105,9 +1114,10 @@
       <ExecFromWildcard>false</ExecFromWildcard>
       <IsSubCommand>false</IsSubCommand>
       <IsOverride>false</IsOverride>
+      <BaseId>00000000-0000-0000-0000-000000000000</BaseId>
     </Command>
     <Command>
-      <Id>89ef556f-ed2e-407d-a106-ca66a80496f0</Id>
+      <Id>d7f92c34-dd93-421b-9702-d7390c2bf537</Id>
       <CommandString>search value</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -1117,13 +1127,13 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>fd080586-f33e-4d3c-9c31-00fe095d0c55</Id>
+          <Id>c2527fde-00d7-48c2-80db-edd3439cb55c</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
           <Context>VxFile</Context>
-          <Context2>TestData\testcsv.csv</Context2>
+          <Context2 xml:space="preserve">TestData\testcsv.csv</Context2>
           <Context3 />
           <Context4 />
           <X>0</X>
@@ -1154,13 +1164,13 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>404ba244-dfcd-4c6d-88c1-f5ec0f82fee9</Id>
+          <Id>4dab96eb-adb2-4a86-a574-cde91f0ee60e</Id>
           <ActionType>TextSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
           <Context>VxArgs</Context>
-          <Context2>Sidewinder</Context2>
+          <Context2 xml:space="preserve">Sidewinder</Context2>
           <Context3 />
           <Context4 />
           <X>0</X>
@@ -1191,20 +1201,20 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>5b1955b8-00f2-42ba-b8b0-f5f03e920dc1</Id>
+          <Id>f736dd88-5a46-49ad-ad8a-bcda01583bf5</Id>
           <ActionType>IntSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
           <Context>VxArgs</Context>
-          <Context2>title</Context2>
+          <Context2 xml:space="preserve">title</Context2>
           <Context3 />
           <Context4 />
           <X>1</X>
           <Y>0</Y>
           <Z>0</Z>
           <InputMode>0</InputMode>
-          <ConditionSetName>VxColumn</ConditionSetName>
+          <ConditionSetName xml:space="preserve">VxColumn</ConditionSetName>
           <ConditionSetCondition />
           <ConditionPairing>0</ConditionPairing>
           <ConditionGroup>0</ConditionGroup>
@@ -1228,7 +1238,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>afba7349-c377-443d-8059-2f3aec63d14a</Id>
+          <Id>4390dfc1-14a4-450b-95cc-93719c86c55c</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1241,7 +1251,7 @@
           <Y>0</Y>
           <Z>0</Z>
           <InputMode>0</InputMode>
-          <ConditionSetName>VxColumn</ConditionSetName>
+          <ConditionSetName xml:space="preserve">VxColumn</ConditionSetName>
           <ConditionSetCondition />
           <ConditionPairing>0</ConditionPairing>
           <ConditionGroup>0</ConditionGroup>
@@ -1267,7 +1277,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>88fcfc48-f756-4639-9407-9c4fc10172d4</Id>
+          <Id>a3ce4263-8be1-4e0c-b0c0-19f4959bbee0</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1300,7 +1310,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>41fd267d-d8fe-4824-a2f7-81c567df410a</Id>
+          <Id>a77b14e0-4f9b-406f-b45a-cb354c7a4261</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1333,7 +1343,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>62ad9bc8-ef38-4221-b374-1f11a2f98528</Id>
+          <Id>e6746918-a9e6-4a80-a2d1-bed6bdb67fcb</Id>
           <ActionType>Say</ActionType>
           <Duration>1</Duration>
           <Delay>1</Delay>
@@ -1365,7 +1375,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>42d5342e-aa6a-4c8f-b1b4-0595d13e08f4</Id>
+          <Id>d85fe4b7-337f-462c-b77e-408b3b55f6a9</Id>
           <ActionType>ConditionElse</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1396,7 +1406,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>7984be26-6278-430d-bd48-ad206c4bd3ee</Id>
+          <Id>4e7b187e-e62c-4bdb-a082-4b1dee20a7dd</Id>
           <ActionType>Say</ActionType>
           <Duration>1</Duration>
           <Delay>1</Delay>
@@ -1428,7 +1438,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>c9e067af-7d42-4e66-80b2-1e8694a5bc22</Id>
+          <Id>df4fe0b3-68a4-4d58-9f3a-e9037367bd1a</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1459,7 +1469,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>37d9c7d2-13ff-484d-bcc4-c443cd022605</Id>
+          <Id>99ab0735-3715-40bb-b220-a6a7f8e50b20</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1490,7 +1500,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>a958febf-6ca7-427e-b0ef-c6dd780fb177</Id>
+          <Id>1bf20aef-4bb4-4325-8d80-70c6e9d3296d</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1523,7 +1533,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>23ee0dc8-3e5d-45ea-8308-41043b5e0850</Id>
+          <Id>eb1d198c-1cea-422f-8a97-923b9cbb9706</Id>
           <ActionType>WriteToLog</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1555,7 +1565,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>5cd69d5d-e3ea-46f8-943b-25f2dbef7a2c</Id>
+          <Id>44db286c-f516-4bd7-b21e-ab2738250919</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1617,6 +1627,10 @@
       <Mouse3>false</Mouse3>
       <Mouse4>false</Mouse4>
       <Mouse5>false</Mouse5>
+      <Mouse6>false</Mouse6>
+      <Mouse7>false</Mouse7>
+      <Mouse8>false</Mouse8>
+      <Mouse9>false</Mouse9>
       <MouseUpOnly>false</MouseUpOnly>
       <MousePassThru>false</MousePassThru>
       <joystickExclusive>false</joystickExclusive>
@@ -1634,6 +1648,7 @@
       <ExecFromWildcard>false</ExecFromWildcard>
       <IsSubCommand>false</IsSubCommand>
       <IsOverride>false</IsOverride>
+      <BaseId>00000000-0000-0000-0000-000000000000</BaseId>
     </Command>
   </Commands>
   <OverrideGlobal>false</OverrideGlobal>
@@ -1663,8 +1678,8 @@
   <GlobalJoystickNumber>0</GlobalJoystickNumber>
   <GlobalJoystickButton2>0</GlobalJoystickButton2>
   <GlobalJoystickNumber2>0</GlobalJoystickNumber2>
-  <ReferencedProfile xsi:nil="true" />
-  <ExportVAVersion>1.5.8.18</ExportVAVersion>
+  <ReferencedProfile>0adac3d4-1d16-4a1e-824d-c5e964ece61e</ReferencedProfile>
+  <ExportVAVersion>1.6</ExportVAVersion>
   <ExportOSVersionMajor>6</ExportOSVersionMajor>
   <ExportOSVersionMinor>2</ExportOSVersionMinor>
   <OverrideConfidence>false</OverrideConfidence>
@@ -1680,5 +1695,5 @@
   <EnableProfileSwitch>false</EnableProfileSwitch>
   <CategoryGroups />
   <GroupCategory>false</GroupCategory>
-  <LastEditedCommand>e514bbf0-b1f4-4ad3-8c3b-1a29415e0b8f</LastEditedCommand>
+  <LastEditedCommand>575ba7c6-a004-4106-84e1-947dd291e476</LastEditedCommand>
 </Profile>

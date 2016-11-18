@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-16"?>
 <Profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Id>b5064319-2af0-4b4c-a5ac-f42d9dc985a5</Id>
+  <Id>1e08c477-2dcd-4b7e-baba-302286f007b8</Id>
   <Name>VAExtentions Random List &amp; BitWise operations</Name>
   <Commands>
     <Command>
-      <Id>c31fb51e-de96-4973-8b11-ec9ca7d58563</Id>
+      <Id>e4f263fd-f050-46f5-8fbf-63e4a7cd3325</Id>
       <CommandString>bit</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -14,7 +14,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>c9070965-6f3f-4103-a5c1-28f904006ff8</Id>
+          <Id>ad2adf4f-4e70-4b2c-a2ce-97cc04a2959a</Id>
           <ActionType>ConditionSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -23,7 +23,7 @@
           <Y>0</Y>
           <Z>0</Z>
           <InputMode>0</InputMode>
-          <ConditionSetName>first</ConditionSetName>
+          <ConditionSetName xml:space="preserve">first</ConditionSetName>
           <ConditionPairing>0</ConditionPairing>
           <ConditionGroup>0</ConditionGroup>
           <ConditionStartOperator>0</ConditionStartOperator>
@@ -46,7 +46,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>e02772fa-9d35-44a4-804f-9a9b3aa1de2d</Id>
+          <Id>612acf29-0cb6-4485-86c6-dab6416e2c08</Id>
           <ActionType>ConditionSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -55,7 +55,7 @@
           <Y>0</Y>
           <Z>0</Z>
           <InputMode>0</InputMode>
-          <ConditionSetName>second</ConditionSetName>
+          <ConditionSetName xml:space="preserve">second</ConditionSetName>
           <ConditionPairing>0</ConditionPairing>
           <ConditionGroup>0</ConditionGroup>
           <ConditionStartOperator>0</ConditionStartOperator>
@@ -78,13 +78,13 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>976ddd06-c502-4b55-8fb1-86a269b04789</Id>
+          <Id>8fe50bee-dc7f-40bc-9720-1b1966b1e8ef</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
           <Context>9571b674-0ce8-4a04-90d3-83519cb66968</Context>
-          <Context2>first;second</Context2>
+          <Context2 xml:space="preserve">first;second</Context2>
           <Context3 />
           <Context4>bit_and</Context4>
           <X>1</X>
@@ -116,7 +116,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>2e0cfb48-ebbf-48de-9ab6-0d3aadbe836c</Id>
+          <Id>9fc6f32d-c33f-4e10-a947-cf0826fc2f5c</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -149,7 +149,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>634888a1-9687-46dd-a464-47b7012a8883</Id>
+          <Id>a31ce9bd-8c7b-452c-a174-786e29287af6</Id>
           <ActionType>WriteToLog</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -181,13 +181,13 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>d931c1be-87a4-4356-b55e-d5f23edabfc6</Id>
+          <Id>dbfedc8c-417e-4129-8f09-154e5c33f9c4</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
           <Context>9571b674-0ce8-4a04-90d3-83519cb66968</Context>
-          <Context2>first;second</Context2>
+          <Context2 xml:space="preserve">first;second</Context2>
           <Context3 />
           <Context4>bit_or</Context4>
           <X>1</X>
@@ -219,7 +219,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>f7337ec9-7ef7-47b4-bd32-612430a4e372</Id>
+          <Id>be72ea24-c6c4-42cd-8aa8-320574261649</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -252,7 +252,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>41b00614-7b86-448b-bb65-c4a0d0e4af5c</Id>
+          <Id>59c29ab5-5051-415f-9d5c-899bc005b73e</Id>
           <ActionType>WriteToLog</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -284,13 +284,13 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>0045b776-e479-41b9-a733-cb5cd989569d</Id>
+          <Id>bdc98fd9-4bcf-4443-b2a0-0f31ac51d14c</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
           <Context>9571b674-0ce8-4a04-90d3-83519cb66968</Context>
-          <Context2>first;second</Context2>
+          <Context2 xml:space="preserve">first;second</Context2>
           <Context3 />
           <Context4>bit_xor</Context4>
           <X>1</X>
@@ -322,7 +322,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>38d63f51-cb3b-49c7-9ee3-8e54cce9b36a</Id>
+          <Id>7e022f65-b678-4d44-a7bf-0130a3c02037</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -355,7 +355,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>0deeb5a1-17a8-47f9-bdd8-10fe9336c2a7</Id>
+          <Id>55001a4a-a442-430f-bd0b-9d8469b61249</Id>
           <ActionType>WriteToLog</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -387,7 +387,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>4eed44a0-468e-4272-81cb-6cea12249824</Id>
+          <Id>2e666c88-cbd4-49ed-96bb-e8ecbe2b95a6</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -418,7 +418,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>ca7d9afe-7f97-4cc4-82f5-55cb9feb94e1</Id>
+          <Id>57187993-a7ca-4e9d-8df1-bcbe1d9b540e</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -449,7 +449,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>af078703-c33e-418c-b554-d0904d6d8d2d</Id>
+          <Id>407c9f98-60fe-4ab2-a199-0295f17bb3cc</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -480,7 +480,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>32202be3-9154-42ca-8e11-1447a0567358</Id>
+          <Id>4ec971dd-aa79-43fd-8704-738716c35879</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -513,7 +513,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>1eedb60c-b13f-4a6c-93c2-ab74366d453f</Id>
+          <Id>1d3deae2-d6b5-44dd-b2fa-7854a3c54370</Id>
           <ActionType>WriteToLog</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -545,7 +545,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>9fb0698a-cd35-4edf-bb66-67deffdf1be7</Id>
+          <Id>64434411-2fd0-4385-b3a9-fe1cc5533cc0</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -606,6 +606,10 @@
       <Mouse3>false</Mouse3>
       <Mouse4>false</Mouse4>
       <Mouse5>false</Mouse5>
+      <Mouse6>false</Mouse6>
+      <Mouse7>false</Mouse7>
+      <Mouse8>false</Mouse8>
+      <Mouse9>false</Mouse9>
       <MouseUpOnly>false</MouseUpOnly>
       <MousePassThru>false</MousePassThru>
       <joystickExclusive>false</joystickExclusive>
@@ -623,9 +627,10 @@
       <ExecFromWildcard>false</ExecFromWildcard>
       <IsSubCommand>false</IsSubCommand>
       <IsOverride>false</IsOverride>
+      <BaseId>00000000-0000-0000-0000-000000000000</BaseId>
     </Command>
     <Command>
-      <Id>185cd2f3-56d8-4101-aca2-69a464e504bb</Id>
+      <Id>3bf13e74-8296-4f83-a251-cf4f12bbd0e2</Id>
       <CommandString>countdown</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -635,7 +640,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>58f2e23e-3fc0-4dc8-9b09-cec41c98c02b</Id>
+          <Id>4f532a12-920d-4292-9887-42c098431c2d</Id>
           <ActionType>ConditionSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -644,7 +649,7 @@
           <Y>0</Y>
           <Z>0</Z>
           <InputMode>0</InputMode>
-          <ConditionSetName>myCountdown</ConditionSetName>
+          <ConditionSetName xml:space="preserve">myCountdown</ConditionSetName>
           <ConditionPairing>0</ConditionPairing>
           <ConditionGroup>0</ConditionGroup>
           <ConditionStartOperator>0</ConditionStartOperator>
@@ -667,13 +672,13 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>860910ae-ff46-4b58-955f-348c7fccb4d2</Id>
+          <Id>ff695c2f-eecf-4008-93fe-6ea064193b10</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
           <Context>9571b674-0ce8-4a04-90d3-83519cb66968</Context>
-          <Context2>myCountdown</Context2>
+          <Context2 xml:space="preserve">myCountdown</Context2>
           <Context3 />
           <Context4>countdown</Context4>
           <X>1</X>
@@ -705,7 +710,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>f375cd70-77e5-4a82-8d97-739b5abe9cea</Id>
+          <Id>f492a1a6-6f64-4b88-bcc6-7502695016bd</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -738,7 +743,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>f75788bb-227f-4471-9e5d-6562a8d021aa</Id>
+          <Id>ad2e8212-0c93-4b26-a87f-ccde136b1b61</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -771,7 +776,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>fc2308be-bc59-4062-9669-2ca28c0b0880</Id>
+          <Id>97edb7be-470c-4f31-a9da-c2a6c3c39654</Id>
           <ActionType>Say</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -803,7 +808,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>f2bdbccc-ae5f-4e1b-ba73-01b8c39003ea</Id>
+          <Id>c112aeab-d021-405e-a3d7-8118396ab973</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -834,7 +839,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>da6925f2-a172-4ae7-b118-4e7b68f1c435</Id>
+          <Id>f9044d1d-36de-459b-bb79-09a0f9264c21</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -867,7 +872,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>33094e84-a275-4671-a0a7-3d2adbeec6a0</Id>
+          <Id>22f56e66-84d1-4128-b6c6-8f9dee5f05ec</Id>
           <ActionType>Say</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -899,7 +904,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>12cb4df7-712a-42aa-a53a-4e2331aee99e</Id>
+          <Id>c153f14f-d5b6-49ed-a69a-f75cd929b74b</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -930,7 +935,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>9aa07740-5b7d-4a16-9ba0-1aced3a01608</Id>
+          <Id>ef1f6179-ff02-4de4-bd84-19de36d1bb48</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -961,7 +966,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>93cd591d-009f-4e84-95a5-425e8898e99c</Id>
+          <Id>ffe52163-1580-48f6-a10e-3302b0e8dbca</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -994,7 +999,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>886203ac-278e-4029-ae05-e3aa82f82f66</Id>
+          <Id>2cf501cc-ce01-43f8-8536-0a1d237fd4d1</Id>
           <ActionType>WriteToLog</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1026,7 +1031,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>5c5cc73a-4287-4609-9e95-c541ada9c086</Id>
+          <Id>ac75cbae-ff5b-4588-ae95-1bc77528d424</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1087,6 +1092,10 @@
       <Mouse3>false</Mouse3>
       <Mouse4>false</Mouse4>
       <Mouse5>false</Mouse5>
+      <Mouse6>false</Mouse6>
+      <Mouse7>false</Mouse7>
+      <Mouse8>false</Mouse8>
+      <Mouse9>false</Mouse9>
       <MouseUpOnly>false</MouseUpOnly>
       <MousePassThru>false</MousePassThru>
       <joystickExclusive>false</joystickExclusive>
@@ -1104,9 +1113,10 @@
       <ExecFromWildcard>false</ExecFromWildcard>
       <IsSubCommand>false</IsSubCommand>
       <IsOverride>false</IsOverride>
+      <BaseId>00000000-0000-0000-0000-000000000000</BaseId>
     </Command>
     <Command>
-      <Id>ff77e9ce-573a-4b1f-a8bf-f8e02116026c</Id>
+      <Id>3ca913df-2a32-4017-b5eb-70d715953822</Id>
       <CommandString>random next</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -1116,7 +1126,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>cdc624f9-64ff-4fd1-aa83-a116db2edc49</Id>
+          <Id>de5a7223-56f1-4cfd-b4c8-1b5c8395b8cb</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1154,7 +1164,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>79bc9625-81f1-411b-a2e9-248e135c3851</Id>
+          <Id>28e0bf75-f1dd-4d21-81da-9d5aad2e8135</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1187,7 +1197,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>83f31ae0-7663-4539-8914-42649537fe11</Id>
+          <Id>985f9de6-07b9-4f3f-a569-65402a0baba1</Id>
           <ActionType>Say</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1219,7 +1229,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>b7fb7c41-c2cc-49c3-962d-ea410af35ef7</Id>
+          <Id>4a79d3c5-5414-4d78-86a7-526fd907158a</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1250,7 +1260,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>2f810a07-91b8-41d6-8d5b-bfb7072876db</Id>
+          <Id>92408e46-23c1-4b70-a03e-2c8dee590a8c</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1283,7 +1293,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>3d946d4c-ae13-4391-b8ad-c2586a87f9a0</Id>
+          <Id>a6029195-9add-412a-86b1-07e853116de5</Id>
           <ActionType>WriteToLog</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1315,7 +1325,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>a69fc2fa-0e13-4690-97bf-ace2e15a6cf7</Id>
+          <Id>721a7d0c-629d-4a63-99ce-1038472d3c0e</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1377,6 +1387,10 @@
       <Mouse3>false</Mouse3>
       <Mouse4>false</Mouse4>
       <Mouse5>false</Mouse5>
+      <Mouse6>false</Mouse6>
+      <Mouse7>false</Mouse7>
+      <Mouse8>false</Mouse8>
+      <Mouse9>false</Mouse9>
       <MouseUpOnly>false</MouseUpOnly>
       <MousePassThru>false</MousePassThru>
       <joystickExclusive>false</joystickExclusive>
@@ -1394,9 +1408,10 @@
       <ExecFromWildcard>false</ExecFromWildcard>
       <IsSubCommand>false</IsSubCommand>
       <IsOverride>false</IsOverride>
+      <BaseId>00000000-0000-0000-0000-000000000000</BaseId>
     </Command>
     <Command>
-      <Id>2002e3af-2d1d-4c29-9636-a41676cd6db6</Id>
+      <Id>93e39499-cb42-4ee5-afa4-d178bb52b431</Id>
       <CommandString>random reset</CommandString>
       <ActionSequence>
         <CommandAction>
@@ -1406,7 +1421,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>d63d6f99-2d64-4c48-a1f0-ce8f75f1f698</Id>
+          <Id>08ca09fc-8ea0-4f97-850b-5ab1a87fb8fe</Id>
           <ActionType>ConditionSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1415,7 +1430,7 @@
           <Y>0</Y>
           <Z>0</Z>
           <InputMode>0</InputMode>
-          <ConditionSetName>VxRangeMin</ConditionSetName>
+          <ConditionSetName xml:space="preserve">VxRangeMin</ConditionSetName>
           <ConditionPairing>0</ConditionPairing>
           <ConditionGroup>0</ConditionGroup>
           <ConditionStartOperator>0</ConditionStartOperator>
@@ -1438,7 +1453,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>7e53916a-cebc-47f6-8d59-8daae79b5cc2</Id>
+          <Id>c39d575d-1614-4484-9b91-63af30c57a1f</Id>
           <ActionType>ConditionSet</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1447,7 +1462,7 @@
           <Y>0</Y>
           <Z>0</Z>
           <InputMode>0</InputMode>
-          <ConditionSetName>VxRangeMax</ConditionSetName>
+          <ConditionSetName xml:space="preserve">VxRangeMax</ConditionSetName>
           <ConditionPairing>0</ConditionPairing>
           <ConditionGroup>0</ConditionGroup>
           <ConditionStartOperator>0</ConditionStartOperator>
@@ -1470,13 +1485,13 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>9fa2391e-3ed9-4c62-9d0c-856dc27003b2</Id>
+          <Id>c3f4a2df-8c55-40d0-9d42-ac634037c488</Id>
           <ActionType>ExternalInvoke</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
           <KeyCodes />
           <Context>9571b674-0ce8-4a04-90d3-83519cb66968</Context>
-          <Context2>VxRangeMin;VxRangeMax</Context2>
+          <Context2 xml:space="preserve">VxRangeMin;VxRangeMax</Context2>
           <Context3 />
           <Context4>rnd_init</Context4>
           <X>1</X>
@@ -1508,7 +1523,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>91450a47-6ece-44bd-ac31-66c64b68a06d</Id>
+          <Id>994ed43c-6d9d-4290-aafb-6eb461e68c00</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1541,7 +1556,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>84f236a9-5990-47a5-8893-46f02ee82249</Id>
+          <Id>88f962d1-2afb-48f1-9458-a187d6ab8ac5</Id>
           <ActionType>Say</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1573,7 +1588,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>041971e8-3596-4591-a3b1-2a120963cf82</Id>
+          <Id>5dfe3888-5332-4d59-b8a4-391ba0b105eb</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1604,7 +1619,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>d3632aa9-1f7c-4486-b0ff-09f493d48981</Id>
+          <Id>df015d49-287d-48d9-aad6-d69d208f6d7e</Id>
           <ActionType>ConditionStart</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1637,7 +1652,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>743acfed-bbed-43dc-96fd-dfd04d0c9e4d</Id>
+          <Id>33afd218-ad36-4881-b100-ee346477b924</Id>
           <ActionType>WriteToLog</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1669,7 +1684,7 @@
           <ConditionMet xsi:nil="true" />
           <IndentLevel>0</IndentLevel>
           <ConditionSkip>false</ConditionSkip>
-          <Id>513f8ff4-8da3-406d-a356-2b38b014e005</Id>
+          <Id>a06dac62-ee3a-42e0-8300-0b75a7d8b1c3</Id>
           <ActionType>ConditionEnd</ActionType>
           <Duration>0</Duration>
           <Delay>0</Delay>
@@ -1731,6 +1746,10 @@
       <Mouse3>false</Mouse3>
       <Mouse4>false</Mouse4>
       <Mouse5>false</Mouse5>
+      <Mouse6>false</Mouse6>
+      <Mouse7>false</Mouse7>
+      <Mouse8>false</Mouse8>
+      <Mouse9>false</Mouse9>
       <MouseUpOnly>false</MouseUpOnly>
       <MousePassThru>false</MousePassThru>
       <joystickExclusive>false</joystickExclusive>
@@ -1748,6 +1767,7 @@
       <ExecFromWildcard>false</ExecFromWildcard>
       <IsSubCommand>false</IsSubCommand>
       <IsOverride>false</IsOverride>
+      <BaseId>00000000-0000-0000-0000-000000000000</BaseId>
     </Command>
   </Commands>
   <OverrideGlobal>false</OverrideGlobal>
@@ -1778,7 +1798,7 @@
   <GlobalJoystickButton2>0</GlobalJoystickButton2>
   <GlobalJoystickNumber2>0</GlobalJoystickNumber2>
   <ReferencedProfile xsi:nil="true" />
-  <ExportVAVersion>1.5.8.18</ExportVAVersion>
+  <ExportVAVersion>1.6</ExportVAVersion>
   <ExportOSVersionMajor>6</ExportOSVersionMajor>
   <ExportOSVersionMinor>2</ExportOSVersionMinor>
   <OverrideConfidence>false</OverrideConfidence>

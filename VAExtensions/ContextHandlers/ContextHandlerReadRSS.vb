@@ -17,10 +17,10 @@
             VAProxy.SetText(App.KEY_RESULT, String.Format("Unknown file name. Text variable '{0}' not set.", App.KEY_FILE))
             Return False
         End If
-        If VAProxy.GetSmallInt(App.KEY_INDEX) Is Nothing OrElse VAProxy.GetSmallInt(App.KEY_INDEX).Value < 1 Then
+        If VAProxy.GetSmallInt(App.KEY_INDEX) Is Nothing OrElse VAProxy.GetSmallInt(App.KEY_INDEX) < 1 Then
             elementCount = 1
         Else
-            elementCount = VAProxy.GetSmallInt(App.KEY_INDEX).Value
+            elementCount = VAProxy.GetSmallInt(App.KEY_INDEX)
         End If
         If VAProxy.GetText(App.KEY_REGEX) IsNot Nothing Then
             regexPattern = VAProxy.GetText(App.KEY_REGEX)
@@ -71,7 +71,7 @@
                     If i > elementCount Then Exit For
                 Next
                 VAProxy.SetText(App.KEY_RESULT, App.LimitResponse(result, regexPattern))
-                VAProxy.SetSmallInt(App.KEY_INDEX) = elementCount + 1S
+                VAProxy.SetSmallInt(App.KEY_INDEX, elementCount + 1S)
             Else
                 VAProxy.SetSmallInt(App.KEY_ERROR, ERR_ARGUMENTS)
                 VAProxy.SetText(App.KEY_RESULT, String.Format("Element not found: '{0}'", VAProxy.GetText(App.KEY_ARGUMENTS)))

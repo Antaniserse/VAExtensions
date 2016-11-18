@@ -10,9 +10,9 @@
         <EnumInfo("Read an XML File", "read_xml")>
         ReadXml
         <EnumInfo("Read a RSS feed", "read_rss")>
-        ReadJSON
-        <EnumInfo("Read a JSON feed", "read_json")>
         ReadRSS
+        <EnumInfo("Read a JSON feed", "read_json")>
+        ReadJSON
         <EnumInfo("Loads a CSV file in memory", "load_csv")>
         LoadCSV
         <EnumInfo("Read a value from a previously loaded CSV file", "read_csv")>

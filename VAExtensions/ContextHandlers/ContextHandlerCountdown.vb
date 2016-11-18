@@ -16,7 +16,7 @@
         For i = 0 To 9
             key = String.Format("{0}{1}", App.KEY_TIMER, i)
             If VAProxy.GetInt(key) IsNot Nothing Then
-                countDownList.Add(key, VAProxy.GetInt(key).Value)
+                countDownList.Add(key, VAProxy.GetInt(key))
             End If
         Next
 
