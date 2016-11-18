@@ -27,15 +27,12 @@ Partial Class Form1
 	''' </summary>
 	Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnLaunchVA = New System.Windows.Forms.Button()
         Me.btnShowInfo = New System.Windows.Forms.Button()
-        Me.BindingSourceMathCond = New System.Windows.Forms.BindingSource(Me.components)
         Me.pageCountDown = New System.Windows.Forms.TabPage()
         Me.lblCountdownOUT = New System.Windows.Forms.Label()
         Me.txtCountdownOUT = New System.Windows.Forms.TextBox()
-        Me.txtCountdownName = New System.Windows.Forms.TextBox()
         Me.lblCountdownSec = New System.Windows.Forms.Label()
         Me.lblCountdownName = New System.Windows.Forms.Label()
         Me.udCountdown = New System.Windows.Forms.NumericUpDown()
@@ -50,21 +47,6 @@ Partial Class Form1
         Me.lblRandomOUT = New System.Windows.Forms.Label()
         Me.txtRandomOUT = New System.Windows.Forms.TextBox()
         Me.btnRandomInit = New System.Windows.Forms.Button()
-        Me.pageMath = New System.Windows.Forms.TabPage()
-        Me.btnMathXor = New System.Windows.Forms.Button()
-        Me.dgvMath = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnMathOr = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnMathAnd = New System.Windows.Forms.Button()
-        Me.btnMathAdd = New System.Windows.Forms.Button()
-        Me.btnMathMax = New System.Windows.Forms.Button()
-        Me.btnMathSub = New System.Windows.Forms.Button()
-        Me.btnMathMin = New System.Windows.Forms.Button()
-        Me.btnMathMult = New System.Windows.Forms.Button()
-        Me.btnMathMod = New System.Windows.Forms.Button()
-        Me.btnMathDiv = New System.Windows.Forms.Button()
         Me.pageReadStdOut = New System.Windows.Forms.TabPage()
         Me.lblReadStdOutResult = New System.Windows.Forms.Label()
         Me.txtReadStdOutResult = New System.Windows.Forms.TextBox()
@@ -145,14 +127,12 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BindingSourceINI = New System.Windows.Forms.BindingSource(Me.components)
-        CType(Me.BindingSourceMathCond, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.cboCountdownName = New System.Windows.Forms.ComboBox()
         Me.pageCountDown.SuspendLayout()
         CType(Me.udCountdown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pageRandom.SuspendLayout()
         CType(Me.udRandomMax, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.udRandomMin, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pageMath.SuspendLayout()
-        CType(Me.dgvMath, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pageReadStdOut.SuspendLayout()
         Me.pageSpellText.SuspendLayout()
         Me.pageShowText.SuspendLayout()
@@ -190,18 +170,18 @@ Partial Class Form1
         '
         'pageCountDown
         '
+        Me.pageCountDown.Controls.Add(Me.cboCountdownName)
         Me.pageCountDown.Controls.Add(Me.lblCountdownOUT)
         Me.pageCountDown.Controls.Add(Me.txtCountdownOUT)
-        Me.pageCountDown.Controls.Add(Me.txtCountdownName)
         Me.pageCountDown.Controls.Add(Me.lblCountdownSec)
         Me.pageCountDown.Controls.Add(Me.lblCountdownName)
         Me.pageCountDown.Controls.Add(Me.udCountdown)
         Me.pageCountDown.Controls.Add(Me.btnCountdownNext)
         Me.pageCountDown.Controls.Add(Me.btnCountdownInit)
-        Me.pageCountDown.Location = New System.Drawing.Point(4, 40)
+        Me.pageCountDown.Location = New System.Drawing.Point(4, 22)
         Me.pageCountDown.Name = "pageCountDown"
         Me.pageCountDown.Padding = New System.Windows.Forms.Padding(3)
-        Me.pageCountDown.Size = New System.Drawing.Size(828, 342)
+        Me.pageCountDown.Size = New System.Drawing.Size(828, 360)
         Me.pageCountDown.TabIndex = 11
         Me.pageCountDown.Text = "CountDown"
         Me.pageCountDown.UseVisualStyleBackColor = True
@@ -229,17 +209,9 @@ Partial Class Form1
         Me.txtCountdownOUT.Size = New System.Drawing.Size(261, 278)
         Me.txtCountdownOUT.TabIndex = 36
         '
-        'txtCountdownName
-        '
-        Me.txtCountdownName.Location = New System.Drawing.Point(66, 6)
-        Me.txtCountdownName.Name = "txtCountdownName"
-        Me.txtCountdownName.Size = New System.Drawing.Size(91, 20)
-        Me.txtCountdownName.TabIndex = 35
-        Me.txtCountdownName.Text = "Timer1"
-        '
         'lblCountdownSec
         '
-        Me.lblCountdownSec.Location = New System.Drawing.Point(233, 8)
+        Me.lblCountdownSec.Location = New System.Drawing.Point(275, 8)
         Me.lblCountdownSec.Name = "lblCountdownSec"
         Me.lblCountdownSec.Size = New System.Drawing.Size(52, 18)
         Me.lblCountdownSec.TabIndex = 34
@@ -255,7 +227,7 @@ Partial Class Form1
         '
         'udCountdown
         '
-        Me.udCountdown.Location = New System.Drawing.Point(163, 6)
+        Me.udCountdown.Location = New System.Drawing.Point(205, 6)
         Me.udCountdown.Maximum = New Decimal(New Integer() {32000, 0, 0, 0})
         Me.udCountdown.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.udCountdown.Name = "udCountdown"
@@ -266,7 +238,7 @@ Partial Class Form1
         '
         'btnCountdownNext
         '
-        Me.btnCountdownNext.Location = New System.Drawing.Point(291, 35)
+        Me.btnCountdownNext.Location = New System.Drawing.Point(339, 37)
         Me.btnCountdownNext.Name = "btnCountdownNext"
         Me.btnCountdownNext.Size = New System.Drawing.Size(125, 23)
         Me.btnCountdownNext.TabIndex = 31
@@ -275,7 +247,7 @@ Partial Class Form1
         '
         'btnCountdownInit
         '
-        Me.btnCountdownInit.Location = New System.Drawing.Point(291, 6)
+        Me.btnCountdownInit.Location = New System.Drawing.Point(339, 8)
         Me.btnCountdownInit.Name = "btnCountdownInit"
         Me.btnCountdownInit.Size = New System.Drawing.Size(125, 23)
         Me.btnCountdownInit.TabIndex = 30
@@ -292,10 +264,10 @@ Partial Class Form1
         Me.pageRandom.Controls.Add(Me.lblRandomOUT)
         Me.pageRandom.Controls.Add(Me.txtRandomOUT)
         Me.pageRandom.Controls.Add(Me.btnRandomInit)
-        Me.pageRandom.Location = New System.Drawing.Point(4, 40)
+        Me.pageRandom.Location = New System.Drawing.Point(4, 22)
         Me.pageRandom.Name = "pageRandom"
         Me.pageRandom.Padding = New System.Windows.Forms.Padding(3)
-        Me.pageRandom.Size = New System.Drawing.Size(828, 342)
+        Me.pageRandom.Size = New System.Drawing.Size(828, 360)
         Me.pageRandom.TabIndex = 10
         Me.pageRandom.Text = "Random list"
         Me.pageRandom.UseVisualStyleBackColor = True
@@ -379,158 +351,6 @@ Partial Class Form1
         Me.btnRandomInit.Text = "Initialize"
         Me.btnRandomInit.UseVisualStyleBackColor = True
         '
-        'pageMath
-        '
-        Me.pageMath.Controls.Add(Me.btnMathXor)
-        Me.pageMath.Controls.Add(Me.dgvMath)
-        Me.pageMath.Controls.Add(Me.btnMathOr)
-        Me.pageMath.Controls.Add(Me.Label2)
-        Me.pageMath.Controls.Add(Me.btnMathAnd)
-        Me.pageMath.Controls.Add(Me.btnMathAdd)
-        Me.pageMath.Controls.Add(Me.btnMathMax)
-        Me.pageMath.Controls.Add(Me.btnMathSub)
-        Me.pageMath.Controls.Add(Me.btnMathMin)
-        Me.pageMath.Controls.Add(Me.btnMathMult)
-        Me.pageMath.Controls.Add(Me.btnMathMod)
-        Me.pageMath.Controls.Add(Me.btnMathDiv)
-        Me.pageMath.Location = New System.Drawing.Point(4, 40)
-        Me.pageMath.Name = "pageMath"
-        Me.pageMath.Size = New System.Drawing.Size(828, 342)
-        Me.pageMath.TabIndex = 7
-        Me.pageMath.Text = "Math functions"
-        Me.pageMath.UseVisualStyleBackColor = True
-        '
-        'btnMathXor
-        '
-        Me.btnMathXor.Location = New System.Drawing.Point(398, 82)
-        Me.btnMathXor.Name = "btnMathXor"
-        Me.btnMathXor.Size = New System.Drawing.Size(39, 23)
-        Me.btnMathXor.TabIndex = 43
-        Me.btnMathXor.Text = "Xor"
-        Me.btnMathXor.UseVisualStyleBackColor = True
-        '
-        'dgvMath
-        '
-        Me.dgvMath.AllowUserToResizeRows = False
-        Me.dgvMath.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dgvMath.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvMath.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4})
-        Me.dgvMath.Location = New System.Drawing.Point(3, 24)
-        Me.dgvMath.Name = "dgvMath"
-        Me.dgvMath.RowHeadersWidth = 20
-        Me.dgvMath.Size = New System.Drawing.Size(358, 226)
-        Me.dgvMath.TabIndex = 30
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Key"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.Width = 80
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        DataGridViewCellStyle3.Format = "0"
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Value"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'btnMathOr
-        '
-        Me.btnMathOr.Location = New System.Drawing.Point(355, 82)
-        Me.btnMathOr.Name = "btnMathOr"
-        Me.btnMathOr.Size = New System.Drawing.Size(39, 23)
-        Me.btnMathOr.TabIndex = 42
-        Me.btnMathOr.Text = "Or"
-        Me.btnMathOr.UseVisualStyleBackColor = True
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 8)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(158, 13)
-        Me.Label2.TabIndex = 29
-        Me.Label2.Text = "Numeric conditions (int16 value)"
-        '
-        'btnMathAnd
-        '
-        Me.btnMathAnd.Location = New System.Drawing.Point(312, 82)
-        Me.btnMathAnd.Name = "btnMathAnd"
-        Me.btnMathAnd.Size = New System.Drawing.Size(39, 23)
-        Me.btnMathAnd.TabIndex = 41
-        Me.btnMathAnd.Text = "And"
-        Me.btnMathAnd.UseVisualStyleBackColor = True
-        '
-        'btnMathAdd
-        '
-        Me.btnMathAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMathAdd.Location = New System.Drawing.Point(312, 24)
-        Me.btnMathAdd.Name = "btnMathAdd"
-        Me.btnMathAdd.Size = New System.Drawing.Size(25, 23)
-        Me.btnMathAdd.TabIndex = 31
-        Me.btnMathAdd.Text = "+"
-        Me.btnMathAdd.UseVisualStyleBackColor = True
-        '
-        'btnMathMax
-        '
-        Me.btnMathMax.Location = New System.Drawing.Point(398, 53)
-        Me.btnMathMax.Name = "btnMathMax"
-        Me.btnMathMax.Size = New System.Drawing.Size(39, 23)
-        Me.btnMathMax.TabIndex = 40
-        Me.btnMathMax.Text = "Max"
-        Me.btnMathMax.UseVisualStyleBackColor = True
-        '
-        'btnMathSub
-        '
-        Me.btnMathSub.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMathSub.Location = New System.Drawing.Point(343, 24)
-        Me.btnMathSub.Name = "btnMathSub"
-        Me.btnMathSub.Size = New System.Drawing.Size(25, 23)
-        Me.btnMathSub.TabIndex = 32
-        Me.btnMathSub.Text = "-"
-        Me.btnMathSub.UseVisualStyleBackColor = True
-        '
-        'btnMathMin
-        '
-        Me.btnMathMin.Location = New System.Drawing.Point(355, 53)
-        Me.btnMathMin.Name = "btnMathMin"
-        Me.btnMathMin.Size = New System.Drawing.Size(39, 23)
-        Me.btnMathMin.TabIndex = 39
-        Me.btnMathMin.Text = "Min"
-        Me.btnMathMin.UseVisualStyleBackColor = True
-        '
-        'btnMathMult
-        '
-        Me.btnMathMult.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMathMult.Location = New System.Drawing.Point(381, 24)
-        Me.btnMathMult.Name = "btnMathMult"
-        Me.btnMathMult.Size = New System.Drawing.Size(25, 23)
-        Me.btnMathMult.TabIndex = 33
-        Me.btnMathMult.Text = "*"
-        Me.btnMathMult.UseVisualStyleBackColor = True
-        '
-        'btnMathMod
-        '
-        Me.btnMathMod.Location = New System.Drawing.Point(312, 53)
-        Me.btnMathMod.Name = "btnMathMod"
-        Me.btnMathMod.Size = New System.Drawing.Size(39, 23)
-        Me.btnMathMod.TabIndex = 38
-        Me.btnMathMod.Text = "Mod"
-        Me.btnMathMod.UseVisualStyleBackColor = True
-        '
-        'btnMathDiv
-        '
-        Me.btnMathDiv.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMathDiv.Location = New System.Drawing.Point(412, 24)
-        Me.btnMathDiv.Name = "btnMathDiv"
-        Me.btnMathDiv.Size = New System.Drawing.Size(25, 23)
-        Me.btnMathDiv.TabIndex = 34
-        Me.btnMathDiv.Text = "/"
-        Me.btnMathDiv.UseVisualStyleBackColor = True
-        '
         'pageReadStdOut
         '
         Me.pageReadStdOut.Controls.Add(Me.lblReadStdOutResult)
@@ -540,9 +360,9 @@ Partial Class Form1
         Me.pageReadStdOut.Controls.Add(Me.lblReadStdOutName)
         Me.pageReadStdOut.Controls.Add(Me.btnReadStdOutExecute)
         Me.pageReadStdOut.Controls.Add(Me.lblReadStdOutArgs)
-        Me.pageReadStdOut.Location = New System.Drawing.Point(4, 40)
+        Me.pageReadStdOut.Location = New System.Drawing.Point(4, 22)
         Me.pageReadStdOut.Name = "pageReadStdOut"
-        Me.pageReadStdOut.Size = New System.Drawing.Size(828, 342)
+        Me.pageReadStdOut.Size = New System.Drawing.Size(828, 360)
         Me.pageReadStdOut.TabIndex = 6
         Me.pageReadStdOut.Text = "Read standard output"
         Me.pageReadStdOut.UseVisualStyleBackColor = True
@@ -618,9 +438,9 @@ Partial Class Form1
         Me.pageSpellText.Controls.Add(Me.txtSpellTextOUT)
         Me.pageSpellText.Controls.Add(Me.txtSpellTextIN)
         Me.pageSpellText.Controls.Add(Me.btnSpellTextExecute)
-        Me.pageSpellText.Location = New System.Drawing.Point(4, 40)
+        Me.pageSpellText.Location = New System.Drawing.Point(4, 22)
         Me.pageSpellText.Name = "pageSpellText"
-        Me.pageSpellText.Size = New System.Drawing.Size(828, 342)
+        Me.pageSpellText.Size = New System.Drawing.Size(828, 360)
         Me.pageSpellText.TabIndex = 4
         Me.pageSpellText.Text = "Spell Text"
         Me.pageSpellText.UseVisualStyleBackColor = True
@@ -681,9 +501,9 @@ Partial Class Form1
         Me.pageShowText.Controls.Add(Me.lblShowFileTextVar)
         Me.pageShowText.Controls.Add(Me.cboShowFileName)
         Me.pageShowText.Controls.Add(Me.btnShowFileName)
-        Me.pageShowText.Location = New System.Drawing.Point(4, 40)
+        Me.pageShowText.Location = New System.Drawing.Point(4, 22)
         Me.pageShowText.Name = "pageShowText"
-        Me.pageShowText.Size = New System.Drawing.Size(828, 342)
+        Me.pageShowText.Size = New System.Drawing.Size(828, 360)
         Me.pageShowText.TabIndex = 5
         Me.pageShowText.Text = "Show file/text"
         Me.pageShowText.UseVisualStyleBackColor = True
@@ -755,9 +575,9 @@ Partial Class Form1
         Me.pageReadRSS.Controls.Add(Me.lblReadRSSDateMask)
         Me.pageReadRSS.Controls.Add(Me.lblReadRSSName)
         Me.pageReadRSS.Controls.Add(Me.btnReadRSSExecute)
-        Me.pageReadRSS.Location = New System.Drawing.Point(4, 40)
+        Me.pageReadRSS.Location = New System.Drawing.Point(4, 22)
         Me.pageReadRSS.Name = "pageReadRSS"
-        Me.pageReadRSS.Size = New System.Drawing.Size(828, 342)
+        Me.pageReadRSS.Size = New System.Drawing.Size(828, 360)
         Me.pageReadRSS.TabIndex = 2
         Me.pageReadRSS.Text = "Read RSS"
         Me.pageReadRSS.UseVisualStyleBackColor = True
@@ -869,10 +689,10 @@ Partial Class Form1
         Me.pageReadXML.Controls.Add(Me.udReadXMLIndex)
         Me.pageReadXML.Controls.Add(Me.lblReadXMLRegEx)
         Me.pageReadXML.Controls.Add(Me.btnReadXMLExecute)
-        Me.pageReadXML.Location = New System.Drawing.Point(4, 40)
+        Me.pageReadXML.Location = New System.Drawing.Point(4, 22)
         Me.pageReadXML.Name = "pageReadXML"
         Me.pageReadXML.Padding = New System.Windows.Forms.Padding(3)
-        Me.pageReadXML.Size = New System.Drawing.Size(828, 342)
+        Me.pageReadXML.Size = New System.Drawing.Size(828, 360)
         Me.pageReadXML.TabIndex = 1
         Me.pageReadXML.Text = "Read XML"
         Me.pageReadXML.UseVisualStyleBackColor = True
@@ -960,10 +780,10 @@ Partial Class Form1
         Me.pageReadFile.Controls.Add(Me.cboReadFileName)
         Me.pageReadFile.Controls.Add(Me.lblReadFileRegEx)
         Me.pageReadFile.Controls.Add(Me.btnReadFileExecute)
-        Me.pageReadFile.Location = New System.Drawing.Point(4, 40)
+        Me.pageReadFile.Location = New System.Drawing.Point(4, 22)
         Me.pageReadFile.Name = "pageReadFile"
         Me.pageReadFile.Padding = New System.Windows.Forms.Padding(3)
-        Me.pageReadFile.Size = New System.Drawing.Size(828, 342)
+        Me.pageReadFile.Size = New System.Drawing.Size(828, 360)
         Me.pageReadFile.TabIndex = 0
         Me.pageReadFile.Text = "Read file"
         Me.pageReadFile.UseVisualStyleBackColor = True
@@ -1025,7 +845,6 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.pageShowText)
         Me.TabControl1.Controls.Add(Me.pageSpellText)
         Me.TabControl1.Controls.Add(Me.pageReadStdOut)
-        Me.TabControl1.Controls.Add(Me.pageMath)
         Me.TabControl1.Controls.Add(Me.pageRandom)
         Me.TabControl1.Controls.Add(Me.pageCountDown)
         Me.TabControl1.Location = New System.Drawing.Point(12, 41)
@@ -1044,10 +863,10 @@ Partial Class Form1
         Me.pageReadJSON.Controls.Add(Me.Label8)
         Me.pageReadJSON.Controls.Add(Me.Label9)
         Me.pageReadJSON.Controls.Add(Me.btnReadJSONExecute)
-        Me.pageReadJSON.Location = New System.Drawing.Point(4, 40)
+        Me.pageReadJSON.Location = New System.Drawing.Point(4, 22)
         Me.pageReadJSON.Name = "pageReadJSON"
         Me.pageReadJSON.Padding = New System.Windows.Forms.Padding(3)
-        Me.pageReadJSON.Size = New System.Drawing.Size(828, 342)
+        Me.pageReadJSON.Size = New System.Drawing.Size(828, 360)
         Me.pageReadJSON.TabIndex = 14
         Me.pageReadJSON.Text = "Read JSON"
         Me.pageReadJSON.UseVisualStyleBackColor = True
@@ -1124,10 +943,10 @@ Partial Class Form1
         Me.pageReadCSV.Controls.Add(Me.Label6)
         Me.pageReadCSV.Controls.Add(Me.udReadCSVRow)
         Me.pageReadCSV.Controls.Add(Me.btnReadCSVExecute)
-        Me.pageReadCSV.Location = New System.Drawing.Point(4, 40)
+        Me.pageReadCSV.Location = New System.Drawing.Point(4, 22)
         Me.pageReadCSV.Name = "pageReadCSV"
         Me.pageReadCSV.Padding = New System.Windows.Forms.Padding(3)
-        Me.pageReadCSV.Size = New System.Drawing.Size(828, 342)
+        Me.pageReadCSV.Size = New System.Drawing.Size(828, 360)
         Me.pageReadCSV.TabIndex = 13
         Me.pageReadCSV.Text = "Read CSV"
         Me.pageReadCSV.UseVisualStyleBackColor = True
@@ -1234,9 +1053,9 @@ Partial Class Form1
         Me.pageINI.Controls.Add(Me.Label3)
         Me.pageINI.Controls.Add(Me.btnINIRead)
         Me.pageINI.Controls.Add(Me.dgvINI)
-        Me.pageINI.Location = New System.Drawing.Point(4, 40)
+        Me.pageINI.Location = New System.Drawing.Point(4, 22)
         Me.pageINI.Name = "pageINI"
-        Me.pageINI.Size = New System.Drawing.Size(828, 342)
+        Me.pageINI.Size = New System.Drawing.Size(828, 360)
         Me.pageINI.TabIndex = 12
         Me.pageINI.Text = "Read/Write INI"
         Me.pageINI.UseVisualStyleBackColor = True
@@ -1315,11 +1134,20 @@ Partial Class Form1
         '
         'DataGridViewTextBoxColumn2
         '
-        DataGridViewCellStyle4.Format = "0"
-        DataGridViewCellStyle4.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Format = "0"
+        DataGridViewCellStyle1.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridViewTextBoxColumn2.HeaderText = "Value"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'cboCountdownName
+        '
+        Me.cboCountdownName.FormattingEnabled = True
+        Me.cboCountdownName.Items.AddRange(New Object() {"VxTimer0", "VxTimer1", "VxTimer2", "VxTimer3", "VxTimer4", "VxTimer5", "VxTimer6", "VxTimer7", "VxTimer8", "VxTimer9"})
+        Me.cboCountdownName.Location = New System.Drawing.Point(66, 5)
+        Me.cboCountdownName.Name = "cboCountdownName"
+        Me.cboCountdownName.Size = New System.Drawing.Size(133, 21)
+        Me.cboCountdownName.TabIndex = 38
         '
         'Form1
         '
@@ -1333,7 +1161,6 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
-        CType(Me.BindingSourceMathCond, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pageCountDown.ResumeLayout(False)
         Me.pageCountDown.PerformLayout()
         CType(Me.udCountdown, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1341,9 +1168,6 @@ Partial Class Form1
         Me.pageRandom.PerformLayout()
         CType(Me.udRandomMax, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.udRandomMin, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pageMath.ResumeLayout(False)
-        Me.pageMath.PerformLayout()
-        CType(Me.dgvMath, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pageReadStdOut.ResumeLayout(False)
         Me.pageReadStdOut.PerformLayout()
         Me.pageSpellText.ResumeLayout(False)
@@ -1373,101 +1197,84 @@ Partial Class Form1
     End Sub
     Friend WithEvents btnShowInfo As System.Windows.Forms.Button
    Friend WithEvents btnLaunchVA As System.Windows.Forms.Button
-   Friend WithEvents BindingSourceMathCond As System.Windows.Forms.BindingSource
-   Friend WithEvents pageCountDown As System.Windows.Forms.TabPage
-   Friend WithEvents lblCountdownOUT As System.Windows.Forms.Label
+    Friend WithEvents pageCountDown As System.Windows.Forms.TabPage
+    Friend WithEvents lblCountdownOUT As System.Windows.Forms.Label
    Friend WithEvents txtCountdownOUT As System.Windows.Forms.TextBox
-   Friend WithEvents txtCountdownName As System.Windows.Forms.TextBox
-   Friend WithEvents lblCountdownSec As System.Windows.Forms.Label
-   Friend WithEvents lblCountdownName As System.Windows.Forms.Label
-   Friend WithEvents udCountdown As System.Windows.Forms.NumericUpDown
-   Friend WithEvents btnCountdownNext As System.Windows.Forms.Button
-   Friend WithEvents btnCountdownInit As System.Windows.Forms.Button
-   Friend WithEvents pageRandom As System.Windows.Forms.TabPage
-   Friend WithEvents lblRandomMax As System.Windows.Forms.Label
-   Friend WithEvents udRandomMax As System.Windows.Forms.NumericUpDown
-   Friend WithEvents lblRandomMin As System.Windows.Forms.Label
-   Friend WithEvents udRandomMin As System.Windows.Forms.NumericUpDown
-   Friend WithEvents btnRandomNext As System.Windows.Forms.Button
-   Friend WithEvents lblRandomOUT As System.Windows.Forms.Label
-   Friend WithEvents txtRandomOUT As System.Windows.Forms.TextBox
-   Friend WithEvents btnRandomInit As System.Windows.Forms.Button
-   Friend WithEvents pageMath As System.Windows.Forms.TabPage
-   Friend WithEvents dgvMath As System.Windows.Forms.DataGridView
-   Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
-   Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
-   Friend WithEvents pageReadStdOut As System.Windows.Forms.TabPage
-   Friend WithEvents lblReadStdOutResult As System.Windows.Forms.Label
-   Friend WithEvents txtReadStdOutResult As System.Windows.Forms.TextBox
-   Friend WithEvents txtReadStdOutArgs As System.Windows.Forms.TextBox
-   Friend WithEvents txtReadStdOutName As System.Windows.Forms.TextBox
-   Friend WithEvents lblReadStdOutName As System.Windows.Forms.Label
-   Friend WithEvents btnReadStdOutExecute As System.Windows.Forms.Button
-   Friend WithEvents lblReadStdOutArgs As System.Windows.Forms.Label
-   Friend WithEvents pageSpellText As System.Windows.Forms.TabPage
-   Friend WithEvents lblSpellTextOUT As System.Windows.Forms.Label
-   Friend WithEvents lblSpellTextIN As System.Windows.Forms.Label
-   Friend WithEvents txtSpellTextOUT As System.Windows.Forms.TextBox
-   Friend WithEvents txtSpellTextIN As System.Windows.Forms.TextBox
-   Friend WithEvents btnSpellTextExecute As System.Windows.Forms.Button
-   Friend WithEvents pageShowText As System.Windows.Forms.TabPage
-   Friend WithEvents lblShowFileOR As System.Windows.Forms.Label
-   Friend WithEvents txtShowFileTextVar As System.Windows.Forms.TextBox
-   Friend WithEvents lblShowFileName As System.Windows.Forms.Label
-   Friend WithEvents lblShowFileTextVar As System.Windows.Forms.Label
-   Friend WithEvents cboShowFileName As System.Windows.Forms.ComboBox
-   Friend WithEvents btnShowFileName As System.Windows.Forms.Button
-   Friend WithEvents pageReadRSS As System.Windows.Forms.TabPage
-   Friend WithEvents txtReadRSSRegEx As System.Windows.Forms.TextBox
-   Friend WithEvents lblReadRSSRegEx As System.Windows.Forms.Label
-   Friend WithEvents cboReadRSSName As System.Windows.Forms.ComboBox
-   Friend WithEvents cboReadRSSDateMask As System.Windows.Forms.ComboBox
-   Friend WithEvents lblReadRSSIndex As System.Windows.Forms.Label
-   Friend WithEvents cboReadRSSArgs As System.Windows.Forms.ComboBox
-   Friend WithEvents udReadRSSIndex As System.Windows.Forms.NumericUpDown
-   Friend WithEvents lblReadRSSArgs As System.Windows.Forms.Label
-   Friend WithEvents lblReadRSSDateMask As System.Windows.Forms.Label
-   Friend WithEvents lblReadRSSName As System.Windows.Forms.Label
-   Friend WithEvents btnReadRSSExecute As System.Windows.Forms.Button
-   Friend WithEvents pageReadXML As System.Windows.Forms.TabPage
-   Friend WithEvents txtReadXMLItemPath As System.Windows.Forms.TextBox
-   Friend WithEvents txtReadXMLRegEx As System.Windows.Forms.TextBox
-   Friend WithEvents cboReadXMLName As System.Windows.Forms.ComboBox
-   Friend WithEvents lblReadXMLItemPath As System.Windows.Forms.Label
-   Friend WithEvents lblReadXMLIndex As System.Windows.Forms.Label
-   Friend WithEvents lblReadXMLName As System.Windows.Forms.Label
-   Friend WithEvents udReadXMLIndex As System.Windows.Forms.NumericUpDown
-   Friend WithEvents lblReadXMLRegEx As System.Windows.Forms.Label
-   Friend WithEvents btnReadXMLExecute As System.Windows.Forms.Button
-   Friend WithEvents pageReadFile As System.Windows.Forms.TabPage
-   Friend WithEvents lblReadFileName As System.Windows.Forms.Label
-   Friend WithEvents txtReadFileRegEx As System.Windows.Forms.TextBox
-   Friend WithEvents cboReadFileName As System.Windows.Forms.ComboBox
-   Friend WithEvents lblReadFileRegEx As System.Windows.Forms.Label
-   Friend WithEvents btnReadFileExecute As System.Windows.Forms.Button
-   Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
-   Friend WithEvents Label2 As System.Windows.Forms.Label
-   Friend WithEvents btnMathXor As System.Windows.Forms.Button
-   Friend WithEvents btnMathOr As System.Windows.Forms.Button
-   Friend WithEvents btnMathAnd As System.Windows.Forms.Button
-   Friend WithEvents btnMathAdd As System.Windows.Forms.Button
-   Friend WithEvents btnMathMax As System.Windows.Forms.Button
-   Friend WithEvents btnMathSub As System.Windows.Forms.Button
-   Friend WithEvents btnMathMin As System.Windows.Forms.Button
-   Friend WithEvents btnMathMult As System.Windows.Forms.Button
-   Friend WithEvents btnMathMod As System.Windows.Forms.Button
-   Friend WithEvents btnMathDiv As System.Windows.Forms.Button
-   Friend WithEvents pageINI As System.Windows.Forms.TabPage
-   Friend WithEvents dgvINI As System.Windows.Forms.DataGridView
-   Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
-   Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
-   Friend WithEvents BindingSourceINI As System.Windows.Forms.BindingSource
-   Friend WithEvents btnINIWrite As System.Windows.Forms.Button
-   Friend WithEvents Label1 As System.Windows.Forms.Label
-   Friend WithEvents txtINISection As System.Windows.Forms.TextBox
-   Friend WithEvents cboINIFile As System.Windows.Forms.ComboBox
-   Friend WithEvents Label3 As System.Windows.Forms.Label
-   Friend WithEvents btnINIRead As System.Windows.Forms.Button
+    Friend WithEvents lblCountdownSec As System.Windows.Forms.Label
+    Friend WithEvents lblCountdownName As System.Windows.Forms.Label
+    Friend WithEvents udCountdown As System.Windows.Forms.NumericUpDown
+    Friend WithEvents btnCountdownNext As System.Windows.Forms.Button
+    Friend WithEvents btnCountdownInit As System.Windows.Forms.Button
+    Friend WithEvents pageRandom As System.Windows.Forms.TabPage
+    Friend WithEvents lblRandomMax As System.Windows.Forms.Label
+    Friend WithEvents udRandomMax As System.Windows.Forms.NumericUpDown
+    Friend WithEvents lblRandomMin As System.Windows.Forms.Label
+    Friend WithEvents udRandomMin As System.Windows.Forms.NumericUpDown
+    Friend WithEvents btnRandomNext As System.Windows.Forms.Button
+    Friend WithEvents lblRandomOUT As System.Windows.Forms.Label
+    Friend WithEvents txtRandomOUT As System.Windows.Forms.TextBox
+    Friend WithEvents btnRandomInit As System.Windows.Forms.Button
+    Friend WithEvents pageReadStdOut As System.Windows.Forms.TabPage
+    Friend WithEvents lblReadStdOutResult As System.Windows.Forms.Label
+    Friend WithEvents txtReadStdOutResult As System.Windows.Forms.TextBox
+    Friend WithEvents txtReadStdOutArgs As System.Windows.Forms.TextBox
+    Friend WithEvents txtReadStdOutName As System.Windows.Forms.TextBox
+    Friend WithEvents lblReadStdOutName As System.Windows.Forms.Label
+    Friend WithEvents btnReadStdOutExecute As System.Windows.Forms.Button
+    Friend WithEvents lblReadStdOutArgs As System.Windows.Forms.Label
+    Friend WithEvents pageSpellText As System.Windows.Forms.TabPage
+    Friend WithEvents lblSpellTextOUT As System.Windows.Forms.Label
+    Friend WithEvents lblSpellTextIN As System.Windows.Forms.Label
+    Friend WithEvents txtSpellTextOUT As System.Windows.Forms.TextBox
+    Friend WithEvents txtSpellTextIN As System.Windows.Forms.TextBox
+    Friend WithEvents btnSpellTextExecute As System.Windows.Forms.Button
+    Friend WithEvents pageShowText As System.Windows.Forms.TabPage
+    Friend WithEvents lblShowFileOR As System.Windows.Forms.Label
+    Friend WithEvents txtShowFileTextVar As System.Windows.Forms.TextBox
+    Friend WithEvents lblShowFileName As System.Windows.Forms.Label
+    Friend WithEvents lblShowFileTextVar As System.Windows.Forms.Label
+    Friend WithEvents cboShowFileName As System.Windows.Forms.ComboBox
+    Friend WithEvents btnShowFileName As System.Windows.Forms.Button
+    Friend WithEvents pageReadRSS As System.Windows.Forms.TabPage
+    Friend WithEvents txtReadRSSRegEx As System.Windows.Forms.TextBox
+    Friend WithEvents lblReadRSSRegEx As System.Windows.Forms.Label
+    Friend WithEvents cboReadRSSName As System.Windows.Forms.ComboBox
+    Friend WithEvents cboReadRSSDateMask As System.Windows.Forms.ComboBox
+    Friend WithEvents lblReadRSSIndex As System.Windows.Forms.Label
+    Friend WithEvents cboReadRSSArgs As System.Windows.Forms.ComboBox
+    Friend WithEvents udReadRSSIndex As System.Windows.Forms.NumericUpDown
+    Friend WithEvents lblReadRSSArgs As System.Windows.Forms.Label
+    Friend WithEvents lblReadRSSDateMask As System.Windows.Forms.Label
+    Friend WithEvents lblReadRSSName As System.Windows.Forms.Label
+    Friend WithEvents btnReadRSSExecute As System.Windows.Forms.Button
+    Friend WithEvents pageReadXML As System.Windows.Forms.TabPage
+    Friend WithEvents txtReadXMLItemPath As System.Windows.Forms.TextBox
+    Friend WithEvents txtReadXMLRegEx As System.Windows.Forms.TextBox
+    Friend WithEvents cboReadXMLName As System.Windows.Forms.ComboBox
+    Friend WithEvents lblReadXMLItemPath As System.Windows.Forms.Label
+    Friend WithEvents lblReadXMLIndex As System.Windows.Forms.Label
+    Friend WithEvents lblReadXMLName As System.Windows.Forms.Label
+    Friend WithEvents udReadXMLIndex As System.Windows.Forms.NumericUpDown
+    Friend WithEvents lblReadXMLRegEx As System.Windows.Forms.Label
+    Friend WithEvents btnReadXMLExecute As System.Windows.Forms.Button
+    Friend WithEvents pageReadFile As System.Windows.Forms.TabPage
+    Friend WithEvents lblReadFileName As System.Windows.Forms.Label
+    Friend WithEvents txtReadFileRegEx As System.Windows.Forms.TextBox
+    Friend WithEvents cboReadFileName As System.Windows.Forms.ComboBox
+    Friend WithEvents lblReadFileRegEx As System.Windows.Forms.Label
+    Friend WithEvents btnReadFileExecute As System.Windows.Forms.Button
+    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
+    Friend WithEvents pageINI As System.Windows.Forms.TabPage
+    Friend WithEvents dgvINI As System.Windows.Forms.DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents BindingSourceINI As System.Windows.Forms.BindingSource
+    Friend WithEvents btnINIWrite As System.Windows.Forms.Button
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents txtINISection As System.Windows.Forms.TextBox
+    Friend WithEvents cboINIFile As System.Windows.Forms.ComboBox
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents btnINIRead As System.Windows.Forms.Button
     Friend WithEvents pageReadCSV As TabPage
     Friend WithEvents btnLoadCSVExecute As Button
     Friend WithEvents txtReadCSVCol As TextBox
@@ -1487,4 +1294,5 @@ Partial Class Form1
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents btnReadJSONExecute As Button
+    Friend WithEvents cboCountdownName As ComboBox
 End Class

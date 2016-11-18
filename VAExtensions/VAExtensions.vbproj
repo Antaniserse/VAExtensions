@@ -22,7 +22,7 @@
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>VAExtensions.xml</DocumentationFile>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DefineConstants>
     </DefineConstants>
@@ -34,7 +34,7 @@
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>VAExtensions.xml</DocumentationFile>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <DefineConstants>
     </DefineConstants>
   </PropertyGroup>
@@ -45,7 +45,7 @@
     <OptionCompare>Binary</OptionCompare>
   </PropertyGroup>
   <PropertyGroup>
-    <OptionStrict>On</OptionStrict>
+    <OptionStrict>Off</OptionStrict>
   </PropertyGroup>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
@@ -91,12 +91,10 @@
     <Compile Include="ContextHandlers\ContextHandlerReadRSS.vb" />
     <Compile Include="ContextHandlers\ContextHandlerReadStdOut.vb" />
     <Compile Include="ContextHandlers\ContextHandlerSpellText.vb" />
-    <Compile Include="ContextHandlers\ContextHandlerMath.vb" />
     <Compile Include="ContextHandlers\ContextHandlerRandom.vb" />
     <Compile Include="ContextHandlers\ContextHandlerCountdown.vb" />
     <Compile Include="ContextHandlers\ContextHandlerInfoDialog.vb" />
-    <Compile Include="ContextHandlers\ContextHandlerReadINI.vb" />
-    <Compile Include="ContextHandlers\ContextHandlerWriteINI.vb" />
+    <Compile Include="ContextHandlers\ContextHandlerINI.vb" />
     <Compile Include="ContextHandlers\ContextHandlerDB.vb" />
     <Compile Include="Forms\DebugForm.designer.vb">
       <DependentUpon>DebugForm.vb</DependentUpon>

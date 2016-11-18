@@ -7,60 +7,59 @@ Public Class VoiceAttack
    End Function
 
    Public Shared Function VA_DisplayName() As String
-        Return "VA Extensions 1.4"
+        Return "VA Extensions 2.0"
     End Function
 
    Public Shared Function VA_DisplayInfo() As String
-      Return String.Empty
-   End Function
+        Return "A general purpose plugin to extend the base functionalities of VoiceAttack"
+    End Function
 
-   Public Shared Sub VA_Init1(ByRef state As Dictionary(Of String, Object) _
-                              , ByRef smallIntValues As Dictionary(Of String, Nullable(Of Short)) _
-                              , ByRef textValues As Dictionary(Of String, String) _
-                              , ByRef intValues As Dictionary(Of String, Nullable(Of Integer)) _
-                              , ByRef decimalValues As Dictionary(Of String, Nullable(Of Decimal)) _
-                              , ByRef booleanValues As Dictionary(Of String, Nullable(Of Boolean)) _
-                              , ByRef extendedValues As Dictionary(Of String, Object))
+    Public Shared Sub VA_Init1(vaProxy As Object)
 
-        App.InitValues()
-        App.Settings = Settings.Deserialize()
+        Dim v As System.Version = vaProxy.VAVersion()
+        If v.Major < 2 AndAlso v.Minor < 5 Then
+            vaProxy.WriteToLog(String.Format("{0} require VA 1.6 or above (detected {1})", VA_DisplayName, v.ToString), "red")
+        Else
+            App.InitValues()
+            App.Settings = Settings.Deserialize()
+        End If
 
     End Sub
 
-   Public Shared Sub VA_Exit1(ByRef state As Dictionary(Of String, Object))
-      App.ClearCachedFiles()
-      Settings.Serialize(App.Settings)
-   End Sub
+    Public Shared Sub VA_Exit1(vaProxy As Object)
+        App.ClearCachedFiles()
+        Settings.Serialize(App.Settings)
+    End Sub
 
-   Public Shared Sub VA_Invoke1(context As String, ByRef state As Dictionary(Of String, Object) _
-                                , ByRef smallIntValues As Dictionary(Of String, Nullable(Of Short)) _
-                                , ByRef textValues As Dictionary(Of String, String) _
-                                , ByRef intValues As Dictionary(Of String, Nullable(Of Integer)) _
-                                , ByRef decimalValues As Dictionary(Of String, Nullable(Of Decimal)) _
-                                , ByRef booleanValues As Dictionary(Of String, Nullable(Of Boolean)) _
-                                , ByRef extendedValues As Dictionary(Of String, Object))
+    Public Shared Sub VA_StopCommand()
+
+    End Sub
+
+    Public Shared Sub VA_Invoke1(vaProxy As Object)
 
 #If SHOW_DEBUG_UI Then
         DebugForm.ShowDebugInfo(context, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
 #End If
 
-        Dim contextHandler As ContextHandlerBase = ContextFactory.Create(context, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+        Dim contextHandler As ContextHandlerBase = ContextFactory.Create(vaProxy)
 
-      If contextHandler Is Nothing Then
-         smallIntValues(App.KEY_ERROR) = ContextHandlerBase.ERR_CONTEXT
-         textValues(App.KEY_RESULT) = String.Format("Unsupported or empty context: '{0}'.", context)
-         Exit Sub
-      Else
-         contextHandler.Execute()
-      End If
+        vaProxy.SetSmallInt(App.KEY_ERROR, Nothing)
+        vaProxy.SetText(App.KEY_RESULT, Nothing)
 
-      If Not textValues.ContainsKey(App.KEY_RESULT) Then
-         textValues(App.KEY_RESULT) = Nothing
-      End If
-      If Not smallIntValues.ContainsKey(App.KEY_ERROR) Then
-         smallIntValues(App.KEY_ERROR) = 0
-      End If
+        If contextHandler Is Nothing Then
+            vaProxy.SetSmallInt(App.KEY_ERROR, ContextHandlerBase.ERR_CONTEXT)
+            vaProxy.SetText(App.KEY_RESULT, String.Format("Unsupported or empty context: '{0}'.", vaProxy.Context))
+            Exit Sub
+        Else
+            contextHandler.Execute()
+        End If
 
-   End Sub
+        If vaProxy.GetText(App.KEY_RESULT) Is Nothing Then
+            vaProxy.SetText(App.KEY_RESULT, String.Empty) 'Nothing
+        End If
+        If vaProxy.GetSmallInt(App.KEY_ERROR) Is Nothing Then
+            vaProxy.SetSmallInt(App.KEY_ERROR, 0)
+        End If
+    End Sub
 
 End Class

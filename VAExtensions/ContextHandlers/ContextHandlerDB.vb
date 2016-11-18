@@ -1,99 +1,90 @@
 ﻿Public Class ContextHandlerDB
     Inherits ContextHandlerBase
 
-    Public Sub New(ByVal context As ContextFactory.Contexts _
-                         , ByRef state As Dictionary(Of String, Object) _
-                         , ByRef smallIntValues As Dictionary(Of String, Nullable(Of Short)) _
-                         , ByRef textValues As Dictionary(Of String, String) _
-                         , ByRef intValues As Dictionary(Of String, Nullable(Of Integer)) _
-                         , ByRef decimalValues As Dictionary(Of String, Nullable(Of Decimal)) _
-                         , ByRef booleanValues As Dictionary(Of String, Nullable(Of Boolean)) _
-                         , ByRef extendedValues As Dictionary(Of String, Object))
-
-        MyBase.New(context, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+    Public Sub New(ByVal context As ContextFactory.Contexts, vaProxy As Object)
+        MyBase.New(context, vaProxy)
     End Sub
-
 
     Public Overrides Function Execute() As Boolean
 
-        If Not m_TextValues.ContainsKey(App.KEY_FILE) Then
-            m_smallIntValues(App.KEY_ERROR) = ERR_ARGUMENTS
-            m_TextValues(App.KEY_RESULT) = String.Format("Unknown database name. Text variable '{0}' not set.", App.KEY_FILE)
+        If VAProxy.GetText(App.KEY_FILE) Is Nothing Then
+            VAProxy.SetSmallInt(App.KEY_ERROR, ERR_ARGUMENTS)
+            VAProxy.SetText(App.KEY_RESULT, String.Format("Unknown database name. Text variable '{0}' not set.", App.KEY_FILE))
             Return False
         End If
 
-        Dim dbFile As String = m_TextValues(App.KEY_FILE)
+        Dim dbFile As String = VAProxy.GetText(App.KEY_FILE)
 
         If Not IO.Path.IsPathRooted(dbFile) Then
             dbFile = IO.Path.Combine(App.LibraryFolder, dbFile)
         End If
 
         If Not IO.File.Exists(dbFile) Then
-            m_smallIntValues(App.KEY_ERROR) = ERR_IO
-            m_TextValues(App.KEY_RESULT) = String.Format("Database '{0}' not found.", dbFile)
+            VAProxy.SetSmallInt(App.KEY_ERROR, ERR_IO)
+            VAProxy.SetText(App.KEY_RESULT, String.Format("Database '{0}' not found.", dbFile))
             Return False
         End If
         Dim db As New SQLiteHelper(dbFile)
         Dim table, columns, where As String
 
 
-        Select Case m_Context
+        Select Case Context
             Case ContextFactory.Contexts.ReadDB
-                If Not m_TextValues.ContainsKey(App.KEY_DB_TABLE) OrElse Not m_TextValues.ContainsKey(App.KEY_DB_COLUMNS) OrElse Not m_TextValues.ContainsKey(App.KEY_DB_WHERE) Then
-                    m_smallIntValues(App.KEY_ERROR) = ERR_ARGUMENTS
-                    m_TextValues(App.KEY_RESULT) = "'Table', 'Columns' and 'Where' arguments are required."
+                If VAProxy.GetText(App.KEY_DB_TABLE) Is Nothing Then
+                    VAProxy.SetSmallInt(App.KEY_ERROR, ERR_ARGUMENTS)
+                    VAProxy.SetText(App.KEY_RESULT, String.Format("The '{0}', variable is required.", App.KEY_DB_TABLE))
                     Return False
                 Else
-                    table = m_TextValues(App.KEY_DB_TABLE)
-                    If m_TextValues.ContainsKey(App.KEY_DB_COLUMNS) Then
-                        columns = m_TextValues(App.KEY_DB_COLUMNS)
+                    table = VAProxy.GetText(App.KEY_DB_TABLE)
+                    If VAProxy.GetText(App.KEY_DB_COLUMNS) IsNot Nothing Then
+                        columns = VAProxy.GetText(App.KEY_DB_COLUMNS)
                     Else
                         columns = "*"
                     End If
-                    If m_TextValues.ContainsKey(App.KEY_DB_WHERE) Then
-                        where = " WHERE " & m_TextValues(App.KEY_DB_WHERE)
+                    If VAProxy.GetText(App.KEY_DB_WHERE) IsNot Nothing Then
+                        where = " WHERE " & VAProxy.GetText(App.KEY_DB_WHERE)
                     Else
                         where = String.Empty
                     End If
                 End If
 
-                Dim result As Data.DataTable = db.GetDataTable("SELECT {0} FROM {1}{2}", columns, table, where)
+                    Dim result As Data.DataTable = db.GetDataTable("SELECT {0} FROM {1}{2}", columns, table, where)
                 If result Is Nothing Then
-                    m_smallIntValues(App.KEY_ERROR) = ERR_IO
-                    m_TextValues(App.KEY_RESULT) = String.Format("Database error: '{0}'.", db.LastMessage)
+                    VAProxy.SetSmallInt(App.KEY_ERROR, ERR_IO)
+                    VAProxy.SetText(App.KEY_RESULT, String.Format("Database error: '{0}'.", db.LastMessage))
                     Return False
                 Else
-                    m_TextValues(App.KEY_RESULT) = result.Rows(0).Item(0).ToString
+                    VAProxy.SetText(App.KEY_RESULT, result.Rows(0).Item(0).ToString)
                     Return True
                 End If
             Case ContextFactory.Contexts.InsertDB
-                If Not m_TextValues.ContainsKey(App.KEY_DB_TABLE) OrElse Not m_TextValues.ContainsKey(App.KEY_DB_COLUMNS) OrElse Not m_TextValues.ContainsKey(App.KEY_ARGUMENTS) Then
-                    m_smallIntValues(App.KEY_ERROR) = ERR_ARGUMENTS
-                    m_TextValues(App.KEY_RESULT) = "'Table', 'Columns' and 'Args' arguments are required."
+                If VAProxy.GetText(App.KEY_DB_TABLE) Is Nothing OrElse VAProxy.GetText(App.KEY_DB_COLUMNS) Is Nothing OrElse VAProxy.GetText(App.KEY_ARGUMENTS) Is Nothing Then
+                    VAProxy.SetSmallInt(App.KEY_ERROR, ERR_ARGUMENTS)
+                    VAProxy.SetText(App.KEY_RESULT, String.Format("The '{0}', '{1}' and '{2}' arguments are required.", App.KEY_DB_TABLE, App.KEY_DB_COLUMNS, App.KEY_ARGUMENTS))
                     Return False
                 End If
                 Dim values As New Dictionary(Of String, String)
                 Dim tempCol(), tempVal() As String
-                tempCol = Split(m_TextValues(App.KEY_DB_COLUMNS), ",")
-                tempVal = Split(m_TextValues(App.KEY_ARGUMENTS), ",")
+                tempCol = Split(VAProxy.GetText(App.KEY_DB_COLUMNS), ",")
+                tempVal = Split(VAProxy.GetText(App.KEY_ARGUMENTS), ",")
                 If tempCol.GetLength(0) <> tempVal.GetLength(0) Then
-                    m_smallIntValues(App.KEY_ERROR) = ERR_ARGUMENTS
-                    m_TextValues(App.KEY_RESULT) = "'Columns' and 'Args' must have teh same number of values."
+                    VAProxy.SetSmallInt(App.KEY_ERROR, ERR_ARGUMENTS)
+                    VAProxy.SetText(App.KEY_RESULT, String.Format("'{0}' and '{2}' must have the same number of values.", App.KEY_DB_COLUMNS, App.KEY_ARGUMENTS))
                     Return False
                 End If
 
                 For i As Integer = 0 To tempCol.GetUpperBound(0)
                     values.Add(tempCol(i), tempVal(i))
                 Next
-                If Not db.Insert(m_TextValues(App.KEY_DB_TABLE), values) Then
-                    m_smallIntValues(App.KEY_ERROR) = ERR_IO
-                    m_TextValues(App.KEY_RESULT) = String.Format("Database error: '{0}'.", db.LastMessage)
+                If Not db.Insert(VAProxy.GetText(App.KEY_DB_TABLE), values) Then
+                    VAProxy.SetSmallInt(App.KEY_ERROR, ERR_IO)
+                    VAProxy.SetText(App.KEY_RESULT, String.Format("Database error: '{0}'.", db.LastMessage))
                     Return False
                 Else
                     'Primary key/Auto increment column?
                     Dim rowID As Integer
-                    If Integer.TryParse(db.ExecuteScalar(String.Format("SELECT last_insert_rowid() AS rowid FROM {0} LIMIT 1", m_TextValues(App.KEY_DB_TABLE))), rowID) Then
-                        m_intValues(App.KEY_INDEX) = rowID
+                    If Integer.TryParse(db.ExecuteScalar(String.Format("SELECT last_insert_rowid() AS rowid FROM {0} LIMIT 1", VAProxy.GetText(App.KEY_DB_TABLE))), rowID) Then
+                        VAProxy.SetInt(App.KEY_INDEX, rowID)
                     End If
 
                     Return True

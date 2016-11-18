@@ -22,6 +22,8 @@
     Public Const KEY_DB_COLUMNS As String = "VxDBColumns"
     Public Const KEY_DB_WHERE As String = "VxDBWhere"
 
+    Public Const KEY_TIMER As String = "VxTimer" 'VxTimer0, VxTimer1, etc.
+    Public Const KEY_TIMER_RESULT As String = "VxTimerResult" 'VxTimerResult0, VxTimerResult1, etc.
 
     Public Const KEY_RANGEMIN As String = "VxRangeMin" '"VAMathRangeMin"
     Public Const KEY_RANGEMAX As String = "VxRangeMax" '"VAMathRangeMax"

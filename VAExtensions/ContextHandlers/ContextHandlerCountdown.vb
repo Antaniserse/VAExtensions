@@ -1,51 +1,63 @@
 ﻿Public Class ContextHandlerCountdown
-   Inherits ContextHandlerBase
+    Inherits ContextHandlerBase
 
-   Public Sub New(ByVal context As ContextFactory.Contexts _
-                        , ByRef state As Dictionary(Of String, Object) _
-                        , ByRef smallIntValues As Dictionary(Of String, Nullable(Of Short)) _
-                        , ByRef textValues As Dictionary(Of String, String) _
-                        , ByRef intValues As Dictionary(Of String, Nullable(Of Integer)) _
-                        , ByRef decimalValues As Dictionary(Of String, Nullable(Of Decimal)) _
-                        , ByRef booleanValues As Dictionary(Of String, Nullable(Of Boolean)) _
-                        , ByRef extendedValues As Dictionary(Of String, Object))
+    Public Sub New(ByVal context As ContextFactory.Contexts, vaProxy As Object)
+        MyBase.New(context, vaProxy)
+    End Sub
 
-      MyBase.New(context, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
-   End Sub
+    Public Overrides Function Execute() As Boolean
 
+        Dim countDownList As New Dictionary(Of String, Int32)
+        Dim key As String
+        Dim i As Integer
 
-   Public Overrides Function Execute() As Boolean
-
-      If m_smallIntValues.Count = 0 Then
-         m_smallIntValues(App.KEY_ERROR) = ERR_ARGUMENTS
-         m_TextValues(App.KEY_RESULT) = "At least a numeric condition is needed to manage the countdown."
-         Return False
-      Else
-         Dim lastRun, thisRun As DateTime, diff As TimeSpan
-         Dim result As Integer
-         Dim countDown As Short
-         Dim countdownName As String
-
-         thisRun = Now
-         countdownName = "count_" & m_smallIntValues.Keys(0)
-         countDown = m_smallIntValues(m_smallIntValues.Keys(0)).Value
-
-         If m_State.ContainsKey(countdownName) Then
-            lastRun = CType(m_State(countdownName), DateTime)
-            diff = thisRun - lastRun
-            If diff.TotalSeconds < countDown Then
-               result = CInt(countDown - diff.TotalSeconds)
-            Else
-               m_State(countdownName) = thisRun
-               result = 0
+        'Since the new VAProxy interface expose every possible INT value in the profile, we don't know how many 'VxCountdown' token are present,
+        'and how many were intended for this specific call; for now, we allow a fixed number of 10
+        For i = 0 To 9
+            key = String.Format("{0}{1}", App.KEY_TIMER, i)
+            If VAProxy.GetInt(key) IsNot Nothing Then
+                countDownList.Add(key, VAProxy.GetInt(key).Value)
             End If
-         Else
-            m_State(countdownName) = thisRun
-            result = 0
-         End If
-         m_smallIntValues(App.KEY_RESULT) = Convert.ToInt16(result)
-      End If
+        Next
 
-      Return True
-   End Function
+        If countDownList.Count = 0 Then
+            VAProxy.SetSmallInt(App.KEY_ERROR, ERR_ARGUMENTS)
+            VAProxy.SetText(App.KEY_RESULT, String.Format("At least a numeric condition '{0}<index>' is needed to manage the timer.", App.KEY_TIMER))
+            Return False
+        Else
+            Dim lastRun, thisRun As DateTime, diff As TimeSpan
+            Dim result As Integer
+            Dim timerValue As Integer
+            Dim timerName As String
+
+            thisRun = Now
+            For Each kvp As KeyValuePair(Of String, Int32) In countDownList
+                timerName = kvp.Key
+                timerValue = kvp.Value
+
+                If Context = ContextFactory.Contexts.TimerStart Then
+                    VAProxy.SessionState(timerName) = thisRun
+                Else
+                    If VAProxy.SessionState.ContainsKey(timerName) Then
+                        lastRun = CType(VAProxy.SessionState(timerName), DateTime)
+                        diff = thisRun - lastRun
+                        If diff.TotalSeconds < timerValue Then
+                            result = CInt(timerValue - diff.TotalSeconds)
+                        Else
+                            VAProxy.SessionState(timerName) = Nothing 'timer expired
+                            result = 0
+                        End If
+                        VAProxy.SetSmallInt(App.KEY_ERROR, 0)
+                        VAProxy.SetInt(timerName.Replace(App.KEY_TIMER, App.KEY_TIMER_RESULT), result)
+                    Else
+                        VAProxy.SetSmallInt(App.KEY_ERROR, ERR_ARGUMENTS)
+                        VAProxy.SetText(App.KEY_RESULT, String.Format("Timer '{0}' is not running.", timerName))
+                        Return False
+                    End If
+                End If
+            Next
+        End If
+
+        Return True
+    End Function
 End Class
