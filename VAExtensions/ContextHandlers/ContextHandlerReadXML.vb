@@ -27,10 +27,10 @@
         Else
             elementPath = {}
         End If
-        If VAProxy.GetSmallInt(App.KEY_INDEX) Is Nothing OrElse VAProxy.GetSmallInt(App.KEY_INDEX).Value < 1 Then
+        If VAProxy.GetSmallInt(App.KEY_INDEX) Is Nothing OrElse VAProxy.GetSmallInt(App.KEY_INDEX) < 1 Then
             elementCount = 1
         Else
-            elementCount = VAProxy.GetSmallInt(App.KEY_INDEX).Value
+            elementCount = VAProxy.GetSmallInt(App.KEY_INDEX)
         End If
 
         Try

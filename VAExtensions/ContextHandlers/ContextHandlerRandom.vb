@@ -15,7 +15,7 @@
                     Return False
                 Else
                     Dim numberList As New List(Of Int32)
-                    For n As Int16 = VAProxy.GetInt(App.KEY_RANGEMIN).Value To VAProxy.GetInt(App.KEY_RANGEMAX).Value
+                    For n As Int16 = VAProxy.GetInt(App.KEY_RANGEMIN) To VAProxy.GetInt(App.KEY_RANGEMAX)
                         numberList.Add(n)
                     Next
                     numbers = numberList.OrderBy(Function(s) Guid.NewGuid()).ToArray
