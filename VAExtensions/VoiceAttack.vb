@@ -40,6 +40,9 @@ Public Class VoiceAttack
 #If SHOW_DEBUG_UI Then
         'Not working with interface 4
         'DebugForm.ShowDebugInfo(context, state, smallIntValues, textValues, intValues, decimalValues, booleanValues, extendedValues)
+        Dim f As New WatchForm
+        f.vaProxy = vaProxy
+        f.Show()
 #End If
 
         Dim contextHandler As ContextHandlerBase = ContextFactory.Create(vaProxy)

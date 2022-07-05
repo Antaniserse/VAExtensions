@@ -20,7 +20,9 @@
 
     Public Const KEY_DB_TABLE As String = "VxDBTable"
     Public Const KEY_DB_COLUMNS As String = "VxDBColumns"
+    Public Const KEY_DB_VALUES As String = "VxDBValues"
     Public Const KEY_DB_WHERE As String = "VxDBWhere"
+    Public Const KEY_DB_FULLSTMT As String = "VxDBFullStatement"
 
     Public Const KEY_TIMER As String = "VxTimer" 'VxTimer0, VxTimer1, etc.
     Public Const KEY_TIMER_RESULT As String = "VxTimerResult" 'VxTimerResult0, VxTimerResult1, etc.

@@ -74,7 +74,7 @@
     End Sub
 
     Private Sub btnLaunchVA_Click(sender As Object, e As EventArgs) Handles btnLaunchVA.Click
-        Process.Start("C:\Program Files (x86)\VoiceAttack\VoiceAttack.exe", "-listeningoff")
+        Process.Start("C:\Program Files\VoiceAttack\VoiceAttack.exe", "-listeningoff")
     End Sub
 
     Private Sub btnReadFileExecute_Click(sender As Object, e As EventArgs) Handles btnReadFileExecute.Click

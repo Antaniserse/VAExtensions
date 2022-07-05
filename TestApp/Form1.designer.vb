@@ -31,6 +31,7 @@ Partial Class Form1
         Me.btnLaunchVA = New System.Windows.Forms.Button()
         Me.btnShowInfo = New System.Windows.Forms.Button()
         Me.pageCountDown = New System.Windows.Forms.TabPage()
+        Me.cboCountdownName = New System.Windows.Forms.ComboBox()
         Me.lblCountdownOUT = New System.Windows.Forms.Label()
         Me.txtCountdownOUT = New System.Windows.Forms.TextBox()
         Me.lblCountdownSec = New System.Windows.Forms.Label()
@@ -127,7 +128,6 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BindingSourceINI = New System.Windows.Forms.BindingSource(Me.components)
-        Me.cboCountdownName = New System.Windows.Forms.ComboBox()
         Me.pageCountDown.SuspendLayout()
         CType(Me.udCountdown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pageRandom.SuspendLayout()
@@ -185,6 +185,15 @@ Partial Class Form1
         Me.pageCountDown.TabIndex = 11
         Me.pageCountDown.Text = "CountDown"
         Me.pageCountDown.UseVisualStyleBackColor = True
+        '
+        'cboCountdownName
+        '
+        Me.cboCountdownName.FormattingEnabled = True
+        Me.cboCountdownName.Items.AddRange(New Object() {"VxTimer0", "VxTimer1", "VxTimer2", "VxTimer3", "VxTimer4", "VxTimer5", "VxTimer6", "VxTimer7", "VxTimer8", "VxTimer9"})
+        Me.cboCountdownName.Location = New System.Drawing.Point(66, 5)
+        Me.cboCountdownName.Name = "cboCountdownName"
+        Me.cboCountdownName.Size = New System.Drawing.Size(133, 21)
+        Me.cboCountdownName.TabIndex = 38
         '
         'lblCountdownOUT
         '
@@ -1139,15 +1148,6 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridViewTextBoxColumn2.HeaderText = "Value"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'cboCountdownName
-        '
-        Me.cboCountdownName.FormattingEnabled = True
-        Me.cboCountdownName.Items.AddRange(New Object() {"VxTimer0", "VxTimer1", "VxTimer2", "VxTimer3", "VxTimer4", "VxTimer5", "VxTimer6", "VxTimer7", "VxTimer8", "VxTimer9"})
-        Me.cboCountdownName.Location = New System.Drawing.Point(66, 5)
-        Me.cboCountdownName.Name = "cboCountdownName"
-        Me.cboCountdownName.Size = New System.Drawing.Size(133, 21)
-        Me.cboCountdownName.TabIndex = 38
         '
         'Form1
         '
