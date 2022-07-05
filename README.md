@@ -8,7 +8,8 @@ VAExtensions adds extra commands for
 - and some more...
 
 <h4>Installation</h4>
-Copy the entire 'VAExtensions' folder into the 'Apps' directory of VoiceAttack. 
+Download the binary package found in the 'releases' section and extract the entire 'VAExtensions' folder into your 'VoiceAttack\Apps' directory.
+Don't forget to enable 'plugin support' from the VoiceAttack main settings window
 
 <h4>Usage</h4>
 Import the sample profiles included for a demo of the supported features.
