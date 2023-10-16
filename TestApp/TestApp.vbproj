@@ -118,12 +118,6 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\VAExtensions\VAExtensions.vbproj">
-      <Project>{c3c3ea36-5109-4f44-bfc4-58ac7a557e86}</Project>
-      <Name>VAExtensions</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
